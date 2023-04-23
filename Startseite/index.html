@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="css/startseite.css">
     <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script defer src="../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+        "three": "https://unpkg.com/three@v0.149.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@v0.149.0/examples/jsm/"
+        }
+    }
+    </script>
     <script defer type="module" src="js/three.js"></script>
     <title>Startseite</title>
 </head>
 <body>
     <div class="container">
-        <canvas id="model1"></canvas>
         <div class="html">
-            <h1>The Star Wars Shop</h1>
+            <h1>The Plane Shop</h1>
+            <canvas id="model1"></canvas>
         </div>
     </div>
 </body>
