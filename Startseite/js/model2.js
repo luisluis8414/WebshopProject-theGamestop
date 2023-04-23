@@ -11,7 +11,7 @@ const camera= new THREE.PerspectiveCamera(
   1000
 );
 
-camera.position.set(0, 0.2 , 1);
+camera.position.set(0, 1 , 1);
 
 const renderer= new THREE.WebGLRenderer({
   canvas: canvas,
@@ -27,7 +27,7 @@ const loader= new GLTFLoader();
 
 let mixer;
 let obj;
-loader.load('models/Ornihopter/scene.gltf', function(gltf){
+loader.load('models/plane2/scene.gltf', function(gltf){
   obj=gltf.scene;
   obj.rotation.y-=3
   obj.position.z-=2
@@ -39,17 +39,9 @@ loader.load('models/Ornihopter/scene.gltf', function(gltf){
   action.play();
 });
 
-
-let obj2;
-// loader.load('models/plane2/scene.gltf', (gltf)=>{
-//   obj2=gltf.scene;
-//   obj2.position.x+=3
-//   scene.add(gltf.scene);
-// });
-
 // scene.background=new THREE.Color(0xffffff);
 
-const light = new THREE.AmbientLight( 0x404040, 3 ); // soft white light
+const light = new THREE.AmbientLight( 0x404040, 10); // soft white light
 scene.add( light );
 
 const clock = new THREE.Clock();
@@ -60,7 +52,6 @@ function animate() {
     //   if(obj.position.z<0)obj.position.z+=0.001;
       mixer.update(clock.getDelta());
     }
-    if(obj2) obj2.rotation.y+=0.01;
   	renderer.render(scene, camera);
   } 
 
