@@ -11,36 +11,54 @@ const camera= new THREE.PerspectiveCamera(
   1000
 );
 
-camera.position.set(1, 0 , 3);
+camera.position.set(0, 0.3 , 1);
 
 const renderer= new THREE.WebGLRenderer({
-  canvas: canvas
+  canvas: canvas,
+  alpha: true 
 });
 
 renderer.setSize(window.innerWidth/2, window.innerHeight/2);
+renderer.setClearColor(0x000000, 0);
 
 
 const loader= new GLTFLoader();
 
-
+let mixer;
 let obj;
-loader.load('models/plane2/scene.gltf', function(gltf){
+loader.load('models/WW1Plane/scene.gltf', function(gltf){
   obj=gltf.scene;
   scene.add(gltf.scene);
+  mixer = new THREE.AnimationMixer(obj);
+  const clips=gltf.animations;
+  const clip = THREE.AnimationClip.findByName(clips, 'Take 001');
+  const action =mixer.clipAction(clip);
+  action.play();
 });
 
-scene.background=new THREE.Color(0xffffff);
+let obj2;
+// loader.load('models/plane2/scene.gltf', (gltf)=>{
+//   obj2=gltf.scene;
+//   obj2.position.x+=3
+//   scene.add(gltf.scene);
+// });
+
+// scene.background=new THREE.Color(0xffffff);
 
 const light = new THREE.AmbientLight( 0x404040, 3 ); // soft white light
 scene.add( light );
 
-
-
+const clock = new THREE.Clock();
 function animate() {
   	requestAnimationFrame( animate );
-    obj.rotation.y+=0.01
-  	renderer.render( scene, camera );
-  }
+    if(obj) {
+      obj.rotation.y+=0.001;
+      mixer.update(clock.getDelta());
+    }
+    if(obj2) obj2.rotation.y+=0.01;
+    
+  	renderer.render(scene, camera);
+  } 
 
   animate()
 // const canvas=document.getElementById('model1');
