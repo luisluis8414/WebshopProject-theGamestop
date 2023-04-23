@@ -1,3 +1,14 @@
 body{
     background-color: bisque;
 }
+
+.main{
+    position: relative;
+}
+
+#model1{
+    position: absolute; 
+    top: 0; 
+    right: 0;
+    margin-top: 10rem;
+}
