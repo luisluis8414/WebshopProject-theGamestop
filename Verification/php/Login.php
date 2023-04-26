@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <link href="../../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">  </script>
     <script defer src="../../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <!-- <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <script type="importmap">
         {
         "imports": {
@@ -17,7 +17,7 @@
         }
     }
     </script>
-    <script defer type="module" src="../js/model1.js"></script>
+    <script defer type="module" src="../js/model1.js"></script> -->
     <link rel="stylesheet" href="../css/login.css">
     <title>Login</title>
     <style>
@@ -34,10 +34,21 @@
             z-index: -1;
         }
     </style>
+     <script>
+        if (performance.navigation.type == 1) {
+            // Reloaded page, remove query parameters from URL
+            window.location.replace(window.location.pathname);
+        }
+    </script>
 </head>
 
 <body>
     <?php
+    if(!isset($_GET['Registrierung'])){
+        $registrierung='';
+    }else{
+        $registrierung=$_GET['Registrierung'];
+    }
     $failed = false;
     $failedCheckbox = false;
     if (isset($_POST["submit"]) && isset($_POST["agreement"]) && $_POST["agreement"] == 1) {
@@ -63,7 +74,7 @@
         $failedCheckbox = true;
     }
     ?>
-    <canvas id="responsive-canvas"></canvas>
+    <!-- <canvas id="responsive-canvas"></canvas> -->
     <div class="row">
         <div class="col-4">
         </div>
@@ -78,7 +89,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Passwort</label>
-                        <input type="password" name="pw" class="form-control" id="exampleInputPassword1" placeholder="Passwort">
+                        <input type="password" autocomplete name="pw" class="form-control" id="exampleInputPassword1" placeholder="Passwort">
                         <small id="error" style="color: red;"></small>
                         <?php
                         if ($failed && isset($_POST["submit"])) {
@@ -96,9 +107,13 @@
                     </div>
                     <small id="errorCheckbox" style="color: red;"></small>
                     <?php
+                    if($registrierung=="success"){
+                        echo "<small class='success' >Please check your emails to finish registration.</small><br>";           
+                     }
                     if ($failedCheckbox && isset($_POST["submit"])) {
                         echo "<script>document.getElementById('error').innerHTML = 'Failed to log in. U need to accept the terms';</script>";
                     }
+                    
                     ?>
                     <button type="submit" name="submit" class="btn btn-primary">Abschicken</button><br>
                     <a href="Registration.php">Ich habe nock keinen Account</a>

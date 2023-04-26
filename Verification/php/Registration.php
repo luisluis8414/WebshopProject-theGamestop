@@ -1,5 +1,4 @@
 <?php
-
     // Start the session
         if(!isset($_GET['Registrierung'])){
             $registrierung='';
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="../css/login.css">
     <script defer src="../../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
     </script>
-    <script src="js/loginFailed.js"></script>
     <title>Registrierung</title>
     <script>
         if (performance.navigation.type == 1) {
@@ -75,27 +73,12 @@
                 echo '<input autocomplete="username"  class="form-control" type="text" name="eMail" placeholder="E-Mail" >';
             }
             if($registrierung=="email"){
-                echo "<small class='error' >Bitte gültige Email eingeben!</small><br>";           
+                echo "<small class='error' >Please enter a valid email!</small><br>";           
              }
-        ?>
-    </div>
-    <div class="form-group p-1">
-        <label for="Passwort">Passwort</label>
-        <input autocomplete="new-password" class="form-control" type="password" type="text" name="pw" placeholder="Passwort">
-    </div>
-    <div class="form-group p-1">
-        <label for="PasswortWiederholen">Passwort wiederholen</label>
-        <input autocomplete="new-password" class="form-control" type="password" type="text" name="pw2" placeholder="Passwort wiederholen">
-        <?php
-            if($registrierung=="pw"){
-                echo "<small class='error' >Die Passwörter stimmen nicht überein!</small><br>";
+             if($registrierung=="emailTaken"){
+                echo "<small class='error' >There is already an account connected to this email!</small><br>";           
              }
-             if($registrierung=="NotStrongEnough"){
-                echo "<small class='error' >Dein Passwort ist nicht stark genug.<br>Bitte beachte, dass dein Passwort mindestens einen Grossbuchstaben, eine Zahl und ein Sonderzeichen, sowie länger als 8 Zeichen ist.</small><br>";           
-             }
-             if($registrierung=="success"){
-                header("Location: Login.php");          
-             }
+
         ?>
     </div>
         <?php
