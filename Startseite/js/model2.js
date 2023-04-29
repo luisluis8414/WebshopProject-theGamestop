@@ -34,7 +34,7 @@ loader.load('models/plane2/scene.gltf', function(gltf){
   scene.add(gltf.scene);
   mixer = new THREE.AnimationMixer(obj);
   const clips=gltf.animations;
-  const clip = THREE.AnimationClip.findByName(clips, 'Action');
+  const clip = THREE.AnimationClip.findByName(clips, 'Take 001');
   const action =mixer.clipAction(clip);
   action.play();
 });

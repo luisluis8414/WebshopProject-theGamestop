@@ -21,7 +21,7 @@ camera.position.set(0, 0.4 , 2);
 const RGBEloader = new RGBELoader();
 RGBEloader.load('src/kloofendal_48d_partly_cloudy_puresky_1k.hdr', function(texture){
   texture.mapping = THREE.EquirectangularReflectionMapping;
-  scene.background=texture;
+  // scene.background=texture;
   scene.environment=texture;
 })
 
@@ -48,7 +48,7 @@ const loader= new GLTFLoader();
 
 let mixer;
 let obj;
-loader.load('models/JediStarFighter/scene.gltf', function(gltf){
+loader.load('models/WIIFighter/scene.gltf', function(gltf){
   obj=gltf.scene;
   obj.rotation.y-=0.3
   // obj.position.z-=2
@@ -84,15 +84,16 @@ const clock = new THREE.Clock();
 function animate() {
   	requestAnimationFrame( animate );
 
+    mixer.update(clock.getDelta());
     controls.update();
 
-    animationFlying();
+    // animationFlying();
     // if(obj2) obj2.rotation.y+=0.01;
   	renderer.render(scene, camera);
   } 
 function animationFlying(){
   if(obj) {
-    mixer.update(clock.getDelta());
+    
     if (rotationBool) {
       obj.rotation.y += increment;
     } else {
