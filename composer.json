@@ -1,0 +1,17 @@
+{
+    "name": "luisw/web-shop",
+    "autoload": {
+        "psr-4": {
+            "Luisw\\WebShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "luisluis8414",
+            "email": "luis.wehrberger2@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

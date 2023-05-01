@@ -5,11 +5,9 @@
      $nachname = $_POST['nachname'];
      $email = $_POST['email'];
         
+    include '../../Mailer/php/sendRegistrationMail.php';
 
     //connect to database
-
-    
-
   
     if (empty($vorname) || empty($nachname) || empty($email)) {
         $response = array(
@@ -72,6 +70,8 @@
                         $stmt->bindParam(":pw", $hash);
                         $stmt->execute();
                         // Return a success response
+                        $name=$vorname.' '.$nachname;
+                        sendRegistrationEmail($email,$name,$pw);
                         $response = array(
                             "empty" => "",
                             "vorname" => "",

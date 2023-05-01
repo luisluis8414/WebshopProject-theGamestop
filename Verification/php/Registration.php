@@ -9,7 +9,7 @@
     <link href="../../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script defer src="../../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/errorHandeling.js"></script>
+    <script type="text/javascript" src="../../Extern/js/jquery.min.js"></script>
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <script type="importmap">
         {
@@ -19,25 +19,25 @@
         }
     }
     </script>
-    <script defer type="module" src="../js/model1.js"></script>
+    <script type="module" src="../js/model1.js"></script>
     <link rel="stylesheet" href="../css/login.css">
     <title>Registrierung</title>
     <style>
         #wrapper {
             margin: auto;
-            margin-top: 10%;
-            margin-right: 20rem;
-            position: relative;
+            margin-top: 11%;
+            margin-left: 70rem;
+            position: absolute;
             align-items: center;
             justify-content: center;
             width: 30rem;
         }
         body {
-  overflow: hidden;
-}
+            overflow: hidden;
+    }
         #responsive-canvas {
             position: absolute;
-            top: -6rem;
+            top: -2rem;
             width: 100%;
             z-index: -1;
         }
@@ -66,7 +66,8 @@
                     <small id="emailError" class="error"></small>
                 </div>
                 <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Abschicken</button><br>
-                <a href="Login.php">Ich habe bereits einen Account</a>
+                <a href="Login.php">I already have an account</a><br>
+                <a href="pwReset/fogotPassword.php">Forgot password</a>
             </form>
         </div>
     </div>

@@ -84,7 +84,7 @@
                 <form action="Login.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email Addresse</label>
-                        <input type="email" name="eMail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                        <input name="eMail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
                         <small id="emailHelp" class="form-text text-muted">Wir werden deine Daten mit niemandem teilen</small>
                     </div>
                     <div class="form-group">
