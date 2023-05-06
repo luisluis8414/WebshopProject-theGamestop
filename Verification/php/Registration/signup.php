@@ -76,7 +76,6 @@
                         $stmt->execute();
                         // Return a success response
                         $name=$vorname.' '.$nachname;
-                        
                         $response = array(
                             "empty" => "",
                             "vorname" => "",
@@ -87,6 +86,7 @@
                             
                         );
                         echo json_encode($response);
+                        sendRegistrationEmail($email,$name,$pw,$vorname);
                         exit();
                     }else{
                         $response = array(

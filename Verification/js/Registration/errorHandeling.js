@@ -7,16 +7,13 @@ var res=screenWidth+"x"+screenHeight;
 // Betriebssystem ermitteln
 var userAgent = navigator.userAgent;
 var os='';
-console.log(userAgent)
+
 if (/Windows/i.test(userAgent)) {
   os="Windows Betriebssystem";
-  console.log("Windows Betriebssystem");
 } else if (/Macintosh/i.test(userAgent)) {
   os="Macintosh Betriebssystem";
-  console.log("Macintosh Betriebssystem");
 } else if (/Linux/i.test(userAgent)) {
   os="Linux Betriebssystem";
-  console.log("Linux Betriebssystem");
 } else {
   os="Unbekanntes Betriebssystem";
   console.log("Unbekanntes Betriebssystem");

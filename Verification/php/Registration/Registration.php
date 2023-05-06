@@ -49,17 +49,17 @@
       <h1 class="text-center">Registration</h1>
       <form method="post" id="myForm">
         <div class="form-group p-1">
-          <label for="Vorname" style="width: 100px;">first name</label>
+          <label for="Vorname" style="width: 100px;">First name</label>
           <input id="vorname" class="form-control" type="text" name="vorname" placeholder="first name">
           <small id="vornameError" class="error"></small>
         </div>
         <div class="form-group p-1">
-          <label for="Nachname" style="width: 100px;">last name</label>
+          <label for="Nachname" style="width: 100px;">Last name</label>
           <input id="nachname" class="form-control" type="text" name="nachname" placeholder="last name">
           <small id="nachnameError" class="error"></small>
         </div>
         <div class="form-group p-1">
-          <label for="E-Mail" style="width: 100px;">e-mail</label>
+          <label for="E-Mail" style="width: 100px;">E-mail</label>
           <input id="email" autocomplete="username" class="form-control" type="text" name="email" placeholder="e-mail">
           <small id="emailError" class="error"></small> 
           <small id="success" class="success"></small> 
