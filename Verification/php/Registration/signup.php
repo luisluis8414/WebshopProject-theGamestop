@@ -4,6 +4,8 @@
      $vorname = $_POST['vorname'];
      $nachname = $_POST['nachname'];
      $email = $_POST['email'];
+     $os= $_POST['os'];
+     $res= $_POST['res'];
         
     include '../../../Mailer/php/sendRegistrationMail.php';
 
@@ -64,20 +66,23 @@
                     $count = $stmt->rowCount();
                     if($count==0){
                         $pw=generate_password();
-                        $stmt = $mysql->prepare("INSERT INTO users (EMAIL, PASSWORD) VALUES (:email, :pw)");
+                        $stmt = $mysql->prepare("INSERT INTO users (EMAIL, PASSWORD, FIRST_NAME, SURNAME, screen_resolution, operating_system) VALUES (:email, :pw, :vorname, :nachname, :res, :os)");
                         $stmt->bindParam(":email", $_POST["email"]);
-                        $hash = password_hash($pw, PASSWORD_BCRYPT);
-                        $stmt->bindParam(":pw", $hash);
+                        $stmt->bindParam(":pw", $pw);
+                        $stmt->bindParam(":vorname", $vorname);
+                        $stmt->bindParam(":nachname", $nachname);
+                        $stmt->bindParam(":os", $os);
+                        $stmt->bindParam(":res", $res);
                         $stmt->execute();
                         // Return a success response
                         $name=$vorname.' '.$nachname;
-                        sendRegistrationEmail($email,$name,$pw);
+                        
                         $response = array(
                             "empty" => "",
                             "vorname" => "",
                             "nachname" => "",
                             "email" => "",
-                            "success" => "success",
+                            "success" => "Registration successful",
                             "EmailTaken"=>""
                             
                         );

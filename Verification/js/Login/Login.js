@@ -1,13 +1,13 @@
-
 $(function () {
 
   $('#submit').on('click', function (event) {
     event.preventDefault();
 
     var email = $('#email').val();
-    //   var emailRegex = /^[a-zA-Z]{5,}@[^\s@]+\.[^\s@]+$/;
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var pw = $('#pw').val();
+    var hashedPW = CryptoJS.SHA512(pw).toString();
+    console.log("hashed pw:"+hashedPW)
     $('#emailError').html('');
     if (pw.length == 0) {
       $('#error').html('Please enter a password');
@@ -20,7 +20,7 @@ $(function () {
           type: 'POST',
           data: {
             email: email,
-            pw: pw,
+            pw: hashedPW,
             RightCredentials: undefined
           },
           success: function (response) {
@@ -39,5 +39,3 @@ $(function () {
   });
 
 });
-
-

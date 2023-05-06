@@ -11,7 +11,8 @@
         if ($count == 1) {
             //Email ist vergeben
             $row = $stmt->fetch();
-            if (password_verify($_POST["pw"], $row["PASSWORD"])) {
+            $hash_pw=hash('sha512',$row["PASSWORD"]);
+            if ($pw==$hash_pw) {
                 $_SESSION['logged_in'] = true;
                 $response = array(
                     "email" => "",

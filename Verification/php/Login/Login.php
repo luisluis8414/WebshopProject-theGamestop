@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/Login/Login.js"></script>
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script type="importmap">
         {
         "imports": {
@@ -26,6 +27,7 @@
         #formWrapper {
             margin-top: 25%;
             width: 50%;
+            height: 30rem;
         }
 
         body {
@@ -38,6 +40,9 @@
             width: 100%;
             z-index: -1;
         }
+        .content{
+            margin-top: 40px;
+        }
     </style>
 </head>
 
@@ -47,6 +52,7 @@
         <div class="row">
             <div class="col-md-12 offset-md-11 d-flex">
                 <div id="formWrapper" class="shadow-lg p-5 mb-5 bg-white rounded mx-auto">
+                    <div class="content">
                     <h1 class="text-center">Login</h1>
                     <form method="post" id="myForm">
                         <div class="form-group p-1">
@@ -62,6 +68,7 @@
                         <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Abschicken</button><br>
                         <a href="../Registration/Registration.php">I don't have an account</a><br>
                         <a href="">Forgot Password</a>
+                    </div>
                     </form>
                 </div>
             </div>
