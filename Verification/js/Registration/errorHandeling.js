@@ -1,3 +1,4 @@
+
 $(function() {
   $('#submit').on('click', function(event) {
     $("#emailError").html(''); 
@@ -26,19 +27,16 @@ $(function() {
       success: function(response) {
         console.log(response);
         var data = JSON.parse(response);  
-        console.log(data.success)
         if(data.empty!=='')$("#emailError").html(data.empty);
         if(data.vorname!=='')$("#vornameError").html(data.vorname);
         if(data.nachname!=='')$("#nachnameError").html(data.nachname);
         if(data.email!=='')$("#emailError").html(data.email);
-        if(data.EmailTaken!=='')$("#emailError").html(data.EmailTaken);
         if(data.success!=='')window.location.href = "Login.php";
-       
-  
+        if(data.EmailTaken!=='')$("#emailError").html(data.EmailTaken);
       },
-      error: function(xhr, status, error) {
+      error: function(error) {
         alert('Error: ' + error.message);
-      }
+      } 
     });
   });
 });

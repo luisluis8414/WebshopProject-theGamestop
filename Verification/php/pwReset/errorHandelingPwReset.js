@@ -26,8 +26,8 @@ $(function() {
        
   
       },
-      error: function(xhr, status, error) {
-        cl('Error: ' + error.message);
+      error: function(error) {
+        console.log('Error: ' + error.message);
       }
     });
   });

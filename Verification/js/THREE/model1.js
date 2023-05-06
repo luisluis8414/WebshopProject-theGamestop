@@ -21,7 +21,7 @@ camera.position.set(-76 ,-25 , 297);
 
 
 const RGBEloader = new RGBELoader();
-RGBEloader.load('../src/HDR_Free_City_Night_Lights_Ref.hdr', function(texture){
+RGBEloader.load('../../src/HDR_Free_City_Night_Lights_Ref.hdr', function(texture){
   texture.mapping = THREE.EquirectangularReflectionMapping;
   // scene.background=texture;
   scene.environment=texture;
@@ -50,7 +50,7 @@ const loader= new GLTFLoader();
 
 let mixer;
 let obj;
-loader.load('../models/Dragon/scene.gltf', function(gltf){
+loader.load('../../models/Dragon/scene.gltf', function(gltf){
   obj=gltf.scene;
   obj.rotation.y+=0.1
   obj.position.y-=80

@@ -63,7 +63,7 @@
             if (password_verify($_POST["pw"], $row["PASSWORD"])) {
                 session_start();
                 $_SESSION["eMail"] = $row["EMAIL"];
-                header("Location: loggedIn.php");
+                    
             } else {
                 $failed = true;
             }

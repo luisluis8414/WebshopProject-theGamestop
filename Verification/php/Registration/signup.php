@@ -5,7 +5,7 @@
      $nachname = $_POST['nachname'];
      $email = $_POST['email'];
         
-    include '../../Mailer/php/sendRegistrationMail.php';
+    include '../../../Mailer/php/sendRegistrationMail.php';
 
     //connect to database
   
@@ -57,7 +57,7 @@
                         echo json_encode($response);
                         exit();
                     }else{
-                    require("mysql.php");
+                    require("../../../DBConnection/mysql.php");
                     $stmt = $mysql->prepare("SELECT * FROM users WHERE EMAIL = :email"); //EMail ueberpruefen
                     $stmt->bindParam(":email", $_POST["email"]);
                     $stmt->execute();
