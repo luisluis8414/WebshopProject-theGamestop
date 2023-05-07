@@ -1,9 +1,10 @@
 # Ingame Item Webshop
 
+<div style="text-align: center; color="red";>
 <h1><strong>This is work in progress and not finished. Some of the features are not implemented</strong></h1>
 
 <h1><strong>This is not a real shop. U cant pay with real money and you are not really purchasing items!</strong></h1>
-
+</div>
 This is a webshop for ingame items built with ThreeJS, PHP, and Ajax. The webshop features a login system that uses SHA512 hash for password encryption and a MySQL database to store user information.
 
 ## Features
