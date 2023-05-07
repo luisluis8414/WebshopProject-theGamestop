@@ -21,7 +21,7 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = $smtpHost;                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -31,7 +31,7 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom($senderMail, 'The GameStop');
+        $mail->setFrom($senderMail, 'The Game Stop');
 
         $mail->addAddress($recipientMail, $recipientName);               //Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
@@ -85,7 +85,7 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
                     Please finish your Registration';
 
         $mail->send();
-        echo 'Message has been sent';
+        // echo 'Message has been sent';
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }

@@ -3,66 +3,57 @@
 //function outputs a comma-separated string
 $email = $_POST['email'];
 
-// include '../../../Mailer/php/sendPwResetMail.php';
+include '../../../Mailer/php/sendPwResetMail.php';
 
 //connect to database
+require("../../../DBConnection/mysql.php");
 
-if (empty($email)) {
+$stmt = $mysql->prepare("SELECT * FROM users WHERE email = :email");
+$stmt->bindParam(":email", $email);
+$stmt->execute();
+$count = $stmt->rowCount();
+if ($count == 1) {
+    // Generate a new password and update the user's password in the database
+
+    $pw = generate_password();
+    $vorname = $mysql->prepare("SELECT FIRST_NAME FROM users WHERE email = :email");
+    $vorname->bindParam(":email", $email);
+    $vorname->execute();
+    $vorname_result = $vorname->fetch();
+
+    $nachname = $mysql->prepare("SELECT SURNAME FROM users WHERE email = :email");
+    $nachname->bindParam(":email", $email);
+    $nachname->execute();
+    $nachname_result = $nachname->fetch();
+
+    $name = $vorname_result['FIRST_NAME'] . ' ' . $nachname_result['SURNAME'];
+
+
+    $stmt = $mysql->prepare("UPDATE users SET password = :pw WHERE email = :email");
+    $stmt->bindParam(":pw", $pw);
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+    // Send the user an email with the new password
+    sendPwReset($email, $name, $pw, $vorname_result['FIRST_NAME']);
+    // Return a success response
     $response = array(
-        "empty" => "Please fill out every field!",
         "email" => "",
-        "success" => "",
+        "success" => "Success! We send you a recovery email",
         "EmailTaken" => ""
     );
     echo json_encode($response);
+    
     exit();
 } else {
-    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
-        $response = array(
-            "empty" => "",
-            "email" => "Please enter a valid email",
-            "success" => "",
-            "EmailTaken" => ""
-        );
-        echo json_encode($response);
-        exit();
-    } else {
-        require("../mysql.php");
-        $stmt = $mysql->prepare("SELECT * FROM users WHERE email = :email");
-        $stmt->bindParam(":email", $email);
-        $stmt->execute();
-        $count = $stmt->rowCount();
-        if ($count == 1) {
-            // Generate a new password and update the user's password in the database
-            $pw = generate_password();
-            $hash = password_hash($pw, PASSWORD_BCRYPT);
-            $stmt = $mysql->prepare("UPDATE users SET password = :hash WHERE email = :email");
-            $stmt->bindParam(":hash", $hash);
-            $stmt->bindParam(":email", $email);
-            $stmt->execute();
-            // Send the user an email with the new password
-            // sendPwReset($email, $name, $pw);
-            // Return a success response
-            $response = array(
-                "empty" => "",
-                "email" => "",
-                "success" => "Success! We have sent you an email with a new password!",
-                "emailTaken" => ""
-            );
-            echo json_encode($response);
-            exit();
-        } else {
-            $response = array(
-                "empty" => "",
-                "email" => "",
-                "success" => "",
-                "EmailTaken" => "This Email is not connected to any account"
-            );
-            echo json_encode($response);
-            exit();
-        }
-    }
+    $response = array(
+        "email" => "",
+        "success" => "",
+        "EmailTaken" => "This Email is not connected to any account"
+    );
+    echo json_encode($response);
+    exit();
 }
+
 function generate_password()
 {
     $length = 10; // set desired password length here (including at least one lowercase letter, one uppercase letter, and one digit)

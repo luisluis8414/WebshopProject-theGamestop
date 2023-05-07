@@ -8,7 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'C:\xampp\htdocs\WebDev\WebShop\Mailer\vendor\autoload.php';
 // sendRegistrationEmail('luis.wehrberger2@gmail.com', 'luis',"23423423423423");
 
-function sendPwReset($recipientMail, $recipientName, $pw){
+function sendPwReset($recipientMail, $recipientName, $pw,$vorname){
+
 $dotenv = Dotenv\Dotenv::createImmutable('C:\xampp\htdocs\WebDev\WebShop');
 $dotenv->load();
 
@@ -19,7 +20,7 @@ $smtpHost=$_ENV['SMTP_HOST'];
 $mail = new PHPMailer(true);
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->SMTPDebug = 0;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = $smtpHost;                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -29,7 +30,7 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom($senderMail, 'The GameStop');
+    $mail->setFrom($senderMail, 'The Game Stop');
 
     $mail->addAddress($recipientMail, $recipientName);               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
@@ -43,17 +44,83 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Registration';
-    $mail->Body    = 'Your Registration was succsessful! <br> 
-                        This is your one time password: <br>'.$pw.'<br>
-                        Please finish your Registration';
-    $mail->AltBody = 'Your Registration was succsessful! <br> 
-                    This is your one time password: <br>'.$pw.'<br>
+    $mail->Body    = '<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>The Game Stop - Password Recovery</title>
+        <style>
+            body {
+                background-color: #f7f7f7;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+    
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            h1 {
+                font-size: 28px;
+                margin-top: 0;
+            }
+    
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+    
+            button {
+                background-color: #0070c9;
+                color: #ffffff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            button:hover {
+                background-color: #004c8e;
+            }
+    
+            .footer {
+                font-size: 14px;
+                color: #999999;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>The Game Stop</h1>
+            <p>Password Recovery</p>
+            <p>Dear '.$vorname.',</p>
+            <p>We have received a request to reset the password for your account. Your new one-time Password is: '.$pw.'</p>
+            <button>Reset Password</button>
+            <p>If you did not request a password reset, please ignore this email and your account will remain secure.</p>
+            <div class="footer">
+                <p>This email was sent to '.$recipientMail.'. If you have any questions, please contact our customer support.</p>
+                <p>The Game Stop, 123 Main St, Anytown USA</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ';
+ $mail->AltBody = 'Your Registration was succsessful! <br> 
+                    This is your one time password: <br>' . $pw . '<br>
                     Please finish your Registration';
 
     $mail->send();
-    echo 'Message has been sent';
+    // echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 }
-?>
