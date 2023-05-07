@@ -63,6 +63,7 @@ try {
                 background-color: #ffffff;
                 border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
             }
     
             h1 {
@@ -96,23 +97,37 @@ try {
                 color: #999999;
                 margin-top: 20px;
             }
+            header {
+                background: linear-gradient(to right, #FD746C, #FFB88C);
+                color: white;
+                padding: 20px;
+                text-align: center;
+              }
+              h1 {
+                margin: 0;
+              }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>The Game Stop</h1>
+        <header>
+        <h1>The Game Stop</h1>
+        </header>
             <p>Password Recovery</p>
             <p>Dear '.$vorname.',</p>
-            <p>We have received a request to reset the password for your account. Your new one-time Password is: '.$pw.'</p>
+            <p>We have received a request to reset the password for your account.<br> Your new one-time Password is: <br><br><b>'.$pw.'</b></p>
+            <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
             <button>Reset Password</button>
+            </a>
             <p>If you did not request a password reset, please ignore this email and your account will remain secure.</p>
             <div class="footer">
                 <p>This email was sent to '.$recipientMail.'. If you have any questions, please contact our customer support.</p>
-                <p>The Game Stop, 123 Main St, Anytown USA</p>
+                <p>The Game Stop, Alteburgstraße 150, Reutlingen, GERMANY</p>
             </div>
         </div>
     </body>
     </html>
+    
     ';
  $mail->AltBody = 'Your Registration was succsessful! <br> 
                     This is your one time password: <br>' . $pw . '<br>

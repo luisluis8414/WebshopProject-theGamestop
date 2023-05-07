@@ -81,7 +81,7 @@
                             "vorname" => "",
                             "nachname" => "",
                             "email" => "",
-                            "success" => "Registration successful",
+                            "success" => "Registration successful. We've send you an Email with your login credentials",
                             "EmailTaken"=>""
                             
                         );

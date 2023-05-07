@@ -27,7 +27,7 @@
         #formWrapper {
             margin-top: 25%;
             width: 50%;
-            height: 30rem;
+            height: fit-content;
         }
 
         body {
@@ -41,7 +41,7 @@
             z-index: -1;
         }
         .content{
-            margin-top: 40px;
+            margin-top: 2rem;
         }
     </style>
 </head>

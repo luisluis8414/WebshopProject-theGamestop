@@ -47,30 +47,76 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
         $mail->Subject = 'Registration';
         $mail->Body    = '<!DOCTYPE html>
         <html>
-          <head>
-            <title>Registration Successful</title>
+        <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>The Game Stop - Password Recovery</title>
             <style>
-              /* Styles for the header */
-              header {
-                background: linear-gradient(to right, #FD746C, #FFB88C);
-                color: white;
-                padding: 20px;
-                text-align: center;
-              }
-              h1 {
-                margin: 0;
-              }
+                body {
+                    background-color: #f7f7f7;
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                }
+        
+                .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                }
+        
+                h1 {
+                    font-size: 28px;
+                    margin-top: 0;
+                }
+        
+                p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    margin-bottom: 20px;
+                }
+        
+                button {
+                    background-color: #0070c9;
+                    color: #ffffff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+        
+                button:hover {
+                    background-color: #004c8e;
+                }
+        
+                .footer {
+                    font-size: 14px;
+                    color: #999999;
+                    margin-top: 20px;
+                }
+                header {
+                    background: linear-gradient(to right, #FD746C, #FFB88C);
+                    color: white;
+                    padding: 20px;
+                    text-align: center;
+                  }
+                  h1 {
+                    margin: 0;
+                  }
             </style>
-          </head>
-          <body style="text-align: center;">
+        </head>
+        <body>
+            <div class="container">
             <header>
-              <h1>The Game Stop</h1>
+            <h1>The Game Stop</h1>
             </header>
             <h2>Hey '.$vorname.'! Your Registration was successful!</h2>
-            <p>This is your one time password:</p>
-            <h2>' . $pw . '</h2>
+            <p>This is your one time password:</p><br>
+            <b>' . $pw . '</b>
             <p>Please finish your Registration</p>
             <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
               <button style="background-color: #008CBA; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; border-radius: 4px;">

@@ -42,7 +42,8 @@
                   <small id="success" class="success"></small>
                   <small id="emailError" class="error"></small>
                </div>
-               <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+               <button type="submit" id="submit" class="btn btn-primary">Submit</button> <br>
+               <a href="../Login/Login.php">Back to Login</a>
             </form>
          </div>
          <div class="col-sm"> </div>

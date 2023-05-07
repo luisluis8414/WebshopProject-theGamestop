@@ -21,7 +21,7 @@
     <title>Logged in</title>
 </head>
 <body>
-    <h1>Hi</h1>
+    
     <a href="?logout=1">Log out</a>
 </body>
 </html>
