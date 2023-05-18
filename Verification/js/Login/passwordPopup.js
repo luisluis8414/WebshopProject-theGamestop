@@ -1,6 +1,15 @@
 function PasswordPopUp(state){
     var email = $('#email').val();
     if(state==1){
+      document.addEventListener('keyup', (event) => {
+        const modal = Swal.getPopup();
+        const submitButton = modal?.querySelector('button.swal2-confirm');
+      
+        if (event.key === 'Enter' && modal && submitButton && modal.contains(event.target)) {
+          event.preventDefault();
+          submitButton.click();
+        }
+      });
     Swal.fire({
         title: 'Set New Password',
         html:
@@ -19,8 +28,8 @@ function PasswordPopUp(state){
             Swal.showValidationMessage('Please enter both passwords.');
           } else if (firstPassword !== confirmPassword) {
             Swal.showValidationMessage('Passwords do not match.');
-          } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{6,}/.test(firstPassword)) {
-            Swal.showValidationMessage('Password must have at least 6 characters, one special character, one number, and one uppercase letter.');
+          } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{9,}/.test(firstPassword)) {
+            Swal.showValidationMessage('Password must have at least 9 characters, one special character, one number, and one uppercase letter.');
           } else {
             const password=CryptoJS.SHA512(firstPassword).toString();
             return fetch('../../php/Login/setNewPassword.php', {
@@ -56,6 +65,15 @@ function PasswordPopUp(state){
       });
     }
      if(state==2){
+      document.addEventListener('keyup', (event) => {
+        const modal = Swal.getPopup();
+        const submitButton = modal?.querySelector('button.swal2-confirm');
+      
+        if (event.key === 'Enter' && modal && submitButton && modal.contains(event.target)) {
+          event.preventDefault();
+          submitButton.click();
+        }
+      });
       Swal.fire({
           title: 'Set New Password',
           html:
@@ -74,8 +92,8 @@ function PasswordPopUp(state){
               Swal.showValidationMessage('Please enter both passwords.');
             } else if (FirstPassword !== confirmPassword) {
               Swal.showValidationMessage('Passwords do not match.');
-            } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{6,}/.test(password)) {
-              Swal.showValidationMessage('Password must have at least 6 characters, one special character, one number, and one uppercase letter.');
+            } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{9,}/.test(password)) {
+              Swal.showValidationMessage('Password must have at least 9 characters, one special character, one number, and one uppercase letter.');
             } else {
               const password=CryptoJS.SHA512(firstPassword).toString();
               return fetch('../../php/Login/setNewPassword.php', {
@@ -110,4 +128,5 @@ function PasswordPopUp(state){
           }
         });
       }
+}
 }
