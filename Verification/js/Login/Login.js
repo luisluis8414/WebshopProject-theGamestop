@@ -6,8 +6,9 @@ $(function () {
 
     var email = $('#email').val();
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var pw = $('#pw').val();
-    var hashedPW = CryptoJS.SHA512(pw).toString();
+
+    var pw = CryptoJS.SHA512($('#pw').val()).toString();
+    console.log(pw)
 
     $('#emailError').html('');
     if (pw.length == 0) {
@@ -21,7 +22,7 @@ $(function () {
           type: 'POST',
           data: {
             email: email,
-            pw: hashedPW,
+            pw: pw,
             RightCredentials: undefined,
             firstLogin: undefined
           },
@@ -34,9 +35,9 @@ $(function () {
               if(data.firstLogin=='1'){
                 PasswordPopUp(1)
               }
-                if(data.firstLogin=='2'){
+              if(data.firstLogin=='2'){
                   PasswordPopUp(2)
-                }else{
+              }if(data.firstLogin=='0'){
                   window.location.href='../../../Mainpage/index.php'
                 }
               

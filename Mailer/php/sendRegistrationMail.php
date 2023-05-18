@@ -123,6 +123,10 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
                 Finish Registration
               </button>
             </a>
+            <div class="footer">
+                <p>This email was sent to '.$recipientMail.'. If you have any questions, please contact our customer support.</p>
+                <p>The Game Stop, Alteburgstraße 150, Reutlingen, GERMANY</p>
+            </div>
           </body>
         </html>
 ';

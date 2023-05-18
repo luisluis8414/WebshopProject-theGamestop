@@ -11,8 +11,8 @@
         if ($count == 1) {
             //Email ist vergeben
             $row = $stmt->fetch();
-            $hash_pw=hash('sha512',$row["PASSWORD"]);
-            if ($pw==$hash_pw) {
+            $server_pw=$row["PASSWORD"];
+            if ($pw==$server_pw) {
                 if($row["erster_login"]==1){
                 $response = array(
                     "email" => "",
@@ -38,7 +38,7 @@
                     "email" => "",
                     "pw"=>"",
                     "RightCredentials"=>"true",
-                    "firstLogin"=>""
+                    "firstLogin"=>"0"
                 );
                 echo json_encode($response);
                 exit();

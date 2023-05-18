@@ -16,6 +16,7 @@ if ($count == 1) {
     // Generate a new password and update the user's password in the database
 
     $pw = generate_password();
+    $hash_pw= hash('sha512',$password);
     $vorname = $mysql->prepare("SELECT FIRST_NAME FROM users WHERE email = :email");
     $vorname->bindParam(":email", $email);
     $vorname->execute();
@@ -29,7 +30,7 @@ if ($count == 1) {
     $name = $vorname_result['FIRST_NAME'] . ' ' . $nachname_result['SURNAME'];
 
 
-    $stmt = $mysql->prepare("UPDATE users SET password = :pw WHERE email = :email");
+    $stmt = $mysql->prepare("UPDATE users SET password = :hash_pw WHERE email = :email");
     $stmt->bindParam(":pw", $pw);
     $stmt->bindParam(":email", $email);
     $stmt->execute();

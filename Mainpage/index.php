@@ -8,9 +8,11 @@
   <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <script defer src="../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../Extern/js/jquery.min.js"></script>
-  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <script type="importmap">
+
+
+  <!-- <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script> -->
+  <!-- <script type="importmap">
     {
         "imports": {
         "three": "https://unpkg.com/three@v0.149.0/build/three.module.js",
@@ -18,7 +20,8 @@
         }
     }
     </script>
-  <script src="../Verification/js/THREE/model1.js"></script>
+  <script type="module" src="../Verification/js/THREE/model1.js"></script> -->
+
   <style>
     .ImageCarousel{
       width: 100rem;

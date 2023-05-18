@@ -11,18 +11,18 @@ function PasswordPopUp(state){
         confirmButtonText: 'Submit',
         showLoaderOnConfirm: true,
         preConfirm: () => {
-          const password = document.getElementById('password').value;
+          const firstPassword = document.getElementById('password').value;
           const confirmPassword = document.getElementById('confirmPassword').value;
       
  
-          if (!password || !confirmPassword) {
+          if (!firstPassword || !confirmPassword) {
             Swal.showValidationMessage('Please enter both passwords.');
-          } else if (password !== confirmPassword) {
+          } else if (firstPassword !== confirmPassword) {
             Swal.showValidationMessage('Passwords do not match.');
-          } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{6,}/.test(password)) {
+          } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{6,}/.test(firstPassword)) {
             Swal.showValidationMessage('Password must have at least 6 characters, one special character, one number, and one uppercase letter.');
           } else {
-      
+            const password=CryptoJS.SHA512(firstPassword).toString();
             return fetch('../../php/Login/setNewPassword.php', {
               method: 'POST',
               headers: {
@@ -66,18 +66,18 @@ function PasswordPopUp(state){
           confirmButtonText: 'Submit',
           showLoaderOnConfirm: true,
           preConfirm: () => {
-            const password = document.getElementById('password').value;
+            const FirstPassword = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
         
-   
-            if (!password || !confirmPassword) {
+            
+            if (!FirstPassword || !confirmPassword) {
               Swal.showValidationMessage('Please enter both passwords.');
-            } else if (password !== confirmPassword) {
+            } else if (FirstPassword !== confirmPassword) {
               Swal.showValidationMessage('Passwords do not match.');
             } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{6,}/.test(password)) {
               Swal.showValidationMessage('Password must have at least 6 characters, one special character, one number, and one uppercase letter.');
             } else {
-        
+              const password=CryptoJS.SHA512(firstPassword).toString();
               return fetch('../../php/Login/setNewPassword.php', {
                 method: 'POST',
                 headers: {
