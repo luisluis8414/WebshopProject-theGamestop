@@ -10,8 +10,16 @@
     <script defer src="../../../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/Login/Login.js"></script>
+    <script type="text/javascript" src="../../js/Login/passwordPopup.js"></script>
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    //Sha512
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    //SweetAlert
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    //ThreeJs
     <script type="importmap">
         {
         "imports": {

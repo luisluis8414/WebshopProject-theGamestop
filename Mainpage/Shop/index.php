@@ -46,10 +46,10 @@ foreach ($items as $item) {
     <nav class="account">
       <ul class="nav__list">
         <li class="nav__list-item">
-          <a class="nav__link nav__link--btn" href="../Verification/php/Login/Login.php">Login</a>
+          <a class="nav__link nav__link--btn" href="../../Verification/php/Login/Login.php">Login</a>
         </li>
         <li class="nav__list-item">
-          <a class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Sign Up</a>
+          <a class="nav__link nav__link--btn nav__link--btn--highlight" href="../../Verification/php/Registration/Registration.php">Sign Up</a>
         </li>
       </ul>
     </nav>
