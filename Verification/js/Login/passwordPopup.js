@@ -18,6 +18,8 @@ function PasswordPopUp(){
             Swal.showValidationMessage('Please enter both passwords.');
           } else if (password !== confirmPassword) {
             Swal.showValidationMessage('Passwords do not match.');
+          } else if (!/(?=.*[!@#$%^&*])(?=.*\d)(?=.*[A-Z]).{6,}/.test(password)) {
+            Swal.showValidationMessage('Password must have at least 6 characters, one special character, one number, and one uppercase letter.');
           } else {
       
             return fetch('../../php/Login/setNewPassword.php', {

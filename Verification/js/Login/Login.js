@@ -34,7 +34,7 @@ $(function () {
               if(data.firstLogin!=''){
                 PasswordPopUp()
               }else{
-                window.location.href='../../../Mainpage.php'
+                window.location.href='../../../Mainpage/index.php'
               }
             }
           },
