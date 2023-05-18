@@ -1,9 +1,11 @@
 function PasswordPopUp(){
+    var email = $('#email').val();
     Swal.fire({
         title: 'Set New Password',
         html:
-          '<input id="password" type="password" placeholder="New Password" class="swal2-input">' +
-          '<input id="confirmPassword" type="password" placeholder="Confirm Password" class="swal2-input">',
+            '<small style="color: green">Please set a new Password as this is your first Login &#128513;</small>'+
+            '<input id="password" type="password" placeholder="New Password" class="swal2-input">' +
+            '<input id="confirmPassword" type="password" placeholder="Confirm Password" class="swal2-input">',
         showCancelButton: true,
         confirmButtonText: 'Submit',
         showLoaderOnConfirm: true,
@@ -11,21 +13,21 @@ function PasswordPopUp(){
           const password = document.getElementById('password').value;
           const confirmPassword = document.getElementById('confirmPassword').value;
       
-          // Perform input validation here
+ 
           if (!password || !confirmPassword) {
             Swal.showValidationMessage('Please enter both passwords.');
           } else if (password !== confirmPassword) {
             Swal.showValidationMessage('Passwords do not match.');
           } else {
-            // Send AJAX post request
-            return fetch('setNewPassword.php', {
+      
+            return fetch('../../php/Login/setNewPassword.php', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
               },
               body: new URLSearchParams({
-                password: password,
-                confirmPassword: confirmPassword
+                email: email,
+                password: password
               })
             })
             .then(response => {

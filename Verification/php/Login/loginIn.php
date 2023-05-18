@@ -13,7 +13,6 @@
             $row = $stmt->fetch();
             $hash_pw=hash('sha512',$row["PASSWORD"]);
             if ($pw==$hash_pw) {
-                $_SESSION['logged_in'] = true;
                 if($row["erster_login"]==1){
                 $response = array(
                     "email" => "",
@@ -24,6 +23,7 @@
                 echo json_encode($response);
                 exit();
             }else{
+                $_SESSION['logged_in'] = true;
                 $response = array(
                     "email" => "",
                     "pw"=>"",
