@@ -28,7 +28,7 @@ $(function () {
             console.log(data);
             if (data.email != '') $('#error').html(data.email);
             if (data.pw != '') $('#error').html(data.pw);
-            if (data.RightCredentials == 'true') window.location.href='../../../Mainpage.php'
+            if (data.RightCredentials == 'true') window.location.href='../../../Mainpage/index.php'
           },
           error: function (error) {
             alert('Error: ' + error.message);
