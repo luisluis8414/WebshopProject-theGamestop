@@ -129,4 +129,3 @@ function PasswordPopUp(state){
         });
       }
 }
-}
