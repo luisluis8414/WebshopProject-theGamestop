@@ -33,6 +33,10 @@ if ($count == 1) {
     $stmt->bindParam(":pw", $pw);
     $stmt->bindParam(":email", $email);
     $stmt->execute();
+
+    $stmt = $mysql->prepare("UPDATE users SET erster_login = 2 WHERE email = :email");
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
     // Send the user an email with the new password
     sendPwReset($email, $name, $pw, $vorname_result['FIRST_NAME']);
     // Return a success response

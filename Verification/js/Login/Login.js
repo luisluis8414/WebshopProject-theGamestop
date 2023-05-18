@@ -31,11 +31,15 @@ $(function () {
             if (data.email != '') $('#error').html(data.email);
             if (data.pw != '') $('#error').html(data.pw);
             if (data.RightCredentials == 'true') {
-              if(data.firstLogin!=''){
-                PasswordPopUp()
-              }else{
-                window.location.href='../../../Mainpage/index.php'
+              if(data.firstLogin=='1'){
+                PasswordPopUp(1)
               }
+                if(data.firstLogin=='2'){
+                  PasswordPopUp(2)
+                }else{
+                  window.location.href='../../../Mainpage/index.php'
+                }
+              
             }
           },
           error: function (error) {

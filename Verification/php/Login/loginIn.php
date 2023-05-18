@@ -18,12 +18,22 @@
                     "email" => "",
                     "pw"=>"",
                     "RightCredentials"=>"true",
-                    "firstLogin"=>"true"
+                    "firstLogin"=>"1"
                 );
                 echo json_encode($response);
                 exit();
             }else{
-                $_SESSION['logged_in'] = true;
+                if($row["erster_login"]==2){
+                    $response = array(
+                        "email" => "",
+                        "pw"=>"",
+                        "RightCredentials"=>"true",
+                        "firstLogin"=>"2"
+                    );
+                    echo json_encode($response);
+                    exit();
+                }else{
+                    $_SESSION['logged_in'] = true;
                 $response = array(
                     "email" => "",
                     "pw"=>"",
@@ -32,6 +42,7 @@
                 );
                 echo json_encode($response);
                 exit();
+                }
             }
             } else {
                 $response = array(

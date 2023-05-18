@@ -116,7 +116,7 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
             </header>
             <h2>Hey '.$vorname.'! Your Registration was successful!</h2>
             <p>This is your one time password:</p><br>
-            <b>' . $pw . '</b>
+            <b>' . $pw . '</b><br>
             <p>Please finish your Registration</p>
             <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
               <button style="background-color: #008CBA; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; border-radius: 4px;">
