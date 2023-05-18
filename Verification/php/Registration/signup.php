@@ -23,7 +23,7 @@
         echo json_encode($response);
         exit();
     }else{
-        if(!preg_match("/^[a-zA-Z]*$/", $vorname)){
+        if(!preg_match("/^[a-zA-ZÜÖÄüöä]*$/", trim($vorname))){
             $response = array(
             "empty" => "",
             "vorname" => "Please enter a valid name!",
@@ -32,10 +32,11 @@
             "success" => "",
             "EmailTaken"=>""
             );
-            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            echo json_encode($response);
             exit();
         }else{
-            if (!preg_match("/^[a-zA-Z]*$/", $nachname)) {
+            if (!preg_match("/^[a-zA-ZÜÖÄüöä]*$/", $nachname)
+            ) {
                 $response = array(
                     "empty" => "",
                     "vorname" => "",
@@ -47,7 +48,7 @@
                 echo json_encode($response);
                 exit();
                 }else {
-                    if(!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)){
+                    if(!preg_match("/^[a-zA-Z0-9._%+-ÜÖÄüöä]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/u", $email)){
                         $response = array(
                             "empty" => "",
                             "vorname" => "",
@@ -81,7 +82,7 @@
                             "vorname" => "",
                             "nachname" => "",
                             "email" => "",
-                            "success" => "Registration successful. We've send you an Email with your login credentials",
+                            "success" => "Registration successful. We've send you an Email with your one-time login credentials",
                             "EmailTaken"=>""
                             
                         );

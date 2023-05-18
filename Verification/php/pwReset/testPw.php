@@ -38,7 +38,7 @@ if ($count == 1) {
     // Return a success response
     $response = array(
         "email" => "",
-        "success" => "Success! We send you a recovery email",
+        "success" => "Success! We have sent you a recovery email",
         "EmailTaken" => ""
     );
     echo json_encode($response);

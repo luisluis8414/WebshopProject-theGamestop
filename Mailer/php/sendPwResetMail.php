@@ -43,7 +43,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Registration';
+    $mail->Subject = 'Password Recovery';
     $mail->Body    = '<!DOCTYPE html>
     <html>
     <head>

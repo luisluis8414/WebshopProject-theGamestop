@@ -8,8 +8,6 @@ $(function () {
 
         var success= '';
         var EmailTaken = '';
-        $('#emailError').html('');
-
 
         if (!emailRegex.test(email)) {
             $('#emailError').html('Please enter a valid Email');
@@ -27,7 +25,7 @@ $(function () {
                     
                     var data = JSON.parse(response);
                     
-                    if (data.emailTaken != '') $('#error').html(data.emailTaken);
+                    if (data.EmailTaken !== '')$('#emailError').html(data.EmailTaken);
                     if (data.success !== '') $('#success').html(data.success);
                 },
                 error: function (error) {
