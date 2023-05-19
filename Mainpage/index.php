@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,8 @@
   <script defer src="../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../Extern/js/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
+  <script src="js/AjaxLoggedInUserData.js"></script>
+  <script type="text/javascript" src="../Extern/js/jquery.min.js"></script>
 
   <!-- <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script> -->
   <!-- <script type="importmap">
@@ -65,7 +67,7 @@
   <main>
     <section class="home-intro">
       <div class="home-sliderAndHeading">
-        <h1>Hello &#128516; Welcome back! You were last online yesterday</h1>
+        <h1>Hello <span id="vorname">User</span> &#128516; Welcome back! You were last online <span id="lastOnline">today</span></h1>
         <div class="ImageCarousel">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">

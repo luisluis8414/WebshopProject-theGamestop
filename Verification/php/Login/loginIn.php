@@ -5,7 +5,7 @@
         
         require("../../../DBConnection/mysql.php");
         $stmt = $mysql->prepare("SELECT * FROM users WHERE EMAIL = :email"); //EMail ueberpruefen
-        $stmt->bindParam(":email", $_POST["email"]);
+        $stmt->bindParam(":email",  $email);
         $stmt->execute();
         $count = $stmt->rowCount();
         if ($count == 1) {
@@ -34,6 +34,7 @@
                     exit();
                 }else{
                     $_SESSION['logged_in'] = true;
+                    $_SESSION['email'] =  $email;
                 $response = array(
                     "email" => "",
                     "pw"=>"",
