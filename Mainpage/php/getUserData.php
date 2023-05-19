@@ -34,7 +34,8 @@ if (isset($_SESSION['logged_in'])) {
 
         $response = array(
             "vorname" => $firstName,
-            "lastOnline" => $formattedTime
+            "lastOnline" => $formattedTime,
+            "error" => ""
         );
 
         echo json_encode($response);
@@ -43,15 +44,18 @@ if (isset($_SESSION['logged_in'])) {
         // User not found in the database
         $response = array(
             "vorname" => "User",
-            "lastOnline" => "today"
+            "lastOnline" => "today",
+            "error" => "1"
         );
         echo json_encode($response);
         exit();
     }
 } else {
+    //user not logged in
     $response = array(
         "vorname" => "User",
-        "lastOnline" => "today"
+        "lastOnline" => "today",
+        "error"=> "2"
     );
     echo json_encode($response);
     exit();

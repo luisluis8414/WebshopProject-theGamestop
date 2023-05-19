@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,7 @@
   <script type="module" src="../Verification/js/THREE/model1.js"></script> -->
 
   <style>
-    .ImageCarousel{
+    .ImageCarousel {
       width: 100rem;
       margin: auto;
     }
@@ -54,12 +56,24 @@
     </nav>
     <nav class="account">
       <ul class="nav__list">
-        <li class="nav__list-item">
-          <a class="nav__link nav__link--btn" href="../Verification/php/Login/Login.php">Login</a>
-        </li>
-        <li class="nav__list-item">
-          <a class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Sign Up</a>
-        </li>
+        <?php
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+          // Logged in
+          echo '
+            <li class="nav__list-item">
+              <a class="nav__link nav__link--btn" href="php/logOut.php">Log Out</a>
+            </li>';
+        } else {
+          // Not logged in
+          echo '
+      <li class="nav__list-item">
+        <a class="nav__link nav__link--btn" href="../Verification/php/Login/Login.php">Login</a>
+      </li>
+      <li class="nav__list-item"> 
+        <a class="nav__link nav__link--btn nav__link--btn--highlight" href="../Verification/php/Registration/Registration.php">Sign Up</a>
+      </li>';
+        }
+        ?>
       </ul>
     </nav>
   </header>
@@ -67,29 +81,29 @@
   <main>
     <section class="home-intro">
       <div class="home-sliderAndHeading">
-        <h1>Hello <span id="vorname">User</span> &#128516; Welcome back! You were last online <span id="lastOnline">today</span></h1>
+        <h1 id="error">Hello <span id="vorname">User</span> &#128516; Welcome back! You were last online <span id="lastOnline">today</span></h1>
         <div class="ImageCarousel">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="../src/pictures/Skyrim-Dragon-PNG-Photos-1.png" class="d-block w-100" alt="...">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../src/pictures/Skyrim-Dragon-PNG-Photos-1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../src/pictures/Dragon1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../src/pictures/girl.png" class="d-block w-100" alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="../src/pictures/Dragon1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="../src/pictures/girl.png" class="d-block w-100" alt="...">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
         </div>
       </div>
     </section>
