@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("../../DBConnection/mysql.php");
 $stmt = $mysql->prepare("SELECT * FROM items WHERE quantity > 0;");
 $stmt->execute();
@@ -30,7 +31,7 @@ foreach ($items as $item) {
     <a href="../" class="site-logo" aria-label="homepage">The Game Stop </a>
     <nav class="main-nav">
       <ul class="nav__list">
-        <li class="nav__list-item"><a href="Shop/index.php" class="nav__link">Shop</a></li>
+        <li class="nav__list-item"><a href="#" class="nav__link">Shop</a></li>
         <li class="nav__list-item">
           <a href="#" class="nav__link">Articles</a>
         </li>
@@ -44,13 +45,25 @@ foreach ($items as $item) {
       </ul>
     </nav>
     <nav class="account">
-      <ul class="nav__list">
-        <li class="nav__list-item">
-          <a class="nav__link nav__link--btn" href="../../Verification/php/Login/Login.php">Login</a>
-        </li>
-        <li class="nav__list-item">
-          <a class="nav__link nav__link--btn nav__link--btn--highlight" href="../../Verification/php/Registration/Registration.php">Sign Up</a>
-        </li>
+    <ul class="nav__list">
+        <?php
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+          // Logged in
+          echo '
+            <li class="nav__list-item">
+              <a class="nav__link nav__link--btn" href="../php/logOut.php">Log Out</a>
+            </li>';
+        } else {
+          // Not logged in
+          echo '
+      <li class="nav__list-item">
+        <a class="nav__link nav__link--btn" href="../../Verification/php/Login/Login.php">Login</a>
+      </li>
+      <li class="nav__list-item"> 
+        <a class="nav__link nav__link--btn nav__link--btn--highlight" href="../../Verification/php/Registration/Registration.php">Sign Up</a>
+      </li>';
+        }
+        ?>
       </ul>
     </nav>
   </header>

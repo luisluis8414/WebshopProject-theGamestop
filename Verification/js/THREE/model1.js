@@ -15,7 +15,7 @@ const camera= new THREE.PerspectiveCamera(
   1000
 );
 
-camera.position.set(-76 ,-25 , 297);
+camera.position.set(6 ,73 , 299);
 
 
 
@@ -52,9 +52,9 @@ let mixer;
 let obj;
 loader.load('../../models/Dragon/scene.gltf', function(gltf){
   obj=gltf.scene;
-  obj.rotation.y+=0.1
-  obj.position.y-=80
-  obj.position.x-=100
+  obj.position.z-=300
+  // obj.position.y-=80
+  // obj.position.x-=100
  
   scene.add(gltf.scene);
   mixer = new THREE.AnimationMixer(obj);
@@ -87,8 +87,35 @@ let rotationBool=true;
 let increment=0.001
 
 const clock = new THREE.Clock();
-function animate() {
+
+
+const modelContainer = document.getElementById('modelContainer');
+
+// Resize function
+function resizeCanvas() {
+  const containerWidth = modelContainer.offsetWidth;
+  const containerHeight = modelContainer.offsetHeight;
   
+  // Adjust the canvas size
+  canvas.width = containerWidth;
+  canvas.height = containerHeight;
+
+  // Update the camera aspect ratio
+  camera.aspect = containerWidth / containerHeight;
+  camera.updateProjectionMatrix();
+
+  // Update the renderer size
+  renderer.setSize(containerWidth, containerHeight);
+}
+
+// Call the resize function on page load and when the window is resized
+window.addEventListener('load', resizeCanvas);
+window.addEventListener('resize', resizeCanvas);
+
+
+
+function animate() {
+    // console.log(camera.position)
   	requestAnimationFrame( animate );
 
     controls.update();
