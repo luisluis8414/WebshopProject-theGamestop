@@ -1,153 +1,242 @@
-#formWrapper{
-    /* display: none; */
+#formWrapper {
+  /* display: none; */
 }
-#LoadingHeading{
-    text-align: center;
+
+#LoadingHeading {
+  text-align: center;
 }
 
 @media (max-width: 375px) {
-    #responsive-canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    #modelContainer {
-        display: none;
-      }
-    #formWrapper {
-        width: fit-content;
-        height: fit-content;
-        margin: auto;
+  #responsive-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-    }
+  #modelContainer {
+    display: none;
+  }
+
+  #formWrapper {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+
+  }
 }
 
 /* Medium-sized mobile devices */
 @media (min-width: 376px) and (max-width: 580px) {
-    #responsive-canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    #modelContainer {
-        display: none;
-      }
-    #formWrapper {
-        width: fit-content;
-        height: fit-content;
-        margin: auto;
+  #responsive-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-    }
+  #modelContainer {
+    display: none;
+  }
+
+  #formWrapper {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+
+  }
 }
 
 /* Larger mobile devices */
 @media (min-width: 581px) and (max-width: 850px) {
-    #responsive-canvas {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-    #modelContainer {
-        display: none;
-      }
-    #formWrapper {
-        width: 30rem;
-        height: 30rem;
-        margin: auto;
+  #responsive-canvas {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-    }
-    #LoginHeading{
-        text-align: left;
-        margin-top: 40px;
-        margin-bottom: 50px;
-    }
+  #modelContainer {
+    display: none;
+  }
+
+  #formWrapper {
+    width: 30rem;
+    height: 30rem;
+    margin: auto;
+
+  }
+
+  #LoginHeading {
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 851px) and (max-width: 1000px) {
-    #responsive-canvas {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-    #modelContainer {
-        position: absolute;
-        z-index: -1;
-        margin-right: 25rem;
-        margin-top: 30rem;
-        width: 100%;
-        padding-bottom: 180%; /* Adjust the aspect ratio of the model container */
-      }
-    #formWrapper {
-        width: 25rem;
-        height: 30rem;
-        margin: auto;
-        margin-right: 4em;
+  #responsive-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 
-    }
-    #LoginHeading{
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
+  #modelContainer {
+    position: absolute;
+    z-index: -1;
+    margin-right: 25rem;
+    margin-top: 30rem;
+    width: 100%;
+    padding-bottom: 180%;
+    /* Adjust the aspect ratio of the model container */
+  }
+
+  #formWrapper {
+    width: 25rem;
+    height: 30rem;
+    margin: auto;
+    margin-right: 4em;
+
+  }
+
+  #LoginHeading {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1001px) and (max-width: 1179px) {
+  #responsive-canvas {
+    position: absolute;
+    top: 5em;
+    width: 100%;
+    height: 100%;
+  }
+
+  #modelContainer {
+    position: absolute;
+    z-index: -1;
+    margin-right: 25rem;
+    margin-top: 30rem;
+    width: 100%;
+    padding-bottom: 160%;
+    /* Adjust the aspect ratio of the model container */
+  }
+
+  #formWrapper {
+    width: 25rem;
+    height: 30rem;
+    margin: auto;
+    margin-right: 4em;
+
+  }
+
+  #LoginHeading {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
 }
 
-@media (min-width: 1001px) and (max-width: 1500px) {
-    #responsive-canvas {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-    #modelContainer {
-        position: absolute;
-        z-index: -1;
-        margin-right: 25rem;
-        margin-top: 30rem;
-        width: 100%;
-        padding-bottom: 180%; /* Adjust the aspect ratio of the model container */
-      }
-    #formWrapper {
-        width: 25rem;
-        height: 30rem;
-        margin: auto;
-        margin-right: 4em;
+@media (min-width: 1180px) and (max-width: 1500px) {
+  #responsive-canvas {
+    position: absolute;
+    top: 10em;
+    width: 100%;
+    height: 100%;
+  }
 
-    }
-    #LoginHeading{
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
+  #modelContainer {
+    position: absolute;
+    z-index: -1;
+    margin-right: 25rem;
+    margin-top: 30rem;
+    width: 100%;
+    padding-bottom: 180%;
+    /* Adjust the aspect ratio of the model container */
+  }
+
+  #formWrapper {
+    width: 25rem;
+    height: 30rem;
+    margin: auto;
+    margin-right: 8em;
+
+  }
+
+  #LoginHeading {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
 }
 
-@media (min-width: 1500px) {
-    #responsive-canvas {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-    #modelContainer {
-        position: absolute;
-        z-index: -1;
-        margin-right: 25rem;
-        margin-top: 30rem;
-        width: 100%;
-        padding-bottom: 180%; /* Adjust the aspect ratio of the model container */
-      }
-    #formWrapper {
-        width: 25rem;
-        height: 30rem;
-        margin: auto;
-        margin-right: 4em;
+@media (min-width: 1501px) and (max-width: 2399px) {
+  #responsive-canvas {
+    position: absolute;
+    top: 16rem;
+    right: 10rem;
+    width: 100%;
+    height: 100%;
+  }
 
-    }
-    #LoginHeading{
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
+  #modelContainer {
+    position: absolute;
+    z-index: -1;
+    margin-right: 25rem;
+
+    width: 100%;
+    padding-bottom: 100%;
+    /* Adjust the aspect ratio of the model container */
+  }
+
+  #formWrapper {
+    width: 35rem;
+    height: 35rem;
+    margin: auto;
+    margin-right: 20em;
+
+  }
+
+  #LoginHeading {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 2400px) {
+  #responsive-canvas {
+    position: absolute;
+    top: 30rem;
+    right: 15rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  #modelContainer {
+    position: absolute;
+    z-index: -1;
+    margin-right: 25rem;
+
+    width: 100%;
+    padding-bottom: 100%;
+    /* Adjust the aspect ratio of the model container */
+  }
+
+  #formWrapper {
+    width: 35rem;
+    height: 35rem;
+    margin: auto;
+    margin-right: 20em;
+
+  }
+
+  #LoginHeading {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+  }
 }
