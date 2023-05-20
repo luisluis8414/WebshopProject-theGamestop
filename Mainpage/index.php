@@ -8,8 +8,8 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  <script defer src="../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../Extern/js/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="js/AjaxLoggedInUserData.js"></script>
@@ -91,30 +91,26 @@ session_start();
   <main>
     <section class="home-intro">
       <div class="home-sliderAndHeading">
-        <h1 id="error">Hello <span id="vorname">User</span> &#128516; Welcome back! You were last online <span id="lastOnline">today</span></h1>
-        <div class="ImageCarousel">
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="../src/pictures/Skyrim-Dragon-PNG-Photos-1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="../src/pictures/Dragon1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="../src/pictures/redDragon.png" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
+      <div id="articleView" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../src/pictures/mainpage/HellHound.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../src/pictures/mainpage/GrimRevenant.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../src/pictures/mainpage/SacredGoat.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../src/pictures/mainpage/MainpageZombieDragon.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../src/pictures/mainpage/Sable Thornrider.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+        <div class="Greeting"><h1 id="error">Hello <span id="vorname">User</span> <br> Welcome back! You were last online <span id="lastOnline">today</span></h1></div>
       </div>
     </section>
 
