@@ -1,7 +1,7 @@
 
 $(function() {
   // Bildschirmauflösung ermitteln
-  event.preventDefault();
+
 
 var screenWidth = screen.width;
 var screenHeight = screen.height;
@@ -22,6 +22,8 @@ if (/Windows/i.test(userAgent)) {
 }
 
   $('#submit').on('click', function(event) {
+
+    event.preventDefault();
 
     $("#emailError").html(''); 
     $("#vornameError").html(''); 
@@ -82,7 +84,7 @@ if (/Windows/i.test(userAgent)) {
             },
             success: function(response) {
               var data = JSON.parse(response)
-
+              console.log(response)
               if(data.success!=='')$("#sucess").html(data.success)
               else $("#emailError").html("There is already an Email bound to this account");
             }

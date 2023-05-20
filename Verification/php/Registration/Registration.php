@@ -49,7 +49,7 @@
         <label for="E-Mail">E-mail</label>
         <input id="email" autocomplete="username" class="form-control" type="text" name="email" placeholder="e-mail">
         <small id="emailError" class="error"></small>
-        <small id="success" class="success"></small>
+        <small id="sucess" class="success"></small>
       </div>
       <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Abschicken</button><br>
       <a href="../Login/Login.php">I already have an account</a><br>
