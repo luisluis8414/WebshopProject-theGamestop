@@ -11,6 +11,13 @@ body::-webkit-scrollbar-thumb {
   background-color: #333333;
 }
 
+
+svg{
+  margin-left: 0.5em;
+  width: 3em;
+  height: 3em;
+}
+
 .site-logo {
   font-weight: 900;
   font-size: 1.2rem;
@@ -156,7 +163,6 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 100px;
 }
 
 .Greeting {
@@ -168,7 +174,7 @@ header {
 
 #error{
   margin: auto;
- width: 10em;
+ width: 20em;
 }
 
 #articleView{
