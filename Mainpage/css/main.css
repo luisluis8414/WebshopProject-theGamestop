@@ -76,10 +76,13 @@ header {
   transition: transform 150ms ease-in-out;
   transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
 }
-
+.nav__link:hover{
+  color: white; 
+}
 .nav__link:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+          background-color: white;
 }
 
 .nav__link--btn {
