@@ -1,6 +1,8 @@
 
 $(function() {
   // Bildschirmauflösung ermitteln
+  event.preventDefault();
+
 var screenWidth = screen.width;
 var screenHeight = screen.height;
 var res=screenWidth+"x"+screenHeight;
@@ -20,21 +22,19 @@ if (/Windows/i.test(userAgent)) {
 }
 
   $('#submit').on('click', function(event) {
+
     $("#emailError").html(''); 
     $("#vornameError").html(''); 
     $("#nachnameError").html(''); 
-    event.preventDefault();
+
     var vorname = $('#vorname').val();
     var email = $('#email').val();
     var nachname= $('#nachname').val();
     var empty='';
     var success='';
-    var EmailTaken='';
-    
-    
    
     $.ajax({
-      url: 'signup.php',
+      url: 'testFields.php',
       type: 'POST',
       data: {
         vorname: vorname,
@@ -42,7 +42,6 @@ if (/Windows/i.test(userAgent)) {
         nachname: nachname,
         empty:empty,
         success:success,
-        EmailTaken:EmailTaken,
         os: os,
         res: res
       },
@@ -53,8 +52,42 @@ if (/Windows/i.test(userAgent)) {
         if(data.vorname!=='')$("#vornameError").html(data.vorname);
         if(data.nachname!=='')$("#nachnameError").html(data.nachname);
         if(data.email!=='')$("#emailError").html(data.email);
-        if(data.success!=='')$("#success").html(data.success);
-        if(data.EmailTaken!=='')$("#emailError").html(data.EmailTaken);
+        if(data.success!==''){
+          // $.ajax({
+          //   url: 'https://api.zerobounce.net/v2/validate?api_key=b8d9387b7c474c9390e81136e563eb53&email='+email+'&ip_address=', //if you see this-- there are no credits on the apiKey so dont even try ;)
+          //   type: 'GET',
+          //   success: function(response) {
+          //     console.log(response)
+          //     if(response.status=="invalid"){
+          //       if(response.did_you_mean!==null){
+          //       $("#emailError").html("This Email is invalid. Please check for typos.<br> Did you mean: " + response.did_you_mean);
+          //       }else{
+          //         $("#emailError").html("This Email is invalid. Please check for typos.");
+          //       }
+          //     }else{
+                  // -->ajax
+          //     }
+          //   }
+          // })
+          $.ajax({
+            url: 'createUser.php',
+            type: 'POST',
+            data: {
+              vorname: vorname,
+              email: email,
+              nachname: nachname,
+              os: os,
+              res: res,
+              success:success
+            },
+            success: function(response) {
+              var data = JSON.parse(response)
+
+              if(data.success!=='')$("#sucess").html(data.success)
+              else $("#emailError").html("There is already an Email bound to this account");
+            }
+          })
+        }
       },
       error: function(error) {
         alert('Error: ' + error.message);

@@ -30,7 +30,7 @@ RGBEloader.load('../../src/HDR_Free_City_Night_Lights_Ref.hdr', function(texture
 const renderer= new THREE.WebGLRenderer({
   canvas: canvas,
   alpha: true, 
-  antialias: true,
+  // antialias: true,
   logarithmicDepthBuffer: true
 });
 

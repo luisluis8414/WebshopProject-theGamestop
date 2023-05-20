@@ -33,9 +33,9 @@
 </head>
 
 <body>
-<div id="modelContainer">
-<canvas id="responsive-canvas"></canvas>
-</div>
+    <div id="modelContainer">
+        <canvas id="responsive-canvas"></canvas>
+    </div>
 
     <div id="formWrapper" class="shadow-lg p-5 bg-white rounded">
         <h1 id="LoginHeading">Login</h1>
@@ -55,7 +55,7 @@
             <a href="../pwReset/fogotPassword.php">Forgot Password</a>
         </form>
     </div>
-   
+
 
 </body>
 

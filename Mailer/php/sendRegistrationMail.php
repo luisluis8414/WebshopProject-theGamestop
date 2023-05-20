@@ -16,12 +16,12 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
 
     $senderMail = $_ENV['EMAIL_SENDER'];
     $smtpPW = $_ENV['SMTP_PW'];
-    $smtpHost = $_ENV['SMTP_HOST'];
+    $smtpHost = $_ENV['SMTP_HOST']; 
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        $mail->SMTPDebug =  0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = $smtpHost;                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -136,6 +136,7 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
 
         $mail->send();
         // echo 'Message has been sent';
+
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
