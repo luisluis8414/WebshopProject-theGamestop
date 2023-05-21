@@ -226,3 +226,8 @@ header {
   box-shadow: 0 0 5px #66afe9;
 }
 
+.ItemImages{
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain;
+}

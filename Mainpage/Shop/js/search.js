@@ -10,7 +10,7 @@ $(document).ready(function () {
 
            
             if (name.includes(searchQuery)) {
-                card.show();
+                card.show(); 
             } else {
                 card.hide(); 
             }
