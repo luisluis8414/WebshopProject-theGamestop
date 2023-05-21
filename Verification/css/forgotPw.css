@@ -1,0 +1,64 @@
+body {
+    overflow: hidden;
+    background-color: #323232;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+#responsive-canvas {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  
+#responsive-canvas1,
+#responsive-canvas2 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+
+#modelContainer {
+  position: absolute;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#responsive-canvas1 {
+  left: 0;
+  z-index: +1;
+}
+
+#responsive-canvas2 {
+  right: 0;
+}
+
+  #formWrapper {
+    /* display: none; */
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #formWrapper button {
+    font-size: x-large;
+    width: fit-content;
+    height: 2.1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;  }
