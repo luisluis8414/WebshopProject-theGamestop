@@ -33,10 +33,10 @@ const renderer= new THREE.WebGLRenderer({
   antialias: true
 });
 
-const controls = new OrbitControls( camera, renderer.domElement );
-controls.enableDamping=true;
+// const controls = new OrbitControls( camera, renderer.domElement );
+// controls.enableDamping=true;
 
-renderer.outputEncoding =THREE.sRGBEncoding;
+renderer.outputColorSpace =THREE.SRGBColorSpace;
 // renderer.toneMapping=THREE.ACESFilmicToneMapping
 // renderer.toneMappingExposure=1.8;
 
@@ -91,7 +91,7 @@ function animate() {
   
   	requestAnimationFrame( animate );
 
-    controls.update();
+    // controls.update();
 
     animationFlying();
     // if(obj2) obj2.rotation.y+=0.01;

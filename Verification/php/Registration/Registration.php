@@ -51,7 +51,7 @@
         <small id="emailError" class="error"></small>
         <small id="sucess" class="success"></small>
       </div>
-      <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Abschicken</button><br>
+      <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Submit</button><br>
       <a href="../Login/Login.php">I already have an account</a><br>
     </form>
   </div>
