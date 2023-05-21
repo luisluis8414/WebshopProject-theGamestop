@@ -21,7 +21,7 @@
         }
     }
     </script>
-  <script type="module" src="../../js/THREE/model1.js"></script>
+  <script type="module" src="../../js/THREE/model2.js"></script>
   <link rel="stylesheet" href="../../css/login.css">
   <link rel="stylesheet" href="../../css/responsive.css">
   <title>Registrierung</title>
