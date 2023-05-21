@@ -144,16 +144,18 @@ header {
   grid-column: 3 / 4;
 }
 .ItemView {
-  margin-top: 2em;
+  margin-top: 10rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .card {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 20%;
   align-items: center;
   text-align: center;
   border-radius: 10px;
@@ -168,7 +170,10 @@ header {
   padding: 2px 16px;
 }
 .card-footer {
+  margin-top: auto;
+  width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .buy-now-button {
@@ -200,4 +205,24 @@ header {
   background-color: #1e87d6;
 }
 
+ #searchInput {
+  position: absolute;
+  top: 2.2em;
+  right: 11em;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#searchInput::placeholder {
+  color: #999;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px #66afe9;
+}
 

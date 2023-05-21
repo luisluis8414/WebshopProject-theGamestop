@@ -11,7 +11,6 @@
     <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/pwReset/resetPw.js"></script>
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
   <script type="importmap">
     {
         "imports": {
