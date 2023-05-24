@@ -1,7 +1,10 @@
 function PasswordPopUp(state) {
-  let htmlText = ''
-  if (state == 1) htmlText = '<small style="color: green">Please set a new Password as this is your first Login &#128513;</small>';
-  if (state == 2) htmlText = '<small style="color: green">Please set a new Password &#128513;</small>';
+  let htmlText = '';
+  if (state === 1) {
+    htmlText = '<small style="color: green">Please set a new Password as this is your first Login &#128513;</small>';
+  } else if (state === 2) {
+    htmlText = '<small style="color: green">Please set a new Password &#128513;</small>';
+  }
 
   var email = $('#email').val();
 
@@ -14,21 +17,21 @@ function PasswordPopUp(state) {
       submitButton.click();
     }
   });
+
   Swal.fire({
     title: 'Set New Password',
     html:
-    htmlText +
-    '<form id="passwordForm">' +
-    '<input id="password" type="password" placeholder="New Password" class="swal2-input" autocomplete="new-password">' +
-    '<input id="confirmPassword" type="password" placeholder="Confirm Password" class="swal2-input" autocomplete="new-password">' +
-    '</form>',  
+      htmlText +
+      '<form id="passwordForm">' +
+      '<input id="password" type="password" placeholder="New Password" class="swal2-input" autocomplete="new-password">' +
+      '<input id="confirmPassword" type="password" placeholder="Confirm Password" class="swal2-input" autocomplete="new-password">' +
+      '</form>',
     showCancelButton: true,
     confirmButtonText: 'Submit',
     showLoaderOnConfirm: true,
     preConfirm: () => {
       const firstPassword = document.getElementById('password').value;
       const confirmPassword = document.getElementById('confirmPassword').value;
-
 
       if (!firstPassword || !confirmPassword) {
         Swal.showValidationMessage('Please enter both passwords.');
@@ -66,8 +69,11 @@ function PasswordPopUp(state) {
         title: 'Success',
         text: 'Password set successfully!',
         icon: 'success'
-      });
+      }).then(() => {
+                TwoFApopup();
+            });
+        
+    
     }
   });
-
 }
