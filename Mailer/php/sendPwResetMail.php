@@ -5,12 +5,12 @@ use PHPMailer\PHPMailer\Exception;
 
 
 //Load Composer's autoloader
-require 'C:\xampp\htdocs\WebDev\WebShop\Mailer\vendor\autoload.php';
+require_once __DIR__.('/../../vendor/autoload.php');
 // sendRegistrationEmail('luis.wehrberger2@gmail.com', 'luis',"23423423423423");
 
 function sendPwReset($recipientMail, $recipientName, $pw,$vorname){
 
-$dotenv = Dotenv\Dotenv::createImmutable('C:\xampp\htdocs\WebDev\WebShop');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../..');
 $dotenv->load();
 
 $senderMail= $_ENV['EMAIL_SENDER'];

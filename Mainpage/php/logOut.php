@@ -1,13 +1,19 @@
 <?php
-session_start(); // Start the session
+session_start(); 
 
-// Unset all session variables
+$email = $_SESSION['email'];
+$this_login = date('Y-m-d H:i:s'); 
+
+require("../../DBConnection/mysql.php");
+$stmt = $mysql->prepare("UPDATE users SET last_login = :this_login WHERE email = :email");
+$stmt->bindParam(":this_login", $this_login);
+$stmt->bindParam(":email", $email);
+$stmt->execute();
+
 session_unset();
 
-// Destroy the session
 session_destroy();
 
-// Redirect the user back to the main page or any other desired location
-header('Location: ../index.php'); // Replace "index.php" with your desired location
+header('Location: ../index.php'); 
 exit;
 ?>

@@ -14,13 +14,11 @@ $count = $stmt->rowCount();
 if ($count == 0) {
     $pw = generate_password();
     $hash_pw = hash('sha512', $pw);
-    $stmt = $mysql->prepare("INSERT INTO users (EMAIL, PASSWORD, FIRST_NAME, SURNAME, screen_resolution, operating_system) VALUES (:email, :hash_pw, :vorname, :nachname, :res, :os)");
+    $stmt = $mysql->prepare("INSERT INTO users (EMAIL, PASSWORD, FIRST_NAME, SURNAME) VALUES (:email, :hash_pw, :vorname, :nachname)");
     $stmt->bindParam(":email", $_POST["email"]);
     $stmt->bindParam(":hash_pw", $hash_pw);
     $stmt->bindParam(":vorname", $vorname);
     $stmt->bindParam(":nachname", $nachname);
-    $stmt->bindParam(":os", $os);
-    $stmt->bindParam(":res", $res);
     $stmt->execute();
     // Return a success response
     $name = $vorname . ' ' . $nachname;

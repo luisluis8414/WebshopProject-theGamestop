@@ -8,7 +8,24 @@ $(function () {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     var pw = CryptoJS.SHA512($('#pw').val()).toString();
-    console.log(pw)
+    // Bildschirmauflösung ermitteln
+    var screenWidth = screen.width;
+    var screenHeight = screen.height;
+    var res=screenWidth+"x"+screenHeight;
+    // Betriebssystem ermitteln
+    var userAgent = navigator.userAgent;
+    var os='';
+
+    if (/Windows/i.test(userAgent)) {
+      os="Windows Betriebssystem";
+    } else if (/Macintosh/i.test(userAgent)) {
+      os="Macintosh Betriebssystem";
+    } else if (/Linux/i.test(userAgent)) {
+      os="Linux Betriebssystem";
+    } else {
+      os="Unbekanntes Betriebssystem";
+      console.log("Unbekanntes Betriebssystem");
+    }
 
     $('#emailError').html('');
     if (pw.length == 0) {
@@ -24,7 +41,9 @@ $(function () {
             email: email,
             pw: pw,
             RightCredentials: undefined,
-            firstLogin: undefined
+            firstLogin: undefined, 
+            os: os,
+            res: res
           },
           success: function (response) {
             var data = JSON.parse(response);
@@ -38,7 +57,7 @@ $(function () {
               if(data.firstLogin=='2'){
                   PasswordPopUp(2)
               }if(data.firstLogin=='0'){
-                  window.location.href='../../../Mainpage/index.php'
+                  window.location.href='../../php/Login/2factor.php'
                 }
               
             }

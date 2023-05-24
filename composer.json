@@ -1,5 +1,10 @@
 {
     "name": "luisw/web-shop",
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "phpgangsta/googleauthenticator": "dev-master",
+        "vlucas/phpdotenv": "^5.4"
+    },
     "autoload": {
         "psr-4": {
             "Luisw\\WebShop\\": "src/"
@@ -10,8 +15,5 @@
             "name": "luisluis8414",
             "email": "luis.wehrberger2@gmail.com"
         }
-    ],
-    "require": {
-        "vlucas/phpdotenv": "^5.5"
-    }
+    ]
 }

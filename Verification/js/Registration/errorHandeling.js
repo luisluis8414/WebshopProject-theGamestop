@@ -49,6 +49,7 @@ if (/Windows/i.test(userAgent)) {
       },
       success: function(response) {
         console.log(response);
+
         var data = JSON.parse(response);  
         if(data.empty!=='')$("#emailError").html(data.empty);
         if(data.vorname!=='')$("#vornameError").html(data.vorname);
@@ -83,8 +84,9 @@ if (/Windows/i.test(userAgent)) {
               success:success
             },
             success: function(response) {
-              var data = JSON.parse(response)
               console.log(response)
+              var data = JSON.parse(response)
+             
               if(data.success!=='')$("#sucess").html(data.success)
               else $("#emailError").html("There is already an Email bound to this account");
             }
