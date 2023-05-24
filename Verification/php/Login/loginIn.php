@@ -1,9 +1,7 @@
     <?php
-        session_start();
+
         $email = $_POST['email'];
         $pw = $_POST['pw'];
-        $os = $_POST['os'];
-        $res = $_POST['res'];
         
         require("../../../DBConnection/mysql.php");
         $stmt = $mysql->prepare("SELECT * FROM users WHERE EMAIL = :email"); //EMail ueberpruefen
@@ -35,13 +33,6 @@
                     echo json_encode($response);
                     exit();
                 }else{
-                    $_SESSION['logged_in'] = true;
-                    $_SESSION['email'] =  $email;
-                    $stmt = $mysql->prepare("UPDATE users SET screen_resolution = :res, operating_system = :os WHERE email = :email");
-                     $stmt->bindParam(":email", $email);           
-                    $stmt->bindParam(":os", $os);
-                    $stmt->bindParam(":res", $res);
-                    $stmt->execute(); 
                     $response = array(
                         "email" => "",
                         "pw"=>"",

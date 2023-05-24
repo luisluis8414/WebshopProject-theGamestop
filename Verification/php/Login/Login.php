@@ -20,6 +20,9 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
     <script type="text/javascript" src="../../js/Login/Login.js"></script>
     <script type="text/javascript" src="../../js/Login/passwordPopup.js"></script>
     <script type="text/javascript" src="../../js/Login/TwoFApopup.js"></script>
+    <script type="text/javascript" src="../../js/Login/2FAInputPopUp.js"></script>
+    <script type="text/javascript" src="../../js/Login/sessionStart.js"></script>
+
 
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
 

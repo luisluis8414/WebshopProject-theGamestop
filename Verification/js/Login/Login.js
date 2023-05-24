@@ -57,7 +57,7 @@ $(function () {
               if(data.firstLogin=='2'){
                   PasswordPopUp(2)
               }if(data.firstLogin=='0'){
-                  window.location.href='../../php/Login/2factor.php'
+                  FaInput(email);
                 }
               
             }

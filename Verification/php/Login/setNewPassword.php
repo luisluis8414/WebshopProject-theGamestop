@@ -9,7 +9,7 @@ require("../../../DBConnection/mysql.php");
         $ga = new PHPGangsta_GoogleAuthenticator();
         $secretKey=$ga->createSecret();
 
-        $stmt = $mysql->prepare("UPDATE users SET PASSWORD = :password, erster_login = 1, secretKey = :secretKey WHERE EMAIL = :email");
+        $stmt = $mysql->prepare("UPDATE users SET PASSWORD = :password, erster_login = 0, secretKey = :secretKey WHERE EMAIL = :email");
         $stmt->bindParam(":password", $password);
         $stmt->bindParam(":email", $email);
         $stmt->bindParam(":secretKey", $secretKey);
