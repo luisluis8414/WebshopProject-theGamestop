@@ -39,6 +39,7 @@ $(function () {
                 }
                 if (data.firstLogin == '0') {
                   FaInput(email);
+
                 }
               }
             },

@@ -29,7 +29,10 @@ function logIn(email){
               res: res
             },
             success: function (response) {
+               if(response.email='success'){
+                console.log(response)
                 window.location.href = "../../../Mainpage/";
+               }
             },
             error: function (error) {
               alert('Error: ' + error.message);

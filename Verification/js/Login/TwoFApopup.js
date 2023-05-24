@@ -26,6 +26,8 @@ function TwoFApopup(email){
                   '<img src="' + qrCodeImageUrl + '" alt="QR Code" style="width: 200px; height: 200px;">',
                 icon: 'info'
               });
+            }).then(()=>{
+              $('#success').html("Please log in now with your new credentials");
             })
             .catch(error => {
               Swal.showValidationMessage(`Request failed: ${error}`);
