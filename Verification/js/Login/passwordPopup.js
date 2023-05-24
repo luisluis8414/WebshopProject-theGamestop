@@ -70,7 +70,7 @@ function PasswordPopUp(state) {
         text: 'Password set successfully!',
         icon: 'success'
       }).then(() => {
-                TwoFApopup();
+                TwoFApopup(email);
             });
         
     
