@@ -15,7 +15,12 @@ $(document).ready(function () {
                 console.log(response);
                 var data = JSON.parse(response);
 
-                if (data.EmailTaken !== '') $("#emailError").html(data.EmailTaken);
+                if (data.EmailTaken !== ''){
+                    $("#sucess").html(''); 
+                    $("#vornameError").html(''); 
+                    $("#nachnameError").html(''); 
+                    $("#emailError").html(data.EmailTaken);
+                }
                 if (data.EmailTaken == '') $("#emailError").html('');
             },
             error: function (error) {

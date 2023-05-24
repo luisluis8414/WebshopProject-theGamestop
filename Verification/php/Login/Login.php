@@ -60,6 +60,7 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" autocomplete name="pw" class="form-control" id="pw" placeholder="Password">
                     <small id="error" style="color: red;"></small>
+                    <small id="success" style="color: green;"></small>
                 </div>
             </div>
             <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Submit</button><br>
