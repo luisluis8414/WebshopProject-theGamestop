@@ -9,6 +9,10 @@ body {
   color: var(--text);
   text-decoration: none;
 }
+.site-logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 
 header {
   --text: #f4f4f4;
@@ -298,7 +302,7 @@ header {
 
 
 .main-nav{
-  margin-left: 10%;
+  margin-left: 16%;
 }
 
 .shopping-cart {
@@ -307,6 +311,9 @@ header {
 }
 
 .cart-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: -5px;
   right: -5px;
@@ -327,5 +334,6 @@ header {
 .shopping-cart:hover .cart-badge {
   transform: scale(1.1);
 }
+
 
 
