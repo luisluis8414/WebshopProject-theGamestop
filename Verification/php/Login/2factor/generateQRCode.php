@@ -7,7 +7,7 @@ $ga = new PHPGangsta_GoogleAuthenticator();
 
 $email = $_POST['email'];
 
-$stmt = $mysql->prepare("SELECT secretKey FROM users WHERE EMAIL = :email"); 
+$stmt = $mysql->prepare("SELECT secret_key FROM users WHERE EMAIL = :email"); 
 $stmt->bindParam(":email", $email);
 $stmt->execute();
 

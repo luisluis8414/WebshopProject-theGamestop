@@ -9,7 +9,7 @@ $email = $_POST['email'];
 $code = $_POST['code'];
 
 
-$stmt = $mysql->prepare("SELECT secretKey FROM users WHERE EMAIL = :email"); 
+$stmt = $mysql->prepare("SELECT secret_key FROM users WHERE EMAIL = :email"); 
 $stmt->bindParam(":email", $email);
 $stmt->execute();
 

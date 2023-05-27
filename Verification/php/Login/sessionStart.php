@@ -11,7 +11,7 @@
         $_SESSION['logged_in'] = true;
         $_SESSION['email'] =  $email;
 
-        $stmt = $mysql->prepare("UPDATE users SET last_login = :lastLogin, screen_resolution = :res, operating_system = :os WHERE email = :email");
+        $stmt = $mysql->prepare("UPDATE users SET last_login = :lastLogin, screen_resolution = :res, operating_system = :os, is WHERE email = :email");
          $stmt->bindParam(":email", $email);  
          $stmt->bindParam(":lastLogin", $lastLogin);          
         $stmt->bindParam(":os", $os);
