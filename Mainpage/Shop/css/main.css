@@ -344,5 +344,16 @@ header {
   transform: scale(1.1);
 }
 
+.cardCart {
+}
+
+.cardCart:hover {
+  box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.3);
+}
+
+.cardCart img {
+  width: 3rem;
+}
+
 
 

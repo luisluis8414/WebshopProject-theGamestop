@@ -20,7 +20,7 @@ if ($row) {
   $response = array(
     "itemName" => $itemName,
     "price" => $price,
-    "imagePath" => $imagePath
+    "imgUrl" => $imagePath
   );
 }
 

@@ -1,5 +1,5 @@
 function sendItemIdToBackend(itemId) {
-    // Create an object with the item IDs
+
     const data = {
       itemId: itemId
     };
