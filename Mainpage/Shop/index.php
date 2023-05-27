@@ -24,9 +24,11 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script type="text/javascript" src="js/search.js"></script>
   <script type="text/javascript" src="js/biggerImage.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/showCartPopUp.js"></script>
-  <script src="js/shoppinCartLogic.js"></script>
-  <script src="js/sendCartToBackend.js"></script>
+  <script src="js/cart/showCartPopUp.js"></script>
+  <script src="js/cart/shoppinCartLogic.js"></script>
+  <script src="js/cart/sendCartToBackend.js"></script>
+  <script src="js/cart/getCartItems.js"></script>
+  
 </head>
 
 <body>
