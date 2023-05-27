@@ -46,7 +46,7 @@ session_start();
         <li class="nav__list-item">
           <a href="#" class="nav__link">Articles</a>
         </li>
-        <li class="nav__list-item"><a href="#" class="nav__link">Blog</a></li>
+        <li class="nav__list-item"><a href="Profile/" class="nav__link">Profile</a></li>
       </ul>
     </nav>
     <nav class="account">

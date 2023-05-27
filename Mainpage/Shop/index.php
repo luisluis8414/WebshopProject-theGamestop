@@ -28,29 +28,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-  <header>
-    <a href="../" class="site-logo" aria-label="homepage">The Game Stop </a>
-    <nav class="main-nav">
-      <ul class="nav__list">
-        <li class="nav__list-item"><a href="#" class="nav__link">Shop</a></li>
-        <li class="nav__list-item">
-          <a href="#" class="nav__link">Articles</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="#" class="nav__link">Pricing</a>
-        </li>
-      </ul>
-    </nav>
-    <nav class="account">
-    <ul class="nav__list">
-    <input type="text" id="searchInput" name="search" placeholder="Search..." />
-
-            <li class="nav__list-item">
-              <a class="nav__link nav__link--btn" href="../php/logOut.php">Log Out</a>
-            </li>
-      </ul>
-    </nav>
-  </header>
+<?php include '../php/navbarWithSearch.php'; ?>
   <main>
   <div class="ItemView">
   <?php foreach ($items as $item) { ?>
@@ -58,7 +36,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div>
         <img src="<?php echo $item['imagePath']; ?>" alt="<?php echo $item['name']; ?>" class="ItemImages" onclick="showImage('<?php echo $item['imagePath']; ?>', '<?php echo $item['name']; ?>');">
         <h2><?php echo $item['name']; ?></h2>
-        <p>Price: <?php echo $item['price']; ?>$</p>
+        <p>Price: <b><?php echo $item['price']; ?>$</b></p>
       </div>
       <div class="card-footer">
         <button class="buy-now-button">Buy Now</button>
