@@ -16,7 +16,7 @@ $(document).ready(function () {
                 var data = JSON.parse(response);
 
                 if (data.EmailTaken !== ''){
-                    $("#sucess").html(''); 
+                    $("#good").html(''); 
                     $("#vornameError").html(''); 
                     $("#nachnameError").html(''); 
                     $("#emailError").html(data.EmailTaken);

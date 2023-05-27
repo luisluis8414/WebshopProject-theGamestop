@@ -28,6 +28,7 @@ if (/Windows/i.test(userAgent)) {
     $("#emailError").html(''); 
     $("#vornameError").html(''); 
     $("#nachnameError").html(''); 
+    $("#good").html('')
 
     var vorname = $('#vorname').val();
     var email = $('#email').val();
@@ -87,8 +88,10 @@ if (/Windows/i.test(userAgent)) {
               console.log(response)
               var data = JSON.parse(response)
              
-              if(data.success!=='')$("#sucess").html(data.success)
-              else $("#emailError").html("There is already an Email bound to this account");
+              if(data.success!=='')$("#good").html(data.success)
+              else {
+                $("#emailError").html("There is already an Email bound to this account");
+              }
             }
           })
         }

@@ -8,7 +8,7 @@ $(function () {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       var pw = CryptoJS.SHA512($('#pw').val()).toString();
-
+      $('#success').html("");
       $('#emailError').html('');
       if (pw.length == 0) {
         $('#error').html('Please enter a password');

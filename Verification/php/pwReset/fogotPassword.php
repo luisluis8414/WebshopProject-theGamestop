@@ -27,7 +27,7 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
     }
     </script>
   <!-- <script type="module" src="../../js/THREE/model3.js"></script> -->
-  <script type="module" src="../../js/THREE/model4.js"></script>
+  <!-- <script type="module" src="../../js/THREE/model4.js"></script> -->
    <title>Reset Password</title>
 </head>
 

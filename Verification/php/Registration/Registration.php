@@ -56,7 +56,7 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <label for="E-Mail">E-mail</label>
         <input id="email" autocomplete="username" class="form-control" type="text" name="email" placeholder="e-mail">
         <small id="emailError" class="error"></small>
-        <small id="sucess" class="success"></small>
+        <small id="good" class="success"></small>
       </div>
       <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Submit</button><br>
       <a href="../Login/Login.php">I already have an account</a><br>

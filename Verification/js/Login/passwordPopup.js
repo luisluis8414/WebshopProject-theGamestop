@@ -70,7 +70,9 @@ function PasswordPopUp(state) {
         text: 'Password set successfully!',
         icon: 'success'
       }).then(() => {
-                TwoFApopup(email);
+          setTimeout(function() {
+            TwoFApopup(email);
+          }, 1000); 
             });
         
     
