@@ -16,7 +16,7 @@ function deleteItem() {
 
             let cartNumber = parseInt(document.getElementById("cart-badge").innerText);
 
-            let quantity = $('#quantity' + itemId).text().replace('Quantity: ', '');
+            let quantity = $('#quantity' + itemId).text().replace('x ', '');
             console.log(quantity);
 
             cartNumber -= quantity;

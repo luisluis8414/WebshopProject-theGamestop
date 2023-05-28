@@ -10,10 +10,10 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../Extern/js/jquery.min.js"></script>
+  <script type="text/javascript" src="Extern/js/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <script src="js/AjaxLoggedInUserData.js"></script>
-  <script type="text/javascript" src="../Extern/js/jquery.min.js"></script>
+  <script src="Mainpage/js/AjaxLoggedInUserData.js"></script>
+  <script type="text/javascript" src="Extern/js/jquery.min.js"></script>
 
   <!-- <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script> -->
   <!-- <script type="importmap">
@@ -24,10 +24,10 @@ session_start();
         }
     }
     </script>
-  <script type="module" src="../Verification/js/THREE/model1.js"></script> -->
+  <script type="module" src="Verification/js/THREE/model1.js"></script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="Mainpage/css/main.css" />
 </head>
 
 <body>
@@ -42,11 +42,11 @@ session_start();
     </div>
     <nav class="main-nav">
       <ul class="nav__list">
-        <li class="nav__list-item"><a href="Shop/index.php" class="nav__link">Shop</a></li>
+        <li class="nav__list-item"><a href="Mainpage/Shop/index.php" class="nav__link">Shop</a></li>
         <li class="nav__list-item">
           <a href="#" class="nav__link">Articles</a>
         </li>
-        <li class="nav__list-item"><a href="Profile/" class="nav__link">Profile</a></li>
+        <li class="nav__list-item"><a href="Mainpage/Profile/" class="nav__link">Profile</a></li>
       </ul>
     </nav>
     <nav class="account">
@@ -56,16 +56,16 @@ session_start();
           // Logged in
           echo '
             <li class="nav__list-item">
-              <a class="nav__link nav__link--btn" href="php/logOut.php">Log Out</a>
+              <a class="nav__link nav__link--btn" href="Verification/php/Login/logOut.php">Log Out</a>
             </li>';
         } else {
           // Not logged in
           echo '
       <li class="nav__list-item">
-        <a class="nav__link nav__link--btn" href="../Verification/php/Login/Login.php">Login</a>
+        <a class="nav__link nav__link--btn" href="Verification/php/Login/Login.php">Login</a>
       </li>
       <li class="nav__list-item"> 
-        <a class="nav__link nav__link--btn nav__link--btn--highlight" href="../Verification/php/Registration/Registration.php">Sign Up</a>
+        <a class="nav__link nav__link--btn nav__link--btn--highlight" href="Verification/php/Registration/Registration.php">Sign Up</a>
       </li>';
         }
         ?>
@@ -79,19 +79,19 @@ session_start();
         <div id="articleView" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="../src/pictures/mainpage/HellHound.png" class="d-block w-100" alt="...">
+              <img src="src/pictures/mainpage/HellHound.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../src/pictures/mainpage/GrimRevenant.png" class="d-block w-100" alt="...">
+              <img src="src/pictures/mainpage/GrimRevenant.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../src/pictures/mainpage/SacredGoat.png" class="d-block w-100" alt="...">
+              <img src="src/pictures/mainpage/SacredGoat.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../src/pictures/mainpage/MainpageZombieDragon.png" class="d-block w-100" alt="...">
+              <img src="src/pictures/mainpage/MainpageZombieDragon.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../src/pictures/mainpage/Sable Thornrider.png" class="d-block w-100" alt="...">
+              <img src="src/pictures/mainpage/Sable Thornrider.png" class="d-block w-100" alt="...">
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ session_start();
 
     <div class="home-more-stuff">
       <div class="more-stuff-grid">
-        <img src="../src//pictures/maps/map.png" alt="" class="slide-in from-left" />
+        <img src="src//pictures/maps/map.png" alt="" class="slide-in from-left" />
         <p class="slide-in from-right">
           Step into a world of limitless possibilities as we unveil our extraordinary collection of in-game items that will revolutionize your gaming experience. Prepare to embark on epic quests and conquer virtual realms with our arsenal of legendary weapons, awe-inspiring armor, and rare artifacts that will amplify your skills to unimaginable heights. Unleash your inner hero and immerse yourself in captivating narratives with our exclusive character enhancements, empowering you to rewrite the very fabric of virtual existence. From the breathtaking beauty of enchanting mounts to the exhilarating rush of adrenaline-pumping vehicles, we offer a treasure trove of in-game items that will transport you to the forefront of gaming greatness. Whether you seek to dominate the competitive arena or simply indulge in the pure joy of customization, our extensive selection of in-game items will leave you spellbound. Join us at The Game Stop, where dreams become reality, and the power to redefine gaming lies at your fingertips. Let the adventure begin!
         </p>
@@ -184,7 +184,7 @@ session_start();
       </div>
     </div>
   </main>
-  <script src="js/observers.js"></script>
+  <script src="Mainpage/js/observers.js"></script>
 </body>
 
 </html>

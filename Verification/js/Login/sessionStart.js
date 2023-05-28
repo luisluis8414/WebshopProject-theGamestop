@@ -30,8 +30,7 @@ function logIn(email){
             },
             success: function (response) {
                if(response.email='success'){
-                console.log(response)
-                window.location.href = "../../../Mainpage/";
+                window.location.href = "../../../index.php";
                }
             },
             error: function (error) {

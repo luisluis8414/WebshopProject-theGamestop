@@ -1,5 +1,5 @@
 <header>
-  <a href="../" class="site-logo" aria-label="homepage">The Game Stop </a>
+  <a href="../../" class="site-logo" aria-label="homepage">The Game Stop </a>
   <nav class="main-nav">
     <ul class="nav__list">
       <li class="nav__list-item"><a href="#" class="nav__link">Shop</a></li>
@@ -7,7 +7,7 @@
         <a href="#" class="nav__link">Articles</a>
       </li>
       <li class="nav__list-item">
-        <a href="#" class="nav__link">Pricing</a>
+        <a href="../Profile/" class="nav__link">Profile</a>
       </li>
     </ul>
   </nav>
