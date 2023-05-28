@@ -342,6 +342,7 @@ header {
 .shopping-cart:hover,
 .shopping-cart:hover .cart-badge {
   transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 
@@ -470,5 +471,6 @@ header {
 .plusButton:hover,
 .deleteButton:hover {
   transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
 

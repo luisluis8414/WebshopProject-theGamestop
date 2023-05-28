@@ -185,3 +185,14 @@ header {
   height: 45em;
   margin-left: 15rem;
 }
+
+#logo{
+  position: absolute;
+  top: -0.5rem;
+  width: 20rem;
+}
+
+#logo:hover{
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
