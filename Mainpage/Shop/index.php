@@ -28,6 +28,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="js/cart/shoppinCartLogic.js"></script>
   <script src="js/cart/sendCartToBackend.js"></script>
   <script src="js/cart/getCartItems.js"></script>
+  <script src="js/cart/deleteCartItem.js"></script>
   
 </head>
 

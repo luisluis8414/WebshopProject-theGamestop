@@ -2,14 +2,19 @@
 function addToCart(itemId) {
     let cartNumber = parseInt(document.getElementById("cart-badge").innerText);
 
+    if (isNaN(cartNumber)||cartNumber<0) {
+      cartNumber=0;
+    }
     cartNumber += 1;
 
-    document.getElementById("cart-badge").innerText = cartNumber.toString();
+    $("#cart-badge").html(cartNumber.toString());
   
     if (cartNumber > 0) {
-      document.getElementById("cart-badge").style.display = "flex";
+     $("#cart-badge").css("display", "flex");
     }
 
     sendItemIdToBackend(itemId)
   }
+
+  
   
