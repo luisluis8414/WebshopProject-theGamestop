@@ -25,16 +25,23 @@ function getCartItems() {
 
             const hiddenId = $('<input>').attr('type', 'hidden').addClass('hiddenId').val(itemResponse.itemId);
             const img = $('<img>').attr('src', imgPath).attr('alt', 'Product Image');
-            const name = $('<h3>').text(itemResponse.name);
-            const price = $('<p>').text('Price: ' + itemResponse.price);
-            const quantity = $('<p>').attr('id', 'quantity'+response[i].itemId).text('Quantity: ' + response[i].quantity);
-            const deleteButton = $('<button>').addClass('deleteButton').text('x');
+
+            const nameOnly = (itemResponse.itemName).split(/,|\s/)[0].trim();
+
+            const name=$('<h5>').text(nameOnly);
+
+
+            const price = $('<p>').text(itemResponse.price+ '$');
+            const quantity = $('<p>').attr('id', 'quantity'+response[i].itemId).text('x ' + response[i].quantity);
+            const deleteButton = $('<button>').addClass('deleteButton').text('');
+            const minusButton = $('<button>').addClass('minusButton').html('<span id="counterButtons">-</span>');
+            const plusButton = $('<button>').addClass('plusButton').html('<span id="counterButtons">+</span>'); 
 
             deleteButton.click(deleteItem);
 
             rightSide.append(img);
-            mid.append(name, price, quantity);
-            leftSide.append(deleteButton, hiddenId);
+            mid.append(name, quantity, price);
+            leftSide.append(minusButton, plusButton, deleteButton, hiddenId);
             itemContainer.append(rightSide, mid, leftSide);
 
             $('#cartItemsContainer').append(itemContainer);

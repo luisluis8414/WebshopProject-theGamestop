@@ -4,7 +4,7 @@ $(document).ready(function() {
       type: 'GET',
       dataType: 'json',
       success: function(response) {
-        console.log("Quantity on reload: " + response.quantity);
+        // console.log("Quantity on reload: " + response.quantity);
         let quantity=response.quantity;
         if(quantity>0&&!(isNaN($("#cart-badge").val())))
         $("#cart-badge").html(quantity.toString());

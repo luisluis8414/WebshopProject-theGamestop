@@ -345,6 +345,19 @@ header {
 }
 
 
+.cardCart:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cardCart img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  float: left;
+}
+
+
+
 .cardCart {
   display: flex;
   align-items: center;
@@ -361,40 +374,52 @@ header {
 
 .rightCard {
   flex: 1;
-  width: auto; /* Adjust the width as needed */
+  width: 25%; /* Updated width */
   height: 100%; /* Adjust the height as needed */
-
 }
 
 .leftCard {
   flex: 1;
+  width: 25%; /* Updated width */
+}
+.midCard {
+  flex: 2; /* Updated flex value */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Add this line */
 }
 
-.midCard {
+.midCard h3,
+.midCard p {
+  margin: 0;
+}
+
+.midCard h3 {
   flex: 1;
 }
 
-.cardCart:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.midCard p {
+  margin-left: 10px;
 }
 
-.cardCart img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-  float: left;
+.leftCard {
+  display: flex;
+  align-items: center;
 }
 
-.deleteButton {
+.deleteButton,
+.minusButton,
+.plusButton {
   position: relative;
-  float: right; 
+  color: white;
   width: 30px;
   height: 30px;
-  background-color: red;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
+  margin-right: 1rem;
 }
 
 
@@ -419,11 +444,31 @@ header {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.deleteButton:hover {
-  transform: scale(1.2);
-}
 
 .deleteButton:hover::before,
 .deleteButton:hover::after {
   background-color: #fff;
 } 
+
+.deleteButton{
+  background-color: red;
+}
+
+.minusButton {
+  background-color: blue;
+}
+
+.plusButton {
+  background-color: green;
+}
+
+#counterButtons{
+  font-size: 20px;
+}
+
+.minusButton:hover,
+.plusButton:hover,
+.deleteButton:hover {
+  transform: scale(1.2);
+}
+
