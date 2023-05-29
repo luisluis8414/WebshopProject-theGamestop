@@ -33,6 +33,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="js/cart/increaseQuantity.js"></script>
   <script src="js/cart/decreaseQuantity.js"></script>
   <script src="js/cart/updateCartNumber.js"></script>
+  <script src="js/cart/getTotalSum.js"></script>
   
 </head>
 

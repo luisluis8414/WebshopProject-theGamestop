@@ -15,10 +15,12 @@ function deleteItem() {
             });
             let quantity = $('#quantity' + itemId).text().replace('x ', '');
             updateCartNumber(itemId, quantity);
+         
         },
         error: function (xhr, status, error) {
             console.log("Delete request failed " + response);
             // Handle any errors that occurred during the request
         }
     });
+    getTotalSum();
 }

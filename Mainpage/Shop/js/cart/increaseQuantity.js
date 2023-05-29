@@ -11,6 +11,7 @@ function increaseQuantity() {
             if (response[0].quantity> 0) {
                 $('#quantity' + itemId).html('x ' + response[0].quantity);
                 updateCartNumber(itemId, -1);
+          
             } else {
                $('#errorMsg'+itemId).html("We don't have more than this in stock");
             }
@@ -20,4 +21,5 @@ function increaseQuantity() {
             console.log("Delete request failed " + error);
         }
     });
+    getTotalSum();
 }

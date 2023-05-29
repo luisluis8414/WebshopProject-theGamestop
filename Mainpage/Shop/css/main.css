@@ -191,7 +191,7 @@ header {
 
 .buy-now-button {
   flex-grow: 3;
-  background-color: #3498db;
+  background-color: #6459DD;
   color: white;
   border: none;
   padding: 10px;
@@ -201,12 +201,12 @@ header {
 }
 
 .buy-now-button:hover {
-  background-color: #1e87d6;
+  background-color: #335599;
 }
 
 .add-to-cart-button {
   flex-grow: 1;
-  background-color: #3498db;
+  background-color: #6459DD;
   color: white;
   border: none;
   padding: 10px;
@@ -215,7 +215,7 @@ header {
 }
 
 .add-to-cart-button:hover {
-  background-color: #1e87d6;
+  background-color: #335599;
 }
 
 
@@ -457,7 +457,7 @@ header {
 }
 
 .minusButton {
-  background-color: blue;
+  background-color: #6459DD;
 }
 
 .plusButton {

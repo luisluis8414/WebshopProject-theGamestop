@@ -18,6 +18,7 @@ function decreaseQuantity() {
                 });
             }
             updateCartNumber(itemId, 1);
+            getTotalSum();
         },
         error: function (xhr, status, error) {
             console.log("Delete request failed " + error);

@@ -33,8 +33,8 @@ function getCartItems() {
             const name=$('<h5>').text(nameOnly);
 
 
-            const price = $('<p>').text(itemResponse.price+ '$');
-            const quantity = $('<p>').attr('id', 'quantity'+response[i].itemId).text('x ' + response[i].quantity);
+            const price = $('<p>').addClass('price').text(itemResponse.price+ '$');
+            const quantity = $('<p>').addClass('quantity').attr('id', 'quantity'+response[i].itemId).text('x ' + response[i].quantity);
             const deleteButton = $('<button>').addClass('deleteButton').text('');
             const minusButton = $('<button>').addClass('minusButton').html('<span id="counterButtons">-</span>');
             const plusButton = $('<button>').addClass('plusButton').html('<span id="counterButtons">+</span>'); 
@@ -66,4 +66,5 @@ function getCartItems() {
       console.log('status:', status);
     }
   });
+  getTotalSum();
 }
