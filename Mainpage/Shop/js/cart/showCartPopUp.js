@@ -1,6 +1,4 @@
 function showCartAlert() {
-
-
   Swal.fire({
     title: 'Shopping Cart',
     html: '<div id="cartItemsContainer"></div>'+

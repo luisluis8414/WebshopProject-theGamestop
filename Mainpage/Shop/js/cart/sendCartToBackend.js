@@ -8,7 +8,7 @@ $.ajax({
     method: 'POST',
     data: data,
     success: function(response) {
-      console.log(response);
+      // console.log(response);
     },
     error: function(errorThrown) {
       console.error('Failed to send item IDs to the backend:', errorThrown);

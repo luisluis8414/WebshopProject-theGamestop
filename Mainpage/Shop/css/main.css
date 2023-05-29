@@ -384,6 +384,7 @@ header {
   width: 25%; /* Updated width */
 }
 .midCard {
+  position: relative;
   flex: 2; /* Updated flex value */
   display: flex;
   flex-direction: row;
@@ -474,3 +475,8 @@ header {
   transition: transform 0.3s ease;
 }
 
+.errorMsg{
+  position: absolute;
+  color: red;
+  bottom: 0;
+}

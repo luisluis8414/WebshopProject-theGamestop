@@ -13,23 +13,8 @@ function deleteItem() {
             }).fadeOut(400, function () {
                 $(this).remove();
             });
-
-            let cartNumber = parseInt(document.getElementById("cart-badge").innerText);
-
             let quantity = $('#quantity' + itemId).text().replace('x ', '');
-            console.log(quantity);
-
-            cartNumber -= quantity;
-            console.log(cartNumber)
-            $("#cart-badge").html(cartNumber.toString());
-
-
-            if (isNaN(cartNumber) || cartNumber <= 0) {
-                $("#cart-badge").css("display", "none");
-              }
-              
-              
-
+            updateCartNumber(itemId, quantity);
         },
         error: function (xhr, status, error) {
             console.log("Delete request failed " + response);

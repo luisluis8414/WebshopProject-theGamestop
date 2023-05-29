@@ -25,6 +25,8 @@ function getCartItems() {
 
             const hiddenId = $('<input>').attr('type', 'hidden').addClass('hiddenId').val(itemResponse.itemId);
             const img = $('<img>').attr('src', imgPath).attr('alt', 'Product Image');
+            const errorMsg = $('<small>').addClass('errorMsg').attr('id', 'errorMsg'+itemResponse.itemId);
+
 
             const nameOnly = (itemResponse.itemName).split(/,|\s/)[0].trim();
 
@@ -38,9 +40,11 @@ function getCartItems() {
             const plusButton = $('<button>').addClass('plusButton').html('<span id="counterButtons">+</span>'); 
 
             deleteButton.click(deleteItem);
+            minusButton.click(decreaseQuantity);
+            plusButton.click(increaseQuantity);
 
             rightSide.append(img);
-            mid.append(name, quantity, price);
+            mid.append(name, quantity, price, errorMsg);
             leftSide.append(minusButton, plusButton, deleteButton, hiddenId);
             itemContainer.append(rightSide, mid, leftSide);
 
