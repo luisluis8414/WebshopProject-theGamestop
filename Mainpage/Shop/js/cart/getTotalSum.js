@@ -5,7 +5,7 @@ function getTotalSum(){
         dataType: "json", 
         success: function (response) {
             console.log(response)
-            $('#cartFooter').html("Total Sum: <strong>" + response[0].totalSum + "$</strong>");
+            $('#cartFooter').html("Total Sum: <strong>" + response[0].totalSum.toFixed(2) + "$</strong>");
 
         },
         error: function (xhr, status, error) {

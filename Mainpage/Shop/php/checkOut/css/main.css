@@ -1,0 +1,25 @@
+#heading {
+    display: flex;
+    justify-content: center; 
+}
+
+
+.content h2{
+    font-size: 5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.container {
+    max-width: 960px;
+  }
+  
+  .lh-condensed { 
+    line-height: 1.25; 
+}
+
+  #ControllerLogo{
+    margin-right: 2rem;
+    width: 10rem;
+    left: -10;
+  }
