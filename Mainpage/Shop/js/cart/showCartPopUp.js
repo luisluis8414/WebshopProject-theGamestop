@@ -14,7 +14,7 @@ function showCartAlert() {
     }
   }).then(function (result) {
     if (result.isConfirmed) {
-      window.location.href = 'php/CheckOut/finishOrder.php';
+      window.location.href = '../Shop/CheckOut/finishOrder.php';
     }
   });
   getCartItems();
