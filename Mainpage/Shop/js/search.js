@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#searchInput").removeAttr("hidden");
     $("#searchInput").on("input", function (event) {
         event.preventDefault();
         var searchQuery = $(this).val().toLowerCase(); 

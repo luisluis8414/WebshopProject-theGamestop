@@ -48,6 +48,7 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 .nav__link {
@@ -194,5 +195,99 @@ header {
 
 #logo:hover{
   transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list__right {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list-item__right {
+  margin-left: 10px;
+}
+
+.nav__link__right {
+  color: white;
+  text-decoration: none;
+}
+
+#searchInput {
+  width: 12rem;
+  height: 2rem; 
+  margin-right: 1.5rem;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: #333;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+#searchInput::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#searchInput:hover,
+#searchInput:focus {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+
+#ShoppingCartIcon {
+  color: white;
+  width: 2.5rem; 
+  height: 100%;
+}
+
+#ShoppingCartIcon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+.main-nav{
+  margin-left: auto;
+  margin-right: 35em;
+}
+
+.shopping-cart {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #6459DD;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.shopping-cart:hover,
+.shopping-cart:hover .cart-badge {
+  transform: scale(1.1);
   transition: transform 0.3s ease;
 }

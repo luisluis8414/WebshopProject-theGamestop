@@ -13,25 +13,27 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css">
   <script src="js/promoCode.js"></script>
   <script src="js/form.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../css/main.css">
-  <link rel="stylesheet" href="css/main.css">
   <script src="js/billingInfo.js"></script>
   <script src="js/fillCart.js"></script>
+  <script src="js/sendOrder.js"></script>
 
   <title>Check Out</title>
 </head>
 
 <body>
+
   <div class="content">
     <div class="container">
       <div id="heading" class="py-5 text-center">
         <!-- <img id="ControllerLogo" src="src/logo4.png" alt=""> -->
-        <a href="../index.php">back to shop</a>
         <h2>Checkout</h2>
       </div>
 
@@ -59,18 +61,18 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
             </li>
           </ul>
 
-        
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Promo code">
-              <div class="input-group-append">
-                <button type="submit" id="promoCode" class="btn btn-secondary">Redeem</button>
-              </div>
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <div class="input-group-append">
+              <button type="submit" id="promoCode" class="btn btn-success">Redeem</button>
             </div>
-        
+          </div>
+
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Billing address</h4>
-          <form class="needs-validation" novalidate>
+          <form  class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -88,7 +90,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               </div>
             </div>
 
-            
+
 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Optional)</span></label>
@@ -106,13 +108,9 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               </div>
             </div>
 
-            <div class="mb-3">
-              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
 
             <div class="row">
-              <div class="col-md-5 mb-3">
+              <div class="col-md-3 mb-3">
                 <label for="country">Country</label>
                 <select class="custom-select d-block w-100" id="country" required>
                   <option value="">Choose...</option>
@@ -135,31 +133,45 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
                   Zip code required.
                 </div>
               </div>
+
+              <div class="col-md-5 mb-3">
+                <label for="download">Downloadtype</label>
+                <select class="custom-select d-block w-100" id="download" required>
+                  <option value="">Choose...</option>
+                  <option>Downloadlink</option>
+                  <option>Zip for Hard Drive</option>
+                  <option>Add them to my account</option>
+
+                </select>
+                <div class="invalid-feedback">
+                  Please select a type.
+                </div>
+              </div>
             </div>
-            <hr class="mb-4">
             <!-- <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
-          <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-        </div> -->
+              <input type="checkbox" class="custom-control-input" id="same-address">
+              <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+            </div> -->
 
             <hr class="mb-4">
 
             <h4 class="mb-3">Payment</h4>
 
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="credit">Credit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="paypal">PayPal</label>
-              </div>
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="credit">Credit card</label>
             </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">Debit card</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">PayPal</label>
+            </div>
+            <div class="invalid-feedback" style="width: 100%;">
+                Please select a payment method
+              </div>
             <div class="row">
               <div class="col-md-6 mb-3 credit-card-fields">
                 <label for="cc-name">Name on card</label>
@@ -196,15 +208,15 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
 
             <hr class="mb-4">
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="save-info" checked>
+              <input type="checkbox" class="custom-control-input" id="save-info" required>
               <label class="custom-control-label" for="save-info">I have read an accepted the <a href="">terms</a></label>
               <div class="invalid-feedback" style="width: 100%;">
-                  Please accept our terms
-                </div>
+                Please accept our terms
+              </div>
               <br> <br>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button class="btn btn-primary btn-lg btn-block" id="submitButton" type="submit">Continue to checkout</button>
           </form>
         </div>
       </div>
