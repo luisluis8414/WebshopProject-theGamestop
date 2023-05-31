@@ -49,10 +49,10 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <canvas id="responsive-canvas"></canvas>
     </div>
 
-    <div id="formWrapper" class="shadow-lg p-5 bg-white rounded">
+    <div id="formWrapper" class="shadow-lg bg-white rounded">
         <h1 id="LoginHeading">Login</h1>
         <form method="post" id="myForm">
-            <div class="form-group p-1">
+            <div class="form-group">
                 <label for="E-Mail">E-mail</label>
                 <input id="email" autocomplete="username" class="form-control" type="text" name="email" placeholder="E-mail">
                 <small id="emailError" class="error"></small>
@@ -63,7 +63,7 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
                     <small id="success" style="color: green;"></small>
                 </div>
             </div>
-            <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Submit</button><br>
+            <button id="submit" type="submit" name="submit" class="btn btn-primary ">Submit</button><br>
             <a href="../Registration/Registration.php">I don't have an account</a><br>
             <a href="../pwReset/fogotPassword.php">Forgot Password</a>
         </form>

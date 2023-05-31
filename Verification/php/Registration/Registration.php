@@ -58,7 +58,7 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <small id="emailError" class="error"></small>
         <small id="good" class="success"></small>
       </div>
-      <button id="submit" type="submit" name="submit" class="btn btn-primary mt-2 mb-2">Submit</button><br>
+      <button id="submit" type="submit" name="submit" class="btn btn-primary">Submit</button><br>
       <a href="../Login/Login.php">I already have an account</a><br>
     </form>
   </div>

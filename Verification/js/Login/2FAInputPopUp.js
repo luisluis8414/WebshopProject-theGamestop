@@ -10,7 +10,7 @@ function FaInput(email) {
   });
 
   Swal.fire({
-    title: 'Enter Code',
+    title: 'Enter Your 2 FA Code',
     html: '<input type="text" id="codeInput" class="swal2-input" placeholder="Enter code">',
     showCancelButton: true,
     showCloseButton: true,

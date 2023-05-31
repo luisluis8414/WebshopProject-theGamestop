@@ -24,3 +24,7 @@ body {
 .success {
     color: green;
 }
+
+.swal2-confirm{
+    margin-right: 1em;
+}
