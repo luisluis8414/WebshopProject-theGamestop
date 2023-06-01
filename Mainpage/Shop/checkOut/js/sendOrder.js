@@ -15,7 +15,10 @@ function sendCheckout(event){
     var ccExpiration = $('#cc-expiration').val();
     var ccCvv = $('#cc-cvv').val();
     var totalSum =  $('#cartFooter').text();
-    console.log(totalSum)
+    var fees = $('#fees strong').text();
+    var promo =$('#promoAmount').text();
+    console.log(promo)
+
 
     var formData = {
       firstName: firstName,
@@ -30,7 +33,9 @@ function sendCheckout(event){
       ccNumber: ccNumber,
       ccExpiration: ccExpiration,
       ccCvv: ccCvv,
-      totalSum: totalSum
+      totalSum: totalSum,
+      fees: fees,
+      promo: promo
     };
 
     $.ajax({
@@ -39,6 +44,11 @@ function sendCheckout(event){
       data: formData,
       success: function(response) {
         console.log(response)
+        var data = JSON.parse(response);
+        if(data.success=='success'){
+          window.location.href = "php/thankYou";
+
+        }
       },
       error: function(xhr, status, error) {
         console.error(error);

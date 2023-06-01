@@ -7,7 +7,6 @@ try {
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
     $address = $_POST['address'];
-    $address2 = $_POST['address2'];
     $country = $_POST['country'];
     $zip = $_POST['zip'];
     $download = $_POST['download'];
@@ -17,14 +16,18 @@ try {
     $ccExpiration = $_POST['ccExpiration'];
     $ccCvv = $_POST['ccCvv'];
     $totalSum = $_POST['totalSum'];
+    $fees =$_POST['fees'];
+    $promo =$_POST['promo'];
 
-    $sql = "INSERT INTO Bestellungen (vorname, nachname, email, adresse, adresse2, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv)
-        VALUES ('$firstName', '$lastName', '$email', '$address', '$address2', '$country', '$zip', '$download', '$paymentMethod', '$ccName', '$ccNumber', '$ccExpiration', '$ccCvv')";
+    $sql = "INSERT INTO Bestellungen (vorname, nachname, email, adresse, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv)
+        VALUES ('$firstName', '$lastName', '$email', '$address', '$country', '$zip', '$download', '$paymentMethod', '$ccName', '$ccNumber', '$ccExpiration', '$ccCvv')";
 
     require("../../../../DBConnection/mysql.php");
 
     $stmt = $mysql->prepare($sql);
     $stmt->execute();
+
+    $orderId = $mysql->lastInsertId();
 
     $userId = $_SESSION['userId'];
 
@@ -62,10 +65,10 @@ foreach ($itemIds as $itemId) {
     require("../../../../Mailer/php/sendCheckoutEmail.php");
 
     $name = $firstName . ' ' . $lastName;
-    sendCheckoutEmail($email, $name, $orderId, $address, $country, $zip, $download, $paymentMethod, $totalSum, $itemNames, $quantities, $prices);
+    sendCheckoutEmail($email, $name, $orderId, $address, $country, $zip, $download, $paymentMethod, $totalSum, $itemNames, $quantities, $prices, $fees, $promo);
 
     $response = array(
-        "success" => true,
+        "success" => 'success',
     );
     echo json_encode($response);
     exit();
