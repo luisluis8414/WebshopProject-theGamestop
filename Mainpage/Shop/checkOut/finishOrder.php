@@ -24,6 +24,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <script src="js/billingInfo.js"></script>
   <script src="js/fillCart.js"></script>
   <script src="js/sendOrder.js"></script>
+  <script src="js/downloadtype.js"></script>
 
   <title>Check Out</title>
 </head>
@@ -55,6 +56,10 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               </div>
               <span class="text-success" id="promoAmount">-</span>
             </li>
+            <li id="fees"> 
+              <span></span>
+              <strong></strong>
+            </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
               <strong id="cartFooter">$20</strong>
@@ -72,7 +77,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Billing address</h4>
-          <form  class="needs-validation" novalidate>
+          <form class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -158,7 +163,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
             <h4 class="mb-3">Payment</h4>
 
             <div class="custom-control custom-radio">
-              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required checked>
               <label class="custom-control-label" for="credit">Credit card</label>
             </div>
             <div class="custom-control custom-radio">
@@ -170,8 +175,8 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               <label class="custom-control-label" for="paypal">PayPal</label>
             </div>
             <div class="invalid-feedback" style="width: 100%;">
-                Please select a payment method
-              </div>
+              Please select a payment method
+            </div>
             <div class="row">
               <div class="col-md-6 mb-3 credit-card-fields">
                 <label for="cc-name">Name on card</label>
@@ -216,7 +221,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               <br> <br>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block" id="submitButton" type="submit">Continue to checkout</button>
+            <button class="btn btn-primary btn-lg btn-block" id="submitButton" type="submit">Order</button>
           </form>
         </div>
       </div>

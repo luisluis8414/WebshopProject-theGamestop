@@ -1,18 +1,16 @@
 $(document).ready(function() {
-  // Initially hide the credit card fields
-  $('.credit-card-fields').hide();
+  // Show the credit card fields on page load
+  $('.credit-card-fields').show();
   
-  // Listen for changes in the payment method selection
+  // Handle changes to the payment method radio buttons
   $('input[name="paymentMethod"]').change(function() {
     if ($('#paypal').is(':checked')) {
-      // PayPal is selected, hide the credit card fields
+      // Hide the credit card fields for PayPal option
       $('.credit-card-fields').hide();
-      // Remove the "required" attribute from credit card fields
       $('.credit-card-fields input').removeAttr('required');
     } else {
-      // Credit card is selected, show the credit card fields
+      // Show the credit card fields for other options
       $('.credit-card-fields').show();
-      // Add the "required" attribute to credit card fields
       $('.credit-card-fields input').attr('required', 'required');
     }
   });

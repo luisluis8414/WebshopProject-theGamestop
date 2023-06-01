@@ -1,7 +1,7 @@
 function sendCheckout(event){
   event.preventDefault();
   $(document).ready(function() {
-    
+
     var firstName = $('#firstName').val();
     var lastName = $('#lastName').val();
     var email = $('#email').val();
@@ -9,14 +9,14 @@ function sendCheckout(event){
     var country = $('#country').val();
     var zip = $('#zip').val();
     var download = $('#download').val();
-    var paymentMethod = $('input[name="paymentMethod"]:checked').val();
+    var paymentMethod=paymentMethod = $('label[for="' + $('input[name="paymentMethod"]:checked').attr('id') + '"]').text();
     var ccName = $('#cc-name').val();
     var ccNumber = $('#cc-number').val();
     var ccExpiration = $('#cc-expiration').val();
     var ccCvv = $('#cc-cvv').val();
-    var totalSum = $('#cartFooter').val()
+    var totalSum =  $('#cartFooter').text();
+    console.log(totalSum)
 
-    // Create an object with the form data
     var formData = {
       firstName: firstName,
       lastName: lastName,
@@ -32,19 +32,15 @@ function sendCheckout(event){
       ccCvv: ccCvv,
       totalSum: totalSum
     };
-    console.log(formData)
-    // Send the form data to the PHP script via AJAX
+
     $.ajax({
       type: 'POST',
-      url: 'php/checkoutSubmit.php', // Replace with your PHP script URL
+      url: 'php/checkoutSubmit.php', 
       data: formData,
       success: function(response) {
-        if(response.success){
-          console.log("worked bitch")
-        }
+        console.log(response)
       },
       error: function(xhr, status, error) {
-        // Handle AJAX errors
         console.error(error);
       }
     });

@@ -1,8 +1,8 @@
 
   $(document).ready(function() {
+    
     $('#promoCode').closest('.input-group-append').click(function(event) {
       event.preventDefault();
-  
       var promoCode = $('.form-control').val();
   
       $('.form-control').val('');
