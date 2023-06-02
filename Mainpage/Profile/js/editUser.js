@@ -80,23 +80,24 @@ $(document).ready(function() {
           $("#lastNameError").text("");
           $("#phoneError").text("");
   
-          // Validate first name input
+     
           if (editedFirstName && !(/^[a-zA-Z]+$/.test(editedFirstName))) {
             $("#firstNameError").text("Please enter a valid first name (only characters)");
-            return false; // Prevent form submission
+            return false; 
           }
   
-          // Validate last name input
+
           if (editedLastName && !(/^[a-zA-Z]+$/.test(editedLastName))) {
             $("#lastNameError").text("Please enter a valid last name (only characters)");
-            return false; // Prevent form submission
+            return false; 
           }
   
-          // Validate phone number input
-          if (editedPhone && !(/^\d+$/.test(editedPhone))) {
+   
+          if (editedPhone && !(/^(\+)?\d+$/.test(editedPhone))) {
             $("#phoneError").text("Please enter a valid phone number");
-            return false; // Prevent form submission
+            return false; 
           }
+          
   
           var data = {
             editedFirstName: editedFirstName,

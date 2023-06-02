@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
+  header("Location: php/pleaseSignIn.php");
+  exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +15,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/shoppingCart.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../../Extern/js/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -18,6 +24,16 @@ session_start();
   <script src="js/getUserDataOnline.js"></script>
   <script src="js/editUser.js"></script>
   <script src="js/getOrders.js"></script>
+  <script src="js/cart/showCartPopUp.js"></script>
+  <script src="js/cart/shoppinCartLogic.js"></script>
+  <script src="js/cart/sendCartToBackend.js"></script>
+  <script src="js/cart/getCartItems.js"></script>
+  <script src="js/cart/deleteCartItem.js"></script>
+  <script src="js/cart/getCartItemsOnReload.js"></script>
+  <script src="js/cart/increaseQuantity.js"></script>
+  <script src="js/cart/decreaseQuantity.js"></script>
+  <script src="js/cart/updateCartNumber.js"></script>
+  <script src="js/cart/getTotalSum.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -34,7 +50,7 @@ session_start();
   <script type="module" src="../Verification/js/THREE/model1.js"></script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="css/main.css" />
   <style>
     body,
     html {
@@ -51,7 +67,7 @@ session_start();
 </head>
 
 <body>
-  <?php include '../php/navbarProfile.php'; ?>
+  <?php include '../../navbars/navbarProfile.php'; ?>
 
 
   <section style="background-color: #eee;">

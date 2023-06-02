@@ -11,9 +11,21 @@ const sectionOneObserver = new IntersectionObserver(function(
   entries.forEach(entry => {
     if (!entry.isIntersecting) {
       header.classList.add("nav-scrolled");
+      $('#ShoppingCartIcon path').css('fill', 'black');
+      $('#LogOutButton').css({
+        'border-color': 'black',
+        'color': 'black'
+      });
+      
+
     } else {
       header.classList.remove("nav-scrolled");
-    }
+      $('#ShoppingCartIcon path').css('fill', 'white');
+      $('#LogOutButton').css({
+        'border-color': 'white',
+        'color': 'white'
+      });
+    } 
   });
 },
 sectionOneOptions);

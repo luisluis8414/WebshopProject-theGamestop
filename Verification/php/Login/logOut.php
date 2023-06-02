@@ -8,4 +8,4 @@ $stmt->bindParam(":email", $email);
 $stmt->execute(); 
 
 session_destroy();
-header("Location: ../../../index.php");
+header("Location: ../../../Mainpage/Startpapge/index.php");

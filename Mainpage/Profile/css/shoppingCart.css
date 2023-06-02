@@ -1,0 +1,183 @@
+
+#ShoppingCartIcon {
+    color: white;
+    width: 2.5rem; 
+    height: 100%;
+  }
+  
+  #ShoppingCartIcon:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .main-nav{
+    margin-left: 16%;
+  }
+  
+  .shopping-cart {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #6459DD;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .shopping-cart:hover,
+  .shopping-cart:hover .cart-badge {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .cardCart:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cardCart img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    float: left;
+  }
+  
+  
+  
+  .cardCart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 5rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .rightCard {
+    flex: 1;
+    width: 25%; /* Updated width */
+    height: 100%; /* Adjust the height as needed */
+  }
+  
+  .leftCard {
+    flex: 1;
+    width: 25%; /* Updated width */
+  }
+  .midCard {
+    position: relative;
+    flex: 2; /* Updated flex value */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Add this line */
+  }
+  
+  .midCard h3,
+  .midCard p {
+    margin: 0;
+  }
+  
+  .midCard h3 {
+    flex: 1;
+  }
+  
+  .midCard p {
+    margin-left: 10px;
+  }
+  
+  .leftCard {
+    display: flex;
+    align-items: center;
+  }
+  
+  .deleteButton,
+  .minusButton,
+  .plusButton {
+    position: relative;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 1rem;
+  }
+  
+  
+  
+  .deleteButton::before,
+  .deleteButton::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 2px;
+    background-color: white;
+  }
+  
+  .deleteButton::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .deleteButton::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  
+  .deleteButton:hover::before,
+  .deleteButton:hover::after {
+    background-color: #fff;
+  } 
+  
+  .deleteButton{
+    background-color: red;
+  }
+  
+  .minusButton {
+    background-color: #6459DD;
+  }
+  
+  .plusButton {
+    background-color: green;
+  }
+  
+  #counterButtons{
+    font-size: 20px;
+  }
+  
+  .minusButton:hover,
+  .plusButton:hover,
+  .deleteButton:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .errorMsg{
+    position: absolute;
+    color: red;
+    bottom: 0;
+  }

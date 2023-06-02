@@ -4,7 +4,7 @@ $(document).ready(function () {
     let error="";
 
     $.ajax({
-        url: 'Mainpage/php/getUserData.php',
+        url: 'php/getUserData.php',
         type: 'GET',
         data: {
             vorname: vorname,

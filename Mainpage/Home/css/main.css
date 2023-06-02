@@ -93,13 +93,9 @@ header {
   transition: background 250ms ease-in-out;
   letter-spacing: 1px;
   padding: 0.75em 1.5em;
+  
 }
 
-.nav__link--btn:hover {
-  background: var(--text);
-  color: var(--text-inverse);
-  border-color: var(--text);
-}
 
 .nav__link--btn::after {
   display: none;
@@ -111,10 +107,7 @@ header {
   color: white;
 }
 
-.nav__link--btn--highlight:hover {
-  background: var(--text);
-  border-color: var(--text);
-}
+
 
 .nav-scrolled {
   --text: #333;
@@ -291,3 +284,18 @@ header {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
+
+.nav__link--btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+/* .nav__link--btn--highlight:hover {
+  background: var(--text);
+  border-color: var(--text);
+} */
+/* .nav__link--btn:hover {
+  background: var(--text);
+  color: var(--text-inverse);
+  border-color: var(--text);
+} */

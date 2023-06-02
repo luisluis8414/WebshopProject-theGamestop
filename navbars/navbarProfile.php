@@ -6,7 +6,7 @@
   
     <ul class="nav__list">
     <li class="nav__list-item">
-        <a href="../../" class="nav__link">Home</a>
+        <a href="../Home" class="nav__link">Home</a>
       </li>
       <li class="nav__list-item"><a href="../Shop" class="nav__link">Shop</a></li>
       <li class="nav__list-item">

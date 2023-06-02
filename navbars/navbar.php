@@ -1,6 +1,6 @@
 <header>
-  <a href="../../" class="site-logo" aria-label="homepage">
-    <img id="logo" src="src/logo3.png" alt="">
+  <a href="#" class="site-logo" aria-label="homepage">
+    <img id="logo" src="../../src/logo3.png" alt="">
   </a>
   <nav class="main-nav">
 
@@ -8,9 +8,9 @@
       <li class="nav__list-item">
         <a href="" class="nav__link">Home</a>
       </li>
-      <li class="nav__list-item"><a href="Mainpage/Shop" class="nav__link">Shop</a></li>
+      <li class="nav__list-item"><a href="../Shop/" class="nav__link">Shop</a></li>
       <li class="nav__list-item">
-        <a href="Mainpage/Profile" class="nav__link">Profile</a>
+        <a href="../Profile" class="nav__link">Profile</a>
       </li>
 
     </ul>
@@ -26,7 +26,7 @@
         <div class="cart-badge" id="cart-badge" style="display: none;">0</div>
       </div>
       <li class="nav__list-item__right">
-        <a class="nav__link__right nav__link--btn nav__link__right--btn" href="../php/logOut.php">Log Out</a>
+        <a class="nav__link__right nav__link--btn " id="LogOutButton" href="../../Verification/php/Login/logOut.php">Log Out</a>
       </li>
     </ul>
   </nav>

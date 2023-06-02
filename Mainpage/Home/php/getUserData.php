@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['logged_in'])) {
     $email = $_SESSION['email'];
 
-    require("../../DBConnection/mysql.php");
+    require("../../../DBConnection/mysql.php");
     $stmt = $mysql->prepare("SELECT * FROM users WHERE EMAIL = :email"); //EMail ueberpruefen
     $stmt->bindParam(":email",  $email);
     $stmt->execute();

@@ -1,14 +1,17 @@
 <header>
-  <a href="../../" class="site-logo" aria-label="homepage">The Game Stop </a>
+  <a href="../Home/" class="site-logo" aria-label="homepage">
+    <img src="../../src/logo3.png" alt="logo" id="logo">
+  </a>
   <nav class="main-nav">
     <ul class="nav__list">
+    <li class="nav__list-item">
+        <a href="../Home" class="nav__link">Home</a>
+      </li>
       <li class="nav__list-item"><a href="#" class="nav__link">Shop</a></li>
       <li class="nav__list-item">
         <a href="../Profile/" class="nav__link">Profile</a>
       </li>
-      <li class="nav__list-item">
-        <a href="#" class="nav__link">Orders</a>
-      </li>
+      
     </ul>
   </nav>
   <nav class="account">
@@ -20,7 +23,7 @@
       <div class="cart-badge" id="cart-badge" style="display: none;">0</div>
       </div>
       <li class="nav__list-item__right">
-        <a class="nav__link__right nav__link--btn nav__link__right--btn" href="../php/logOut.php">Log Out</a>
+        <a class="nav__link__right nav__link--btn nav__link__right--btn" href="../../Verification/php/Login/logOut.php">Log Out</a>
       </li>
     </ul>
   </nav>
