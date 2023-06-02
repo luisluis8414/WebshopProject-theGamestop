@@ -5,7 +5,8 @@ $userId = $_SESSION['userId'];
 
 require('../../../DBConnection/mysql.php');
 
-$stmt = $mysql->prepare("SELECT FIRST_NAME, SURNAME, EMAIL, is_online FROM users");
+$stmt = $mysql->prepare("SELECT FIRST_NAME, SURNAME, EMAIL, is_online FROM users WHERE id <> :userId");
+$stmt->bindParam(":userId", $userId);
 $stmt->execute();
 
 $response = array();

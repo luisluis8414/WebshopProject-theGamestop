@@ -16,6 +16,10 @@ session_start();
   <script type="text/javascript" src="../../Extern/js/jquery.min.js"></script>
   <script src="js/getUserData.js"></script>
   <script src="js/getUserDataOnline.js"></script>
+  <script src="js/editUser.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
   <!-- <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script> -->
   <!-- <script type="importmap">
@@ -71,7 +75,7 @@ session_start();
               <h5 class="my-3" id="ShowName">John Smith</h5>
               <p class="text-muted mb-1" id="ShowEmail">example@email.com</p>
               <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-outline-primary ms-1 mt-2">Edit Profile</button>
+                <button type="button" class="btn btn-outline-primary ms-1 mt-2" id="EditProfile">Edit Profile</button>
               </div>
             </div>
           </div>
@@ -137,12 +141,22 @@ session_start();
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">Address</p>
+                  <p class="mb-0">City</p>
                 </div>
                 <div class="col-sm-9">
-                  <p class="text-muted mb-0" id="Address">-</p>
+                  <p class="text-muted mb-0" id="City">-</p>
                 </div>
               </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Street</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0" id="Street">-</p>
+                </div>
+              </div>
+              
             </div>
           </div 
           <div class="row">

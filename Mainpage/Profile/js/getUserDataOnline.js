@@ -6,10 +6,9 @@ $(document).ready(function() {
             type: "GET",
             success: function(response) {
                 var data = JSON.parse(response);
-                console.log(data);
 
                 var userContainer = $(".user-list");
-                userContainer.empty(); // Clear existing user list
+                userContainer.empty();
 
                 for (let i = 0; i < data.length; i++) {
                     var user = data[i];
@@ -38,10 +37,8 @@ $(document).ready(function() {
             }
         });
     }
-
-    // Call fetchUserData initially on page load
     fetchUserData();
 
-    // Call fetchUserData every 5 seconds
     setInterval(fetchUserData, 1000);
 });
+        
