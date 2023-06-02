@@ -1,27 +1,36 @@
 <?php
 
-$email = $_POST['email'];
+try{
+    $email = $_POST['email'];
 $password = $_POST['password'];
 
 require '../../../vendor/phpgangsta/googleauthenticator/PHPGangsta/GoogleAuthenticator.php';
 require("../../../DBConnection/mysql.php");
 
-        $ga = new PHPGangsta_GoogleAuthenticator();
-        $secretKey=$ga->createSecret();
+header('Content-Type: application/json');
 
-        $stmt = $mysql->prepare("UPDATE users SET PASSWORD = :password, erster_login = 0, secret_key = :secretKey WHERE EMAIL = :email");
-        $stmt->bindParam(":password", $password);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":secret_key", $secretKey);
-        $stmt->execute();
-        $count = $stmt->rowCount();
+$ga = new PHPGangsta_GoogleAuthenticator();
+$secretKey = $ga->createSecret();
 
-        
-        if ($count > 0) {
-            $response = array('success' => true);
-            echo json_encode($response);
+$stmt = $mysql->prepare("UPDATE users SET PASSWORD = :password, erster_login = 0, secret_key = :secretKey WHERE EMAIL = :email");
+$stmt->bindParam(":password", $password);
+$stmt->bindParam(":email", $email);
+$stmt->bindParam(":secretKey", $secretKey); 
+$stmt->execute();
+$count = $stmt->rowCount();
 
-        } else {
-            $response = array('success' => false, 'message' => 'Failed to update password.');
-            echo json_encode($response);
-        }
+$response = array();
+if ($count > 0) {
+    $response = array('success' => 'success');
+} else {
+    $response = array('success' => 'fail', 'message' => 'Failed to update password.');
+}
+echo json_encode($response);
+exit();
+
+}catch(Exception $e)
+{
+$response = array('exception' => $e->getMessage());
+echo json_encode($response);
+exit();
+}

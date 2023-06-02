@@ -19,11 +19,12 @@
         $_SESSION['email'] =  $email;
         $_SESSION['userId'] = $UserId;
 
-        $stmt = $mysql->prepare("UPDATE users SET last_login = :lastLogin, screen_resolution = :res, operating_system = :os, is WHERE email = :email");
-         $stmt->bindParam(":email", $email);  
-         $stmt->bindParam(":lastLogin", $lastLogin);          
-        $stmt->bindParam(":os", $os);
-        $stmt->bindParam(":res", $res);
+        $stmt = $mysql->prepare("UPDATE users SET last_login = :lastLogin, screen_resolution = :res, operating_system = :os, is_online = 1 WHERE email = :email");
+        $stmt->bindParam(":lastLogin", $lastLogin);
+        $stmt->bindParam(":res", $resolution);
+        $stmt->bindParam(":os", $operatingSystem);
+        $stmt->bindParam(":email", $email);
+
         $stmt->execute(); 
 
         $response = array(
