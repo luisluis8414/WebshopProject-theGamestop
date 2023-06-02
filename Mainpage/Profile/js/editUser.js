@@ -17,6 +17,7 @@ $(document).ready(function() {
           </div>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="swalFirstName" value="${firstName}">
+            <small id="firstNameError" class="error-text"></small>
           </div>
         </div>
         <hr>
@@ -26,6 +27,7 @@ $(document).ready(function() {
           </div>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="swalLastName" value="${lastName}">
+            <small id="lastNameError" class="error-text"></small>
           </div>
         </div>
         <hr>
@@ -35,6 +37,7 @@ $(document).ready(function() {
           </div>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="swalPhone" value="${phone}">
+            <small id="phoneError" class="error-text"></small>
           </div>
         </div>
         <hr>
@@ -72,6 +75,28 @@ $(document).ready(function() {
           var editedPhone = $("#swalPhone").val();
           var editedCity = $("#swalCity").val();
           var editedStreet = $("#swalStreet").val();
+
+          $("#firstNameError").text("");
+          $("#lastNameError").text("");
+          $("#phoneError").text("");
+  
+          // Validate first name input
+          if (editedFirstName && !(/^[a-zA-Z]+$/.test(editedFirstName))) {
+            $("#firstNameError").text("Please enter a valid first name (only characters)");
+            return false; // Prevent form submission
+          }
+  
+          // Validate last name input
+          if (editedLastName && !(/^[a-zA-Z]+$/.test(editedLastName))) {
+            $("#lastNameError").text("Please enter a valid last name (only characters)");
+            return false; // Prevent form submission
+          }
+  
+          // Validate phone number input
+          if (editedPhone && !(/^\d+$/.test(editedPhone))) {
+            $("#phoneError").text("Please enter a valid phone number");
+            return false; // Prevent form submission
+          }
   
           var data = {
             editedFirstName: editedFirstName,

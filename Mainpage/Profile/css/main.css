@@ -40,4 +40,10 @@
     margin-right: 5px;
   }
   
-  
+  #phoneError, #lastNameError, #firstNameError{
+    color: red;
+  }
+
+  .swal2-popup, .swal2-modal, .swal2-show {
+    overflow: hidden;
+  }

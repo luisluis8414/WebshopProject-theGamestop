@@ -17,6 +17,7 @@ session_start();
   <script src="js/getUserData.js"></script>
   <script src="js/getUserDataOnline.js"></script>
   <script src="js/editUser.js"></script>
+  <script src="js/getOrders.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -80,25 +81,16 @@ session_start();
             </div>
           </div>
           <div class="card mb-4 mb-lg-0">
-          <ul class="list-group list-group-flush rounded-3">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <p class=""><span class="text-primary font-italic me-1">Your Orders</span></p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <p class="mb-0">Order1</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <p class="mb-0">Order2</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <p class="mb-0">Order3</p>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                <p class="mb-0">Order4</p>
+  <ul class="list-group list-group-flush rounded-3">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <p class=""><span class="text-primary font-italic me-1">Your Orders</span></p>
+    </li>
+    <div id="orders" style="height: 20em; overflow-y: auto;">
 
-              </li>
-            </ul>
-          </div>
+    </div>
+  </ul>
+</div>
+
         </div>
         <div class="col-lg-8">
           <div class="card mb-4">
@@ -166,7 +158,7 @@ session_start();
               <div class="card mb-4 mb-md-0">
                 <div class="card-body">
                   <p class="mb-4"><span class="text-primary font-italic me-1">Other Users Online </span></p>
-                  <div class="user-list">
+                  <div class="user-list" style="height: 15em; overflow-y: auto;">
                     
                     
                   </div>
