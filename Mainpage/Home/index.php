@@ -114,7 +114,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
 
     <div class="home-more-stuff">
       <div class="more-stuff-grid">
-        <img src="../../src//pictures/maps/map.png" alt="" class="slide-in from-left" />
+        <img id="mapImage" src="../../src//pictures/maps/map.png" alt="" class="slide-in from-left" />
         <p class="slide-in from-right">
           Step into a world of limitless possibilities as we unveil our extraordinary collection of in-game items that will revolutionize your gaming experience. Prepare to embark on epic quests and conquer virtual realms with our arsenal of legendary weapons, awe-inspiring armor, and rare artifacts that will amplify your skills to unimaginable heights. Unleash your inner hero and immerse yourself in captivating narratives with our exclusive character enhancements, empowering you to rewrite the very fabric of virtual existence. From the breathtaking beauty of enchanting mounts to the exhilarating rush of adrenaline-pumping vehicles, we offer a treasure trove of in-game items that will transport you to the forefront of gaming greatness. Whether you seek to dominate the competitive arena or simply indulge in the pure joy of customization, our extensive selection of in-game items will leave you spellbound. Join us at The Game Stop, where dreams become reality, and the power to redefine gaming lies at your fingertips. Let the adventure begin!
         </p>
@@ -123,44 +123,20 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <p class="slide-in from-left">
           Indulge in the realm of gaming fashion at The Game Stop, where accessories become statements of style and power. Elevate your gaming persona with our meticulously crafted accessories, from sleek gaming headsets that immerse you in crystal-clear audio, to cutting-edge controllers that enhance precision and control. Embrace the spirit of customization with vibrant and eye-catching skins, stickers, and decals that transform your devices into personalized works of art. Enhance your comfort and endurance with ergonomic gaming chairs and advanced gaming mouse pads, designed to optimize your performance during intense gaming sessions. Unleash your true potential with our wide range of gaming accessories, as we redefine the boundaries of gaming excellence. Elevate your gaming experience to new heights at The Game Stop, where accessories are more than just add-ons – they are the keys to unlocking your gaming prowess.
         </p>
-        <img src="https://unsplash.it/401" alt="" class="slide-in from-right" />
+      <div class="imgContainer">
+      <img id="battle" src="../../src//pictures/battle.png" alt="" class="slide-in from-right" />
+
+      </div>
       </div>
       <div class="more-stuff-grid">
-        <img src="//unsplash.it/400" alt="" class="slide-in from-left" />
+        <div class="imgContainer">
+        <img id="battle" src="../../src//pictures/army.png" alt="" class="slide-in from-right" />
+        </div>
         <p class="slide-in from-right">
           Immerse yourself in the world of gaming culture with The Game Stop's exclusive merchandise collection. Embrace your passion for gaming with pride as you adorn yourself in our premium apparel, featuring iconic game logos and captivating designs. From stylish t-shirts that showcase your favorite characters to cozy hoodies that keep you warm during intense gaming sessions, our merchandise is a testament to your dedication and love for the gaming universe. Complete your gaming shrine with our meticulously crafted collectibles, including figurines, posters, and art prints that bring virtual worlds to life in your own space. Let your gaming enthusiasm shine with The Game Stop's extraordinary merchandise, where gaming becomes a lifestyle and your dreams become tangible reality.
         </p>
       </div>
-      <div class="more-stuff-grid">
-        <p class="slide-in from-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
-          quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
-          omnis sapiente neque cumque consequuntur reiciendis deserunt.
-          Dolorem vero exercitationem consequuntur, eligendi cupiditate
-          debitis facilis quibusdam magni. Eveniet.
-        </p>
-        <img src="https://unsplash.it/401" alt="" class="slide-in from-right" />
-      </div>
-      <div class="more-stuff-grid">
-        <img src="//unsplash.it/400" alt="" class="slide-in from-left" />
-        <p class="slide-in from-right">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
-          quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
-          omnis sapiente neque cumque consequuntur reiciendis deserunt.
-          Dolorem vero exercitationem consequuntur, eligendi cupiditate
-          debitis facilis quibusdam magni. Eveniet.
-        </p>
-      </div>
-      <div class="more-stuff-grid">
-        <p class="slide-in from-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit,
-          quae beatae vero sit magni quaerat id ratione. Dolor optio unde amet
-          omnis sapiente neque cumque consequuntur reiciendis deserunt.
-          Dolorem vero exercitationem consequuntur, eligendi cupiditate
-          debitis facilis quibusdam magni. Eveniet.
-        </p>
-        <img src="https://unsplash.it/401" alt="" class="slide-in from-right" />
-      </div>
+      
     </div>
   </main>
   <script src="js/observers.js"></script>

@@ -14,6 +14,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/shoppingCart.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
 
@@ -25,12 +26,24 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <script src="js/fillCart.js"></script>
   <script src="js/sendOrder.js"></script>
   <script src="js/downloadtype.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/cart/showCartPopUp.js"></script>
+  <script src="js/cart/shoppinCartLogic.js"></script>
+  <script src="js/cart/sendCartToBackend.js"></script>
+  <script src="js/cart/getCartItems.js"></script>
+  <script src="js/cart/deleteCartItem.js"></script>
+  <script src="js/cart/getCartItemsOnReload.js"></script>
+  <script src="js/cart/increaseQuantity.js"></script>
+  <script src="js/cart/decreaseQuantity.js"></script>
+  <script src="js/cart/updateCartNumber.js"></script>
+  <script src="js/cart/getTotalSum.js"></script>
+
 
   <title>Check Out</title>
 </head>
 
 <body>
-
+<?php include '../../../navbars/navbarCheckout.php'; ?>
   <div class="content">
     <div class="container">
       <div id="heading" class="py-5 text-center">

@@ -54,11 +54,11 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <form method="post" id="myForm">
             <div class="form-group">
                 <label for="E-Mail">E-mail</label>
-                <input id="email" autocomplete="username" class="form-control" type="text" name="email" placeholder="E-mail">
+                <input id="email" autocomplete="username" class="form-control" type="text" name="email" placeholder="e-mail">
                 <small id="emailError" class="error"></small>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" autocomplete name="pw" class="form-control" id="pw" placeholder="Password">
+                    <input type="password" autocomplete name="pw" class="form-control" id="pw" placeholder="password">
                     <small id="error" style="color: red;"></small>
                     <small id="success" style="color: green;"></small>
                 </div>

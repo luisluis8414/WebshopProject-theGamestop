@@ -221,6 +221,10 @@
     margin-right: 15em;
     padding: 4em;
   }
+  #formWrapper input{
+    font-size: 1em;
+    padding: 0.2em;
+  }
   #formWrapper button {
     font-size: 1.8em; 
     padding: 0.4em 0.8em; 
@@ -233,7 +237,6 @@
     margin-top: 0.6em;
     margin-bottom: 0.6em;
   }
-  #formWrapper input,
   #formWrapper select,
   #formWrapper label,
   #formWrapper a {

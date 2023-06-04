@@ -145,14 +145,16 @@ header {
   display: grid;
   grid-gap: 2em;
   align-items: center;
-  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em, 1fr);
+  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(20em, 40em)) minmax(1em, 1fr);
 }
 
 .from-left {
+  font-size: 1.2em;
   grid-column: 2 / 3;
 }
 
 .from-right {
+  font-size: 1.2em;
   grid-column: 3 / 4;
 }
 
@@ -299,3 +301,26 @@ header {
   color: var(--text-inverse);
   border-color: var(--text);
 } */
+
+.more-stuff-grid {
+  background: #f4f4f4;
+  padding: 4em 0;
+  display: grid;
+  grid-gap: 2em;
+  align-items: center;
+  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(20em, 40em)) minmax(1em, 1fr);
+}
+.imgContainer{
+  width: 40em;
+  height: 20em;
+  overflow: hidden;
+}
+
+.imgContainer img{
+  width: 30em;
+}
+#mapImage{
+  width: 30em;
+  overflow: hidden;
+}
+

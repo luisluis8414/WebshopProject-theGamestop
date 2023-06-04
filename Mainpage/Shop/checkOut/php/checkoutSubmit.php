@@ -22,7 +22,7 @@ try {
     $sql = "INSERT INTO Bestellungen (vorname, nachname, email, adresse, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv)
         VALUES ('$firstName', '$lastName', '$email', '$address', '$country', '$zip', '$download', '$paymentMethod', '$ccName', '$ccNumber', '$ccExpiration', '$ccCvv')";
 
-    require("../../../../DBConnection/mysql.php");
+    require("../../../../../DBConnection/mysql.php");
 
     $stmt = $mysql->prepare($sql);
     $stmt->execute();
@@ -62,7 +62,7 @@ foreach ($itemIds as $itemId) {
 
 
 
-    require("../../../../Mailer/php/sendCheckoutEmail.php");
+    require("../../../../../Mailer/php/sendCheckoutEmail.php");
 
     $name = $firstName . ' ' . $lastName;
     sendCheckoutEmail($email, $name, $orderId, $address, $country, $zip, $download, $paymentMethod, $totalSum, $itemNames, $quantities, $prices, $fees, $promo);

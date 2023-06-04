@@ -180,4 +180,9 @@
     position: absolute;
     color: red;
     bottom: 0;
+    bottom: -1.15em;
+  }
+
+  h5{
+    font-weight: bold;
   }

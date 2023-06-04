@@ -72,7 +72,7 @@ function PasswordPopUp(state) {
       }).then(() => {
           setTimeout(function() {
             TwoFApopup(email);
-          }, 800); 
+          }, 100); 
             });
         
     
