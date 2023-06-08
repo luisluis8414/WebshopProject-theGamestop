@@ -5,7 +5,7 @@ $(document).ready(function() {
     dataType: "json", 
     success: function (response) {
         let sum=(response[0].totalSum ).toFixed(2);
-        $('#cartFooter').html("<strong>" + sum + "$</strong>");
+        $('#cartFooter').html(sum + "$");
     },
     error: function (xhr, status, error) {
         console.log("Delete request failed " + error);

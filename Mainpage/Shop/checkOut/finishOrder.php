@@ -41,6 +41,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <script src="js/cart/decreaseQuantity.js"></script>
   <script src="js/cart/updateCartNumber.js"></script>
   <script src="js/cart/getTotalSum.js"></script>
+  <script src="js/deleteCart.js"></script>
 
 
   <title>Check Out</title>

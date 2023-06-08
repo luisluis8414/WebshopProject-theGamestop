@@ -14,11 +14,9 @@ function sendCheckout(event){
     var ccNumber = $('#cc-number').val();
     var ccExpiration = $('#cc-expiration').val();
     var ccCvv = $('#cc-cvv').val();
-    var totalSum =  $('#cartFooter').text();
+    var totalSum =  $('#cartFooter').text().replace('$', '');
     var fees = $('#fees strong').text();
     var promo =$('#promoAmount').text();
-    console.log(promo)
-
 
     var formData = {
       firstName: firstName,
@@ -46,8 +44,8 @@ function sendCheckout(event){
         console.log(response)
         var data = JSON.parse(response);
         if(data.success=='success'){
-          window.location.href = "php/thankYou.php";
-
+          deleteCart(data.orderId);
+          // window.location.href = "php/thankYou.php";
         }
       },
       error: function(xhr, status, error) {

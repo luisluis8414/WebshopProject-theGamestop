@@ -19,8 +19,8 @@ try {
     $fees =$_POST['fees'];
     $promo =$_POST['promo'];
 
-    $sql = "INSERT INTO Bestellungen (vorname, nachname, email, adresse, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv)
-        VALUES ('$firstName', '$lastName', '$email', '$address', '$country', '$zip', '$download', '$paymentMethod', '$ccName', '$ccNumber', '$ccExpiration', '$ccCvv')";
+    $sql = "INSERT INTO Bestellungen (vorname, nachname, email, adresse, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv, totalSum)
+        VALUES ('$firstName', '$lastName', '$email', '$address', '$country', '$zip', '$download', '$paymentMethod', '$ccName', '$ccNumber', '$ccExpiration', '$ccCvv', '$totalSum')";
 
     require("../../../../DBConnection/mysql.php");
 
@@ -69,6 +69,7 @@ foreach ($itemIds as $itemId) {
 
     $response = array(
         "success" => 'success',
+        "orderId" => $orderId
     );
     echo json_encode($response);
     exit();
