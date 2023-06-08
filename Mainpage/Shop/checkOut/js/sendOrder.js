@@ -46,7 +46,7 @@ function sendCheckout(event){
         console.log(response)
         var data = JSON.parse(response);
         if(data.success=='success'){
-          window.location.href = "php/thankYou";
+          window.location.href = "php/thankYou.php";
 
         }
       },

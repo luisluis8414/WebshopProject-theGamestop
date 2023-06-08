@@ -15,6 +15,10 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/shoppingCart.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../src/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../src/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../src/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../src/favicon/site.webmanifest">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
 
@@ -227,7 +231,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
             <hr class="mb-4">
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="save-info" required>
-              <label class="custom-control-label" for="save-info">I have read an accepted the <a href="">terms</a></label>
+              <label class="custom-control-label" for="save-info">I have read an accepted the <a href="#">terms</a></label>
               <div class="invalid-feedback" style="width: 100%;">
                 Please accept our terms
               </div>
