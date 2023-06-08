@@ -9,15 +9,16 @@ $stmt = $mysql->prepare("SELECT * FROM cart WHERE user_id = :userId");
 $stmt->bindParam(":userId", $userId);
 $stmt->execute();
 
-$response = array(); // Initialize an empty array to store the cart items
+$response = array(); 
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $itemId = $row['item_id'];
     $quantity = $row['quantity'];
 
-    $stmt2 = $mysql->prepare("INSERT INTO bestellungsItems (orderId, itemId) VALUES (:orderId, :itemId)");
+    $stmt2 = $mysql->prepare("INSERT INTO bestellungsItems (orderId, itemId, quantity) VALUES (:orderId, :itemId, :quantity)");
     $stmt2->bindParam(":orderId", $orderId);
     $stmt2->bindParam(":itemId", $itemId);
+    $stmt2->bindParam(":quantity", $quantity);
     $stmt2->execute();
 }
 

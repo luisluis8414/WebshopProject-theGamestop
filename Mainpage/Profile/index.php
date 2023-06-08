@@ -39,6 +39,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <script src="js/cart/updateCartNumber.js"></script>
   <script src="js/cart/getTotalSum.js"></script>
   <script src="js/viewOrder.js"></script>
+  <script src="js/orderAgain.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -110,8 +111,6 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
     </div>
   </ul>
 </div>
-
-
         </div>
         <div class="col-lg-8">
           <div class="card mb-4">

@@ -16,6 +16,7 @@
     }
 
     h1 {
+      margin-top: 4em;
       color: #333;
     }
 
@@ -56,13 +57,13 @@
 <body>
   <h1>Thank You for Ordering</h1>
   <p class="emoji">&#127881;</p>
-  <p><b>We have sent you an email with your oder details</b></p>
+  <p><b>We have sent you an email with your order details</b></p>
   <p>Thank you for your order. We appreciate your business!</p>
   <p>If you have any questions or concerns regarding your order, please don't hesitate to contact us.</p>
   <p>We will process your order as soon as possible.</p>
   <p>Best regards,</p>
-  <p>The Gamestop Store Team</p>
+  <p>Your   <b>Gamestop</b> Team</p>
   <a class="btn" href="../../../Shop/">Back to Store</a>
-  <button class="btn-konfetti">more confetti</button>
+  <button class="btn-konfetti">More Confetti  &#127881;</button>
 </body>
 </html>

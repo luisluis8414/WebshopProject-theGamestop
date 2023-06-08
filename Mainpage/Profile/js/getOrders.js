@@ -6,7 +6,7 @@ $(document).ready(function() {
       success: function(response) {
 
         for (let i = 0; i < response.length; i++) {
-            console.log(response[i])
+
           let id = response[i].id;
           let totalSum = response[i].totalSum;
           

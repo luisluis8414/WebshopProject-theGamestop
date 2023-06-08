@@ -344,3 +344,32 @@
   .swal2-html-container::-webkit-scrollbar {
     display: none;
   }
+  .image {
+    height: 4em;
+    object-fit: contain;
+  }
+  
+  .orderCard {
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .itemName {
+    text-align: center; 
+    margin-left: 6em;
+  }
+  
+ 
+ .right{
+  display: flex;
+  justify-content: space-between;
+  width: 8em;
+ }
+ .price {
+  text-align: right; 
+}
+.quantity{
+  text-align: left;
+}

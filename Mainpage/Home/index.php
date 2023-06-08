@@ -76,12 +76,17 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         </div>
         <div class="Greeting">
           <div id="error">
-          <h1>Welcome back!<br> <br>
-            Hello <span id="vorname">User</span> <br>
+            
+          <h1>
+          Hello <span id="vorname">User </span>👋 <br>
+            Welcome back!<br> 
+           <br> 
             You were last online <span id="lastOnline">today</span>
           </h1>
-          <a class="nav__link nav__link--btn" href="Shop/">Visit Shop</a>
-          <a class="nav__link nav__link--btn nav__link--btn--highlight" href="Profile/">Your Profile</a>
+          <div id="buttonsX">
+          <a class="nav__link nav__link--btn mt-4" href="../Shop/">Visit Shop</a>
+          <a class="nav__link nav__link--btn nav__link--btn--highlight" href="../Profile/">Your Profile</a>
+          </div>
           </div>
         </div>
       </div>

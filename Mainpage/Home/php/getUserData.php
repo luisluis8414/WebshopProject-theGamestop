@@ -24,9 +24,9 @@ if (isset($_SESSION['logged_in'])) {
 
         // Format the last online time
         if ($timeDiff < 86400) {
-            $formattedTime = "Today";
+            $formattedTime = "today";
         } elseif ($timeDiff < 172800) {
-            $formattedTime = "Yesterday";
+            $formattedTime = "yesterday";
         } else {
             $daysAgo = floor($timeDiff / 86400);
             $formattedTime = $daysAgo . " days ago";

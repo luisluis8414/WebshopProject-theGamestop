@@ -45,7 +45,7 @@ function sendCheckout(event){
         var data = JSON.parse(response);
         if(data.success=='success'){
           deleteCart(data.orderId);
-          // window.location.href = "php/thankYou.php";
+          window.location.href = "php/thankYou.php";
         }
       },
       error: function(xhr, status, error) {

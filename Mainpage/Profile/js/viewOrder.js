@@ -1,30 +1,72 @@
 function onClickOrder(id) {
+    let totalSum = 0;
+    var orderCardsHtml = '';
+  
     Swal.fire({
-      title: 'Order',
-      text: 'Do you want to place the order again?',
-      icon: 'question',
+      title: 'Order: ' + id,
+      html: '<div class="parentContainer">' +
+        orderCardsHtml +
+        '</div>' +
+        '<div class="totalSum">Total Sum: </div>',
+      icon: 'info',
       showCancelButton: true,
       confirmButtonText: 'Order Again',
-      cancelButtonText: 'Close'
+      cancelButtonText: 'Close',
+      width: '60rem'
     }).then((result) => {
       if (result.isConfirmed) {
-        $.ajax({
-            url: 'php/getOrderView.php',
+        orderAgain(id);
+      }
+    });
+  
+    $.ajax({
+      url: 'php/getOrderView.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        id: id
+      },
+      success: function(response) {
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+          var itemId = response[i].itemId;
+          var quantity = response[i].quantity;
+          $.ajax({
+            url: 'php/getItems.php',
             type: 'POST',
             dataType: 'json',
-            data: { id: id },
-            success: function(response) {
-              console.log('Response from PHP file:', response);
-              // Handle the response data here
+            data: {
+              itemId: itemId
+            },
+            success: function(itemResponse) {
+              console.log(itemResponse);
+              var itemName = itemResponse.itemName;
+              var itemPrice = itemResponse.price;
+              var itemImgUrl = itemResponse.imgUrl;
+  
+              var orderCardHtml = '<div class="orderCard cardCart">' +
+                '<img class="image" src="' + itemImgUrl + '">' +
+                '<p class="itemName">' + itemName + '</p>' +
+                '<div class="right"><p class="quantity">' + quantity + 'x' + '</p>' +
+                '<p class="price"> <b>' + itemPrice + '$ </b></p></div>' +
+                '</div>';
+  
+              orderCardsHtml += orderCardHtml;
+  
+              totalSum += parseFloat(quantity) * parseFloat(itemPrice);
+  
+              $('.parentContainer').html(orderCardsHtml);
+              $('.totalSum').html("Total Sum: <b>" + totalSum+"$</b>"); // Update the total sum here
+  
             },
             error: function(jqXHR, textStatus, errorThrown) {
               console.error('Error:', textStatus, errorThrown);
-              // Handle any errors here
             }
           });
-          console.log("Order again! Order ID: " + id);
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        console.log("Close clicked! Order ID: " + id);
+        }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error('Error:', textStatus, errorThrown);
       }
     });
   }
