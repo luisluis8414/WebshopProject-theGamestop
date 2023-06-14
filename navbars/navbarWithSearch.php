@@ -23,7 +23,7 @@
       <div class="cart-badge" id="cart-badge" style="display: none;">0</div>
       </div>
       <li class="nav__list-item__right">
-        <a class="nav__link__right nav__link--btn nav__link__right--btn" href="../../Verification/php/Login/logOut.php">Log Out</a>
+        <a class="nav__link__right nav__link--btn nav__link__right--btn" href="../../Verification/php/Login/logOutWithOutRedirect.php">Log Out</a>
       </li>
     </ul>
   </nav>
