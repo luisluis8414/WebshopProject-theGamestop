@@ -98,37 +98,42 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
                     color: #999999;
                     margin-top: 20px;
                 }
+                
                 header {
                     background: linear-gradient(to right, #FD746C, #FFB88C);
                     color: white;
                     padding: 20px;
                     text-align: center;
-                  }
-                  h1 {
+                }
+                
+                h1 {
                     margin: 0;
-                  }
+                }
             </style>
         </head>
         <body>
             <div class="container">
-            <header>
-            <h1>The Game Stop</h1>
-            </header>
-            <h2>Hey '.$vorname.'! Your Registration was successful!</h2>
-            <p>This is your one time password:</p><br>
-            <b>' . $pw . '</b><br>
-            <p>Please finish your Registration</p>
-            <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
-              <button style="background-color: #008CBA; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; border-radius: 4px;">
-                Finish Registration
-              </button>
-            </a>
-            <div class="footer">
-                <p>This email was sent to '.$recipientMail.'. If you have any questions, please contact our customer support.</p>
-                <p>The Game Stop, Alteburgstraße 150, Reutlingen, GERMANY</p>
+                <header>
+                    <h1>The Game Stop</h1>
+                </header>
+                <h2>Hey '.$vorname.'! Your Registration was successful!</h2>
+                <p>This is your one-time password:</p><br>
+                <b>'.$pw.'</b><br>
+                <p>Please finish your Registration</p>
+                <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
+                    <button style="background-color: #008CBA; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; border-radius: 4px;">
+                        Finish Registration
+                    </button>
+                </a>
+                <p>As a special welcome offer, use the promo code <b>Welcome12</b> for a $25 discount on your first order!</p>
+                <div class="footer">
+                    <p>This email was sent to '.$recipientMail.'. If you have any questions, please contact our customer support.</p>
+                    <p>The Game Stop, Alteburgstraße 150, Reutlingen, GERMANY</p>
+                </div>
             </div>
-          </body>
+        </body>
         </html>
+        
 ';
         $mail->AltBody = 'Your Registration was succsessful! <br> 
                     This is your one time password: <br>' . $pw . '<br>

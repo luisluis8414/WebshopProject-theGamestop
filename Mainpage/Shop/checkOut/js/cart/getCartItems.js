@@ -16,7 +16,7 @@ function getCartItems() {
           },
           success: function (itemResponse) {  
             // console.log('Items Data:', itemResponse);
-            const imgPath=''+itemResponse.imgUrl;
+            const imgPath='../'+itemResponse.imgUrl;
 
             const itemContainer = $('<div class="cardCart"></div>');
             const rightSide = $('<div class="rightCard"></div>');
@@ -24,7 +24,7 @@ function getCartItems() {
             const mid = $('<div class="midCard"></div>');
 
             const hiddenId = $('<input>').attr('type', 'hidden').addClass('hiddenId').val(itemResponse.itemId);
-            const img = $('<img>').attr('src', '../'+imgPath).attr('alt', 'Product Image');
+            const img = $('<img>').attr('src', imgPath).attr('alt', 'Product Image');
             const errorMsg = $('<small>').addClass('errorMsg').attr('id', 'errorMsg'+itemResponse.itemId);
 
 

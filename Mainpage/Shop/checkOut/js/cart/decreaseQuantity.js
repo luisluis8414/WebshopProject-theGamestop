@@ -16,6 +16,8 @@ function decreaseQuantity() {
                 }).fadeOut(400, function () {
                     $(this).remove();
                 });
+                $('#cartFooterPrice').html("Total Sum: <strong>" + 0 + "$</strong>");
+
             }
             updateCartNumber(itemId, 1);
             getTotalSum();

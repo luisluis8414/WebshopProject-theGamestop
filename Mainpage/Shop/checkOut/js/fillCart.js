@@ -1,37 +1,43 @@
 $(document).ready(function() {
   $.ajax({
+    
     url: "../php/getTotalSum.php",
     type: "GET",
-    dataType: "json", 
-    success: function (response) {
-        let sum=(response[0].totalSum ).toFixed(2);
-        $('#cartFooter').html(sum + "$");
-    },
-    error: function (xhr, status, error) {
-        console.log("Delete request failed " + error);
-    }
-});
+    dataType: "json",
+    success: function(response) {
+      let sum = (response.totalSum).toFixed(2);
+      $('#subtotal').html(sum + "$");
 
-  $.ajax({
-    url: '../php/getCartItems.php',
-    type: 'POST',
-    dataType: 'json',
-    success: function (response) {
-      // console.log('Cart items:', response);
-      for (let i = 0; i < response.length; i++) {
-        $.ajax({
-          url: '../php/getItems.php',
-          type: 'POST',
-          dataType: 'json',
-          data: {
-            itemId: response[i].itemId
-          },
-          success: function (itemResponse) {  
-            // console.log('Items Data:', itemResponse);
-            // console.log(itemResponse.itemName)
-            // const imgPath=''+itemResponse.imgUrl;
+      $.ajax({
+        url: 'php/getCartItems.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+          console.log('Cart items:', response);
 
-            
+          for (let i = 0; i < response.length; i++) {
+            $.ajax({
+              url: '../php/getItems.php',
+              type: 'POST',
+              dataType: 'json',
+              data: {
+                itemId: response[i].itemId
+              },
+              success: function(itemResponse) {
+                $('#cartFooter').html(sum + "$");
+                if (response[i].quantity >= 10) {
+                  const discount = sum * 0.1;
+                  const totalSum = (sum - discount).toFixed(2);
+                  $('#cartFooter').html(totalSum + "$");
+                  $('#discount').html("10% Discount");
+                  $('#discountSum').html("-" + discount.toFixed(2) + "$");
+                } else if (response[i].quantity >= 5) {
+                  const discount = sum * 0.05;
+                  const totalSum = (sum - discount).toFixed(2);
+                  $('#cartFooter').html(totalSum + "$");
+                  $('#discount').html("5% Discount");
+                  $('#discountSum').html("-" + discount.toFixed(2) + "$");
+                } 
 
             const list = $('<li></li>').addClass('list-group-item d-flex justify-content-between lh-condensed');
 
@@ -55,22 +61,23 @@ $(document).ready(function() {
             $('#cartItems').append(list);
 
           },
-          error: function (xhr, status, error) {
+          error: function(xhr, status, error) {
             console.error('Error:', error);
             console.log('xhr:', xhr);
             console.log('status:', status);
           }
         });
       }
-
     },
-    error: function (xhr, status, error) {
+    error: function(xhr, status, error) {
       console.error('Error:', error);
       console.log('xhr:', xhr);
       console.log('status:', status);
     }
   });
-})
-
-
-
+},
+error: function(xhr, status, error) {
+  console.log("Delete request failed " + error);
+}
+});
+});

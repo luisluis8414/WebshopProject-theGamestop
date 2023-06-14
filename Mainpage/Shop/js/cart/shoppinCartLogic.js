@@ -59,5 +59,6 @@ function updateBadge(quantity, cartQuantity, itemId) {
   } else {
     $('.error'+itemId).html("Sorry but we don't have more items of this kind in stock");
   }
+  getTotalSum();
 }
 

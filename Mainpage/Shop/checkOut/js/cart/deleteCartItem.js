@@ -15,6 +15,9 @@ function deleteItem() {
             });
             let quantity = $('#quantity' + itemId).text().replace('x ', '');
             updateCartNumber(itemId, quantity);
+            $('#cartFooterPrice').html("Total Sum: <strong>" + 0 + "$</strong>");
+            $('#cartFooterFooter').html("");
+
          
         },
         error: function (xhr, status, error) {

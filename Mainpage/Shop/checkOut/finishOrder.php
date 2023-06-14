@@ -66,10 +66,18 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
             <div id="cartItems">
 
             </div>
+            
+          
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Subtotal (USD)</span>
+              <strong id="subtotal">$20</strong>
+            </li>
             <li id="fees"> 
               <span></span>
               <strong></strong>
             </li>
+            
+
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
@@ -77,7 +85,13 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               </div>
               <span class="text-success" id="promoAmount">-</span>
             </li>
-            
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span id="discount" style="color: green;">--</span>
+              <strong style="color: green;" id="discountSum">--</strong>
+            </li>
+
+              
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (USD)</span>
               <strong id="cartFooter">$20</strong>
@@ -91,7 +105,9 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
               <button type="submit" id="promoCode" class="btn btn-success">Redeem</button>
             </div>
           </div>
-
+          <div >
+            <small id="discountError" style="color: red;"></small>
+          </div>
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Billing address</h4>
