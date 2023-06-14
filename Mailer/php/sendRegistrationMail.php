@@ -6,17 +6,17 @@ use PHPMailer\PHPMailer\Exception;
 
 
 //Load Composer's autoloader
-require_once __DIR__.('/../../vendor/autoload.php');
+require_once __DIR__ . ('/../../vendor/autoload.php');
 // sendRegistrationEmail('luis.wehrberger2@gmail.com', 'luis',"23423423423423");
 
 function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
 {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../..');
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..');
     $dotenv->load();
 
     $senderMail = $_ENV['EMAIL_SENDER'];
     $smtpPW = $_ENV['SMTP_PW'];
-    $smtpHost = $_ENV['SMTP_HOST']; 
+    $smtpHost = $_ENV['SMTP_HOST'];
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
     try {
@@ -116,9 +116,9 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
                 <header>
                     <h1>The Game Stop</h1>
                 </header>
-                <h2>Hey '.$vorname.'! Your Registration was successful!</h2>
+                <h2>Hey ' . $vorname . '! Your Registration was successful!</h2>
                 <p>This is your one-time password:</p><br>
-                <b>'.$pw.'</b><br>
+                <b>' . $pw . '</b><br>
                 <p>Please finish your Registration</p>
                 <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
                     <button style="background-color: #008CBA; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; border-radius: 4px;">
@@ -126,8 +126,9 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
                     </button>
                 </a>
                 <p>As a special welcome offer, use the promo code <b>Welcome12</b> for a $25 discount on your first order!</p>
+                <small style="color: grey;">Please note that the minimum order total must be $20 or more to apply the discount.</small>
                 <div class="footer">
-                    <p>This email was sent to '.$recipientMail.'. If you have any questions, please contact our customer support.</p>
+                    <p>This email was sent to ' . $recipientMail . '. If you have any questions, please contact our customer support.</p>
                     <p>The Game Stop, Alteburgstraße 150, Reutlingen, GERMANY</p>
                 </div>
             </div>
