@@ -9,7 +9,7 @@ $(document).ready(function() {
 
                 var userContainer = $(".user-list");
                 userContainer.empty();
-
+                $('#UsersOnlineNumber').html(data.length -1);
                 for (let i = 0; i < data.length; i++) {
                     var user = data[i];
                     var userDiv = $("<div>").addClass("user");

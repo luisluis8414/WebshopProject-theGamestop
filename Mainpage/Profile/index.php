@@ -177,7 +177,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
           <div class="card-body p-0">
               <div class="card mb-4 mb-md-0">
                 <div class="card-body">
-                  <p class="mb-4"><span class="text-primary font-italic me-1">Other Users Online </span></p>
+                  <p class="mb-4"><span class="text-primary font-italic me-1">Other Users Online: <span id="UsersOnlineNumber"></span> </span></p>
                   <div class="user-list" style="height: 15em; overflow-y: auto;">
                     
                     

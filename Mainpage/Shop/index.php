@@ -55,17 +55,17 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <img src="<?php echo $item['imagePath']; ?>" alt="<?php echo $item['name']; ?>" class="ItemImages" onclick="showImage('<?php echo $item['imagePath']; ?>', '<?php echo $item['name']; ?>');">
         <h2><?php echo $item['name']; ?></h2>
         <p>Price: <b><?php echo $item['price']; ?>$</b></p>
-        <small class="error<?php echo $item['id'];?>"></small>
+        <small id="error" class="error<?php echo $item['id'];?>"></small>
         <input type="hidden" class="item-id" value="<?php echo $item['id']; ?>">
       </div>
       <div class="card-footer">
       <?php 
-if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
-  echo '<div id="filler"> </div>';
-}else{
-  include 'php/buttons.php'; 
-}
-?>
+        if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
+          echo '<div id="filler"> </div>';
+        }else{
+          include 'php/buttons.php'; 
+        }
+        ?>
         
       </div>
     </div>

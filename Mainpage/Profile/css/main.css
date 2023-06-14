@@ -241,10 +241,12 @@
     position: absolute;
     top: -0.5rem;
     width: 20rem;
+    transform: scale(1);
+  transition: transform 0.3s ease;
   }
   
   #logo:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: transform 0.3s ease;
   }
   
