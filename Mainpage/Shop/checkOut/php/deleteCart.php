@@ -5,13 +5,12 @@ require("../../../../DBConnection/mysql.php");
 $userId = $_SESSION['userId'];
 $orderId = $_POST['orderId'];
 
-$stmt = $mysql->prepare("SELECT * FROM cart WHERE user_id = :userId");
-$stmt->bindParam(":userId", $userId);
-$stmt->execute();
+try {
+  $stmt = $mysql->prepare("SELECT * FROM cart WHERE user_id = :userId");
+  $stmt->bindParam(":userId", $userId);
+  $stmt->execute();
 
-$response = array(); 
-
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $itemId = $row['item_id'];
     $quantity = $row['quantity'];
 
@@ -20,14 +19,20 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $stmt2->bindParam(":itemId", $itemId);
     $stmt2->bindParam(":quantity", $quantity);
     $stmt2->execute();
-}
+  }
 
-$stmt3 = $mysql->prepare("DELETE FROM cart WHERE user_id = :userId");
-$stmt3->bindParam(":userId", $userId);
-$stmt3->execute();
+  $stmt3 = $mysql->prepare("DELETE FROM cart WHERE user_id = :userId");
+  $stmt3->bindParam(":userId", $userId);
+  $stmt3->execute();
 
-$response = array(
+  $response = array(
     "success" => "success"
-); 
-
-echo json_encode($response);
+  ); 
+  echo json_encode($response);
+} catch (Exception $e) {
+  $response = array(
+    "error" => $e->getMessage()
+  ); 
+  echo json_encode($response);
+}
+?>

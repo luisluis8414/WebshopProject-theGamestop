@@ -8,7 +8,7 @@ $(document).ready(function() {
         for (let i = 0; i < response.length; i++) {
 
           let id = response[i].id;
-          let totalSum = response[i].totalSum;
+          var totalSum = response[i].totalSum.toFixed(2); 
           
           let listItem = `
             <li class="list-group-item d-flex justify-content-between align-items-center p-3">

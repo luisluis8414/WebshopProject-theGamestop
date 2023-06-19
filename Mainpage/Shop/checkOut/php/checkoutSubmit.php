@@ -2,10 +2,17 @@
 try {
     session_start();
     $userId = $_SESSION['userId'];
+    $email=$_SESSION['email'];
+
+    $email2 = $_POST['email'];
+
+    if (empty($email2) || !preg_match("/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/", $email2)) {
+        $email2 = $email;
+    }
+    
 
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
-    $email = $_POST['email'];
     $address = $_POST['address'];
     $country = $_POST['country'];
     $zip = $_POST['zip'];
@@ -65,7 +72,7 @@ foreach ($itemIds as $itemId) {
     require("../../../../Mailer/php/sendCheckoutEmail.php");
 
     $name = $firstName . ' ' . $lastName;
-    sendCheckoutEmail($email, $name, $orderId, $address, $country, $zip, $download, $paymentMethod, $totalSum, $itemNames, $quantities, $prices, $fees, $promo);
+    sendCheckoutEmail($email2, $name, $orderId, $address, $country, $zip, $download, $paymentMethod, $totalSum, $itemNames, $quantities, $prices, $fees, $promo);
 
     $response = array(
         "success" => 'success',

@@ -6,6 +6,7 @@ function deleteCart(orderId) {
       data: { orderId: orderId },
       success: function (response) {
         console.log(response)
+        console.log("deleted")
       },
       error: function (xhr, status, error) {
         console.error("Delete request failed " + error);

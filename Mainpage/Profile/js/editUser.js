@@ -72,7 +72,7 @@ $(document).ready(function() {
         preConfirm: function() {
           var editedFirstName = $("#swalFirstName").val();
           var editedLastName = $("#swalLastName").val();
-          var editedPhone = $("#swalPhone").val();
+          var editedPhone = $ ("#swalPhone").val();
           var editedCity = $("#swalCity").val();
           var editedStreet = $("#swalStreet").val();
 
@@ -81,16 +81,16 @@ $(document).ready(function() {
           $("#phoneError").text("");
   
      
-          if (editedFirstName && !(/^[a-zA-Z]+$/.test(editedFirstName))) {
+          if (editedFirstName && !(/^[a-zA-ZäüöÄÜÖ]+$/.test(editedFirstName))) {
             $("#firstNameError").text("Please enter a valid first name (only characters)");
-            return false; 
+            return false;
           }
-  
-
-          if (editedLastName && !(/^[a-zA-Z]+$/.test(editedLastName))) {
+          
+          if (editedLastName && !(/^[a-zA-ZäüöÄÜÖ]+$/.test(editedLastName))) {
             $("#lastNameError").text("Please enter a valid last name (only characters)");
-            return false; 
+            return false;
           }
+          
   
    
           if (editedPhone && !(/^(\+)?\d+$/.test(editedPhone))) {

@@ -17,6 +17,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/shoppingCart.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="apple-touch-icon" sizes="180x180" href="../../src/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../src/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../src/favicon/favicon-16x16.png">
@@ -52,7 +53,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <?php foreach ($items as $item) { ?>
     <div class="card">
       <div>
-        <img src="<?php echo $item['imagePath']; ?>" alt="<?php echo $item['name']; ?>" class="ItemImages" onclick="showImage('<?php echo $item['imagePath']; ?>', '<?php echo $item['name']; ?>');">
+        <img src="<?php echo $item['imagePath']; ?>" alt="<?php echo $item['name']; ?>" class="ItemImages" >
         <h2><?php echo $item['name']; ?></h2>
         <p>Price: <b><?php echo $item['price']; ?>$</b></p>
         <small id="error" class="error<?php echo $item['id'];?>"></small>

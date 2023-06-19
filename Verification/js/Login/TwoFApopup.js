@@ -31,6 +31,8 @@ function TwoFApopup(email){
               $('#emailError').html('');
               $('#error').html('');
               $('#success').html("Please log in now with your new credentials");
+              $('#pw').val("");
+
             })
             .catch(error => {
               Swal.showValidationMessage(`Request failed: ${error}`);

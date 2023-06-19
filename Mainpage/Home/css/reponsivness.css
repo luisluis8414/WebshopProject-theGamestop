@@ -1,0 +1,44 @@
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+    #mapImage{
+        width: 25rem;
+    }
+    .slide-in {
+        font-size: 5rem;
+    }
+    #battle{
+        width: 25rem;
+    }
+  }
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+    #mapImage{
+        width: 30rem;
+    }
+    #battle{
+        width: 30rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1300px) {
+    #mapImage{
+        width: 30em;
+        overflow: hidden;
+      }
+  }
+  
+  @media only screen and (max-width: 899px) {
+    #mapImage{
+        display: none;
+      }
+      #battle{
+        display: none;
+    }
+    .slide-in p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+  }
+  

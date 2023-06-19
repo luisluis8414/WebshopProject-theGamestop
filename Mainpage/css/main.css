@@ -1,6 +1,3 @@
-html{
-  width: 100%;
-}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -51,7 +48,6 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
 }
 
 .nav__link {
@@ -96,9 +92,13 @@ header {
   transition: background 250ms ease-in-out;
   letter-spacing: 1px;
   padding: 0.75em 1.5em;
-  
 }
 
+.nav__link--btn:hover {
+  background: var(--text);
+  color: var(--text-inverse);
+  border-color: var(--text);
+}
 
 .nav__link--btn::after {
   display: none;
@@ -110,7 +110,10 @@ header {
   color: white;
 }
 
-
+.nav__link--btn--highlight:hover {
+  background: var(--text);
+  border-color: var(--text);
+}
 
 .nav-scrolled {
   --text: #333;
@@ -148,16 +151,14 @@ header {
   display: grid;
   grid-gap: 2em;
   align-items: center;
-  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(20em, 40em)) minmax(1em, 1fr);
+  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em, 1fr);
 }
 
 .from-left {
-  font-size: 1.2em;
   grid-column: 2 / 3;
 }
 
 .from-right {
-  font-size: 1.2em;
   grid-column: 3 / 4;
 }
 
@@ -169,7 +170,6 @@ header {
 
 .Greeting {
   flex: 1;
-  font-size: 1rem;
   display: flex;
   align-items: center;
 }
@@ -177,159 +177,11 @@ header {
 
 #error{
   margin: auto;
- width: 40em;
-}
-@media only screen and (max-width: 1200px) {
-  #articleView{
-   display: none;
-  }
-}
-@media only screen and (max-width: 1400px) {
-  #articleView{
-    width: 45em;
-    margin-left: 8rem;
-  }
+ width: 20em;
 }
 
-@media only screen and (min-width: 1400px) {
-  #articleView{
-    width: 45em;
-    margin-left: 15rem;
-  }
-}
-
-
-#logo{
-  position: absolute;
-  top: -0.5rem;
-  width: 20rem;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-}
-
-#logo:hover{
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.account {
-  display: flex;
-  align-items: center;
-}
-
-.nav__list__right {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav__list-item__right {
-  margin-left: 10px;
-}
-
-.nav__link__right {
-  color: white;
-  text-decoration: none;
-}
-
-#searchInput {
-  width: 12rem;
-  height: 2rem; 
-  margin-right: 1.5rem;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 20px;
-  background-color: white;
-  color: #333;
-  outline: none;
-  transition: transform 0.3s ease;
-}
-
-#searchInput::placeholder {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-#searchInput:hover,
-#searchInput:focus {
-  background-color: white;
-  transform: scale(1.05);
-}
-
-
-#ShoppingCartIcon {
-  color: white;
-  width: 2.5rem; 
-  height: 100%;
-}
-
-#ShoppingCartIcon:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-
-.shopping-cart {
-  position: relative;
-  display: inline-block;
-}
-
-.cart-badge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  background-color: #6459DD;
-  border-radius: 50%;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.shopping-cart:hover,
-.shopping-cart:hover .cart-badge {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.nav__link--btn:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
-}
-
-/* .nav__link--btn--highlight:hover {
-  background: var(--text);
-  border-color: var(--text);
-} */
-/* .nav__link--btn:hover {
-  background: var(--text);
-  color: var(--text-inverse);
-  border-color: var(--text);
-} */
-
-.more-stuff-grid {
-  background: #f4f4f4;
-  padding: 4em 0;
-  display: grid;
-  grid-gap: 2em;
-  align-items: center;
-  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(20em, 40em)) minmax(1em, 1fr);
-}
-.imgContainer{
-  width: 40em;
-  height: 20em;
-  overflow: hidden;
-}
-
-.imgContainer img{
-  width: 30em;
+#articleView{
+  width: 45em;
+  height: 45em;
+  margin-left: 15rem;
 }

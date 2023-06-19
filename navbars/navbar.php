@@ -1,6 +1,7 @@
 <header>
   <a href="#" class="site-logo" aria-label="homepage">
     <img id="logo" src="../../src/logo3.png" alt="">
+    <img id="logo2" src="../../src/logo4.png" alt="">
   </a>
   <nav class="main-nav">
 
