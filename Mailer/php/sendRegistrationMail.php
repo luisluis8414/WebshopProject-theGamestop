@@ -125,7 +125,7 @@ function sendRegistrationEmail($recipientMail, $recipientName, $pw, $vorname)
                         Finish Registration
                     </button>
                 </a>
-                <p>As a special welcome offer, use the promo code <b>Welcome12</b> for a $25 discount on your first order!</p>
+                <p>As a special welcome offer, use the promo code <b>Welcome12</b> for a $5 discount on your first order!</p>
                 <small style="color: grey;">Please note that the minimum order total must be $20 or more to apply the discount.</small>
                 <div class="footer">
                     <p>This email was sent to ' . $recipientMail . '. If you have any questions, please contact our customer support.</p>

@@ -17,7 +17,6 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/shoppingCart.css">
-  <link rel="stylesheet" href="css/navbar.css">
   <link rel="apple-touch-icon" sizes="180x180" href="../../src/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../src/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../src/favicon/favicon-16x16.png">
@@ -37,6 +36,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="js/cart/updateCartNumber.js"></script>
   <script src="js/cart/getTotalSum.js"></script>
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 
 <body>

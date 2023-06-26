@@ -8,7 +8,7 @@
   @media only screen and (min-width: 1700px) and (max-width: 1979px) {
     .main-nav{
         margin-left: auto;
-        margin-right: 30rem;
+        margin-right: 35rem;
       }
   }
   
@@ -57,4 +57,38 @@
       #logo2{
         width: 4em;
       }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .main-nav{
+      margin-left: auto;
+      margin-right: 6rem;
+    }
+    #LogOutButton{
+      padding: 0.5em 0.75em;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .main-nav{
+      margin-left: auto;
+      margin-right: 2rem;
+    }
+    #LogOutButton{
+      padding: 0.5em 0.75em;
+    }
+  }
+
+  @media only screen and (max-width: 630px) {
+    .main-nav{
+      margin-left: 0;
+      margin-right: 0;
+    }
+    #LogOutButton{
+      font-size: smaller;
+      padding:  0.5em 0.75em;
+    }
+    header{
+      padding: 1rem;
+    }
   }
