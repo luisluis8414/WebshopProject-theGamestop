@@ -3,6 +3,9 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import {RGBELoader} from 'three/addons/loaders/RGBELoader.js'
 
+
+
+
 const scene = new THREE.Scene();
 const canvas = document.getElementById('responsive-canvas');
 var heightRatio = 1.5;
@@ -17,14 +20,22 @@ const camera= new THREE.PerspectiveCamera(
 
 camera.position.set(6 ,73 , 299);
 
+const loadingScreen = document.getElementById('loading-screen');
+const loadingManager= new THREE.LoadingManager();
 
+loadingManager.onLoad = function(){
+  setTimeout(function () {
+    loadingScreen.style.display = 'none';
+  }, 100);
+}
 
-
-const RGBEloader = new RGBELoader();
+const RGBEloader = new RGBELoader(loadingManager);
 RGBEloader.load('../../src/HDR_Free_City_Night_Lights_Ref.hdr', function(texture){
   texture.mapping = THREE.EquirectangularReflectionMapping;
   // scene.background=texture;
   scene.environment=texture;
+  
+  console.log("model loaded")
 })
 
 const renderer= new THREE.WebGLRenderer({

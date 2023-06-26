@@ -49,7 +49,7 @@ function FaInput(email) {
                 if (result.isConfirmed) {
                   setTimeout(function() {
                     FaInput(email);
-                  }, 100); 
+                  }, 200); 
                 }
               });
             }

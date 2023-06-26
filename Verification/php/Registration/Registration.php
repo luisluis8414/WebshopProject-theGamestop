@@ -34,7 +34,10 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <title>Registrierung</title>
 </head>
 
-<body>
+<body class="blur-background">
+<div id="loading-screen">
+    <h1>Loading...</h1>
+    </div>
   <div id="modelContainer">
     <canvas id="responsive-canvas"></canvas>
   </div>

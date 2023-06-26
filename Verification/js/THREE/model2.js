@@ -17,10 +17,17 @@ const camera= new THREE.PerspectiveCamera(
 
 camera.position.set(4.55 ,0.92 , -6.99);
 
+const loadingScreen = document.getElementById('loading-screen');
+const loadingManager= new THREE.LoadingManager();
+
+loadingManager.onLoad = function(){
+  setTimeout(function () {
+    loadingScreen.style.display = 'none';
+  }, 100);
+}
 
 
-
-const RGBEloader = new RGBELoader();
+const RGBEloader = new RGBELoader(loadingManager);
 RGBEloader.load('../../src/HDR_Free_City_Night_Lights_Ref.hdr', function(texture){
   texture.mapping = THREE.EquirectangularReflectionMapping;
   // scene.background=texture;
@@ -62,7 +69,7 @@ loader.load('../../models/DragonTalisman/scene.gltf', function(gltf){
   const clips=gltf.animations;
   const clip = THREE.AnimationClip.findByName(clips, 'Object_0');
   const action =mixer.clipAction(clip);
-  action.play();
+  // action.play();
 });
 
 
