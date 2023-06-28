@@ -1,15 +1,16 @@
 $(document).ready(function() {
-    // Function to fetch and populate user data
     function fetchUserData() {
         $.ajax({
             url: "php/getUserDataOnline.php",
             type: "GET",
             success: function(response) {
                 var data = JSON.parse(response);
-
+                // console.log(data)
                 var userContainer = $(".user-list");
                 userContainer.empty();
-                $('#UsersOnlineNumber').html(data.length);
+
+                var onlineUserCount = 0; 
+
                 for (let i = 0; i < data.length; i++) {
                     var user = data[i];
                     var userDiv = $("<div>").addClass("user");
@@ -24,6 +25,7 @@ $(document).ready(function() {
                     var statusDotDiv = $("<div>").addClass("status-dot");
                     if (user.isOnline === 1) {
                         statusDotDiv.addClass("online");
+                        onlineUserCount++; 
                     } else {
                         statusDotDiv.addClass("offline");
                     }
@@ -31,6 +33,8 @@ $(document).ready(function() {
 
                     userContainer.append(userDiv);
                 }
+
+                $('#UsersOnlineNumber').html(onlineUserCount); 
             },
             error: function(xhr, status, error) {
                 console.log(error);
@@ -41,4 +45,3 @@ $(document).ready(function() {
 
     setInterval(fetchUserData, 1000);
 });
-        
