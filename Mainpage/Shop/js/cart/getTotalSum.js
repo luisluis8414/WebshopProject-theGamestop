@@ -4,10 +4,10 @@ function getTotalSum() {
       type: "GET",
       dataType: "json",
       success: function (response) {
-        console.log(response.items)
+        // console.log(response.items)
         for (var i = 0; i < response.items.length; i++) {
           var quantity = response.items[i].quantity;
-          console.log("quant"+quantity)
+          // console.log("quant"+quantity)
           var message='Total Sum: <strong>' + response.totalSum.toFixed(2) + '$</s></strong>'
           var messageFooter='';
           if (quantity >= 10) {

@@ -22,7 +22,7 @@ function addToCart(itemId) {
           itemId: itemId
         },
         success: function (itemResponse) {
-          console.log("ITEMRESPONE:"+itemResponse.quantity)
+          // console.log("ITEMRESPONE:"+itemResponse.quantity)
           cartQuantity=itemResponse.quantity;
           updateBadge(quantity, cartQuantity, itemId);
         },

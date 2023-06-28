@@ -8,6 +8,7 @@ function deleteItem() {
         type: "POST",
         data: { itemId: itemId },
         success: function (response) {
+            console.log("happened")
             $('#cartItemsContainer').find('.cardCart').filter(function () {
                 return $(this).find('.hiddenId').val() === itemId;
             }).fadeOut(400, function () {
@@ -17,7 +18,8 @@ function deleteItem() {
             updateCartNumber(itemId, quantity);
             $('#cartFooter').html("Total Sum: <strong>" + 0 + "$</strong>");
             $('#cartFooterFooter').html("");
-
+            
+            $('.error'+itemId).html('');
          
         },
         error: function (xhr, status, error) {

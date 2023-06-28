@@ -14,6 +14,10 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/login.css">
     <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../../src/favicon/site.webmanifest">
     <link href="../../../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script defer src="../../../extern/bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>

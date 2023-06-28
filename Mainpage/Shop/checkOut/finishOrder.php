@@ -46,9 +46,11 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <link rel="stylesheet" href="css/navbar.css">
 
   <title>Check Out</title>
+ 
 </head>
 
 <body>
+  
 <?php include '../../../navbars/navbarCheckout.php'; ?>
   <div class="content">
     <div class="container">

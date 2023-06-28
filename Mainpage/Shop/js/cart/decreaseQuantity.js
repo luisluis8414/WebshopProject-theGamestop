@@ -1,6 +1,6 @@
 function decreaseQuantity() {
     const itemId = $(this).siblings('.hiddenId').val();
-
+    console.log('happened')
     $.ajax({
         url: "php/decreaseQuantity.php",
         type: "POST",
@@ -10,6 +10,7 @@ function decreaseQuantity() {
             if (response[0].quantity> 0) {
                 $('#quantity' + itemId).html('x ' + response[0].quantity);
                 $('#errorMsg'+itemId).html("");
+                $('.error'+itemId).html('');
             } else {
                 $('#cartItemsContainer').find('.cardCart').filter(function () {
                     return $(this).find('.hiddenId').val() === itemId;
@@ -17,7 +18,8 @@ function decreaseQuantity() {
                     $(this).remove();
                 });
                 $('#cartFooter').html("Total Sum: <strong>" + 0 + "$</strong>");
-
+                
+                $('.error'+itemId).html('');
             }
             updateCartNumber(itemId, 1);
             getTotalSum();
