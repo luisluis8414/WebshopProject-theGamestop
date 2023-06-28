@@ -2,7 +2,8 @@ function showCartAlert() {
   Swal.fire({
     title: 'Shopping Cart',
     html: '<div id="cartItemsContainer"></div>'+
-    '<div id="cartFooter"></div>',
+    '<div id="cartFooter"></div>'+
+    '<div id="cartFooterFooter"></div>',
     showCancelButton: true,
     cancelButtonText: 'Keep Shopping',
     confirmButtonText: 'Finish Order',
@@ -14,7 +15,16 @@ function showCartAlert() {
     }
   }).then(function (result) {
     if (result.isConfirmed) {
-      window.location.href = '../Shop/CheckOut/finishOrder.php';
+      var cartItemsCount = $('#cartItemsContainer').children().length;
+      if (cartItemsCount >= 1) {
+        window.location.href = '../Shop/CheckOut/finishOrder.php';
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: "Your cart can't be empty!",
+        })
+      }
     }
   });
   getCartItems();

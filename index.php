@@ -1,3 +1,3 @@
 <?php
 
-header("Location: Mainpage/Home");
+header("Location: Mainpage/Startpage");

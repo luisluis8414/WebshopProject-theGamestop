@@ -69,6 +69,9 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
       justify-content: center;
       height: 100%;
     }
+    .midCard h5{
+      margin-bottom: 0px;
+    }
   </style>
 </head>
 

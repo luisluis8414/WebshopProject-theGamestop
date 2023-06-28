@@ -15,7 +15,7 @@
       <input style="right: 12em" type="text" id="searchInput" name="search" placeholder="Search..." hidden/>
       
       <li class="nav__list-item__right">
-        <a class="nav__link nav__link--btn nav__link--btn--highlight"    href="../../Verification/php/Login/logOut.php">Log In</a>
+        <a class="nav__link nav__link--btn nav__link--btn--highlight"    href="../../Verification/php/Login/Login.php">Log In</a>
       </li>
     </ul>
   </nav>

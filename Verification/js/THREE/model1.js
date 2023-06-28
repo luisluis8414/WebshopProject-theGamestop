@@ -9,7 +9,7 @@ import {RGBELoader} from 'three/addons/loaders/RGBELoader.js'
 const scene = new THREE.Scene();
 const canvas = document.getElementById('responsive-canvas');
 var heightRatio = 1.5;
-canvas.height = canvas.width * heightRatio;
+canvas.height = canvas.width * heightRatio;   
 
 const camera= new THREE.PerspectiveCamera(
   75,

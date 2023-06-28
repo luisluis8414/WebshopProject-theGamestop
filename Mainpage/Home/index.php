@@ -51,6 +51,12 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/navbar.css">
+  <style>
+     .midCard h5{
+      margin-bottom: 0px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>

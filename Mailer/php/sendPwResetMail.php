@@ -116,7 +116,7 @@ try {
             <p>Password Recovery</p>
             <p>Dear '.$vorname.',</p>
             <p>We have received a request to reset the password for your account.<br> Your new one-time Password is: <br><br><b>'.$pw.'</b></p>
-            <a href="http://192.168.178.22:8080/WebDev/WebShop/Verification/php/Login/login.php">
+            <a href="https://thegamestop.de/Verification/php/Login/Login.php">
             <button>Set new Password</button>
             </a>
             <p>If you did not request a password reset, please ignore this email and your account will remain secure.</p>

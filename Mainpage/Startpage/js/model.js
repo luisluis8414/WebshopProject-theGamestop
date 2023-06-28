@@ -15,16 +15,16 @@ const camera= new THREE.PerspectiveCamera(
   1000
 );
 
-camera.position.set(-1.03 ,0.952, -2.44);
+
 
 const loadingScreen = document.getElementById('loading-screen');
 const loadingManager= new THREE.LoadingManager();
 
-// loadingManager.onLoad = function(){
-//   setTimeout(function () {
-//     loadingScreen.style.display = 'none';
-//   }, 100);
-// }
+loadingManager.onLoad = function(){
+  setTimeout(function () {
+    loadingScreen.style.display = 'none';
+  }, 4500);
+}
 
 
 const RGBEloader = new RGBELoader(loadingManager);
@@ -41,8 +41,8 @@ const renderer= new THREE.WebGLRenderer({
   logarithmicDepthBuffer: true
 });
 
-const controls = new OrbitControls( camera, renderer.domElement );
-controls.enableDamping=true;
+// const controls = new OrbitControls( camera, renderer.domElement );
+// controls.enableDamping=true;
 
 renderer.outputEncoding =THREE.sRGBEncoding;
 // renderer.toneMapping=THREE.ACESFilmicToneMapping
@@ -58,46 +58,42 @@ const loader= new GLTFLoader();
 
 let mixer;
 let obj;
-loader.load('../../Verification/models/DragonTalisman/scene.gltf', function(gltf){
+loader.load('../../Verification/models/cyber_samurai/scene.gltf', function(gltf){
   obj=gltf.scene;
-  obj.position.z-=1
-  obj.position.y-=0
-  // obj.position.x-=100
+  obj.position.z-=0.1
+  obj.position.y+=0.6
+  obj.rotation.y-=0.2 
+  // obj.position.x-=1
  
   scene.add(gltf.scene);
-  mixer = new THREE.AnimationMixer(obj);
-  const clips=gltf.animations;
-  const clip = THREE.AnimationClip.findByName(clips, 'Object_0');
-  const action =mixer.clipAction(clip);
+  // mixer = new THREE.AnimationMixer(obj);
+  // const clips=gltf.animations;
+  // const clip = THREE.AnimationClip.findByName(clips, 'Object_0');
+  // const action =mixer.clipAction(clip);
   // action.play();
 });
 
 
 // scene.background=new THREE.Color(0xffffff);
-const axesHelper = new THREE.AxesHelper( 500);
-scene.add( axesHelper );
+// const axesHelper = new THREE.AxesHelper( 500);
+// scene.add( axesHelper );
 
-// const ambientLight = new THREE.AmbientLight(0x404040, 0.1);
-const light = new THREE.SpotLight(0x404040, 0.1); // soft white light
-light.position.set(0, 0, -2); // Position the light in front of the model
-light.target.position.set(0, 0, -1); // Set the light's target to your model's position
+const ambientLight = new THREE.AmbientLight(0x404040, 0.1);
+const light = new THREE.DirectionalLight(0x404040, 3); // soft white light
+light.position.set(0, 0, 2); 
+light.target.position.set(0, 0, -1);
 
-// Configure spotlight properties
-light.angle = Math.PI / 4; // Set the spotlight cone angle
-light.penumbra = 0.1; // Set the spotlight penumbra (fading edge)
-light.decay = 0.01; // Set the spotlight decay (intensity attenuation over distance)
-light.distance = 0.01; // Set the maximum distance the light will reach
-
+scene.add(ambientLight);
 scene.add(light);
 scene.add(light.target);
 // scene.add(ambientLight);
 
-const helper = new THREE.DirectionalLightHelper(light, 5);
+// const helper = new THREE.DirectionalLightHelper(light, 5);
 
-light.add(helper);
+// light.add(helper);
 
 let rotationBool=true;
-let increment=0.0002
+let increment=0.0004
 
 const clock = new THREE.Clock();
 
@@ -125,24 +121,29 @@ function resizeCanvas() {
 window.addEventListener('load', resizeCanvas);
 window.addEventListener('resize', resizeCanvas);
 
+camera.position.set(0,2,1);
+scene.add(camera)
+
+
 
 
 function animate() {
     // console.log(camera.position)
   	requestAnimationFrame( animate );
 
-    controls.update();
+    // controls.update();
 
-    // console.log( camera.position)
-    // console.log(obj.position)
+    // console.log(camera.position)
+    // console.log(camera.rotation)
+    // // console.log(obj.position)
 
-    // animationFlying();
+    animationFlying();
     // if(obj2) obj2.rotation.y+=0.01;
   	renderer.render(scene, camera);
   } 
 function animationFlying(){
   if(obj) {
-    mixer.update(clock.getDelta());
+    // mixer.update(clock.getDelta());
     if (rotationBool) {
       obj.rotation.y += increment;
     } else {
