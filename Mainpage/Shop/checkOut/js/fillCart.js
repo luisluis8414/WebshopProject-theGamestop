@@ -26,10 +26,10 @@ $(document).ready(function() {
               success: function(itemResponse) {
                 $('#cartFooter').html(sum + "$");
                 if (response[i].quantity >= 10) {
-                  const discount = sum * 0.1;
+                  const discount = sum * 0.15;
                   const totalSum = (sum - discount).toFixed(2);
                   $('#cartFooter').html(totalSum + "$");
-                  $('#discount').html("10% Discount");
+                  $('#discount').html("15% Discount");
                   $('#discountSum').html("-" + discount.toFixed(2) + "$");
                 } else if (response[i].quantity >= 5) {
                   const discount = sum * 0.05;
