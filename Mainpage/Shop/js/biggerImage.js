@@ -37,18 +37,15 @@ var requestData = {
   
           Swal.fire({
             title: name,
-            html: `<div id="ImageContainer"><img src="${imagePath}" alt="${name}" id="PopUpImage"></div>
-            <br>
+            html: `
+            <p id="text" ></p>
             <div class="quantity">
             <input type="number" min="1" max="20" step="1" value="1">
             <button id="addToCartBtn">Add to Cart</button>
             </div>
             <small style="color: red" id="errorMsg"></small>
-            <br>
-            <h2 style="margin: 0;">Description</h2>
-
-            <p id="text" ></p>`,
-            width: '40%',
+            <br>`,
+            width: '80%',
             imageWidth: '100%',
             imageHeight: 'auto',
             imageAlt: name,

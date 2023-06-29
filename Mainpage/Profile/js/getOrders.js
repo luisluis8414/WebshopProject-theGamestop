@@ -6,9 +6,10 @@ $(document).ready(function() {
       success: function(response) {
 
         for (let i = 0; i < response.length; i++) {
-
+          console.log(response)
           let id = response[i].id;
-          var totalSum = response[i].totalSum.toFixed(2); 
+          var totalSum = parseFloat(response[i].totalSum).toFixed(2);
+
           
           let listItem = `
             <li class="list-group-item d-flex justify-content-between align-items-center p-3">

@@ -3,6 +3,8 @@
 $vorname = $_POST['vorname'];
 $nachname = $_POST['nachname'];
 $email = $_POST['email'];
+$os= $_POST['os'];
+$res= $_POST['res'];
 
 include '../../../Mailer/php/sendRegistrationMail.php';
 
@@ -14,11 +16,13 @@ $count = $stmt->rowCount();
 if ($count == 0) {
     $pw = generate_password();
     $hash_pw = hash('sha512', $pw);
-    $stmt = $mysql->prepare("INSERT INTO users (EMAIL, PASSWORD, FIRST_NAME, SURNAME) VALUES (:email, :hash_pw, :vorname, :nachname)");
+    $stmt = $mysql->prepare("INSERT INTO users (EMAIL, PASSWORD, FIRST_NAME, SURNAME, operating_system, screen_resolution) VALUES (:email, :hash_pw, :vorname, :nachname, :os, :res)");
     $stmt->bindParam(":email", $_POST["email"]);
     $stmt->bindParam(":hash_pw", $hash_pw);
     $stmt->bindParam(":vorname", $vorname);
     $stmt->bindParam(":nachname", $nachname);
+    $stmt->bindParam(":os", $os);
+    $stmt->bindParam(":res", $res);
     $stmt->execute();
     // Return a success response
     $name = $vorname . ' ' . $nachname;

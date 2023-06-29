@@ -23,6 +23,7 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
 
   <style>
     body {
+      /* background-image: url('../../src/background.jpg'); */
       background-color: #333333;
       overflow: hidden;
     }
@@ -60,8 +61,8 @@ if ((isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
         <div class="center">
           <div class="container shadow-lg bg-white rounded p-5 custom">
             <div class="text-center">
-              <h1 class="mb-5 mt-2">Welcome!<br><br> Please login or register to continue. </h1>
-              <a href="../../Verification/php/Login/Login.php" class="btn btn-primary m-2 btn-lg">Login/Register</a>
+              <h1 class="mb-5 mt-2">Welcome!<br><br> Please login to continue. </h1>
+              <a href="../../Verification/php/Login/Login.php" class="btn btn-primary m-2 btn-lg">Login</a>
               <a href="../Shop/" class="btn btn-primary m-2 btn-lg">View Store</a>
             </div>
           </div>

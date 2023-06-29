@@ -1,0 +1,60 @@
+@media (orientation: portrait) and (max-width: 600px) {
+    .main-nav{
+        font-size: 10px;
+    }
+    #logo2{
+        display: none;
+    }
+
+    #ShoppingCartIcon{
+        width: 30px;
+    }
+
+    #logOutButton{
+        padding: 10px;
+        margin: 0;
+    }
+    .ItemView{
+        margin-top: 4em;
+    }
+    .card{
+        width: 100%;
+    }
+    header{
+        padding: 10px;
+    }
+    .rightCard{
+        display: none;
+    }
+   
+  }
+
+  @media (orientation: portrait) and (max-width: 375px) {
+    .main-nav{
+        font-size: 6px;
+    }
+    #logo2{
+        display: none;
+    }
+
+    #ShoppingCartIcon{
+        width: 30px;
+    }
+
+    #logOutButton{
+        padding: 5px;
+        margin: 0;
+    }
+    .ItemView{
+        margin-top: 4em;
+    }
+    .card{
+        width: 100%;
+    }
+    header{
+        padding: 5px;
+    }
+    .nav__link{
+        padding: 10px;
+    }
+  }

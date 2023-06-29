@@ -6,7 +6,7 @@ require('../../../DBConnection/mysql.php');
 $id = $_POST['id'];
 
 try {
-  $stmt = $mysql->prepare("SELECT * FROM bestellungsItems WHERE orderId = :id");
+  $stmt = $mysql->prepare("SELECT * FROM bestellungsitems WHERE orderId = :id");
   $stmt->bindParam(":id", $id);
   $stmt->execute();
 
@@ -33,4 +33,3 @@ try {
   echo json_encode($response);
   exit();
 }
-?>

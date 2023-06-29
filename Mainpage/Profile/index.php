@@ -56,6 +56,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/responsiv.css">
 
   <style>
     body,
@@ -83,11 +84,11 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
     <div class="container py-5">
       <div class="row">
         <div class="col">
-          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <nav id="hiddenThing" aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">User</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+              <li class="breadcrumb-item"><a href="#"></a></li>
+              <li class="breadcrumb-item"><a href="#"></a></li>
+              <li class="breadcrumb-item active" aria-current="page"></li>
             </ol>
           </nav>
         </div>
@@ -95,7 +96,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
 
       <div class="row">
         <div class="col-lg-4">
-          <div class="card mb-4">
+          <div class="card mb-4" id="thisNeedsMargin" >
             <div class="card-body text-center">
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3" id="ShowName">John Smith</h5>

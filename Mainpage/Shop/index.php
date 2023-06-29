@@ -37,41 +37,48 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="js/cart/getTotalSum.js"></script>
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/responsiv.css">
+  <style>
+    .card h2 {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  </style>
 </head>
 
 <body>
-  
-<?php 
-if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
-  include '../../navbars/navbarWithSearchNotLoggedIn.php'; 
-}else{
-  include '../../navbars/navbarWithSearch.php'; 
-}
-?>
+
+  <?php
+  if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
+    include '../../navbars/navbarWithSearchNotLoggedIn.php';
+  } else {
+    include '../../navbars/navbarWithSearch.php';
+  }
+  ?>
   <main>
-  <div class="ItemView">
-  <?php foreach ($items as $item) { ?>
-    <div class="card">
-      <div>
-        <img src="<?php echo $item['imagePath']; ?>" alt="<?php echo $item['name']; ?>" class="ItemImages" >
-        <h2><?php echo $item['name']; ?></h2>
-        <p>Price: <b><?php echo $item['price']; ?>$</b></p>
-        <small id="error" class="error<?php echo $item['id'];?>"></small>
-        <input type="hidden" class="item-id" value="<?php echo $item['id']; ?>">
-      </div>
-      <div class="card-footer">
-      <?php 
-        if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
-          echo '<div id="filler"> </div>';
-        }else{
-          include 'php/buttons.php'; 
-        }
-        ?>
-        
-      </div>
+    <div class="ItemView">
+      <?php foreach ($items as $item) { ?>
+        <div class="card">
+          <div>
+            <img src="<?php echo $item['imagePath']; ?>" alt="<?php echo $item['name']; ?>" class="ItemImages">
+            <h2><?php echo $item['name']; ?></h2>
+            <p>Price: <b><?php echo $item['price']; ?>$</b></p>
+            <small id="error" class="error<?php echo $item['id']; ?>"></small>
+            <input type="hidden" class="item-id" value="<?php echo $item['id']; ?>">
+          </div>
+          <div class="card-footer">
+            <?php
+            if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
+              echo '<div id="filler"> </div>';
+            } else {
+              include 'php/buttons.php';
+            }
+            ?>
+
+          </div>
+        </div>
+      <?php } ?>
     </div>
-  <?php } ?>
-</div>
   </main>
 
 </body>

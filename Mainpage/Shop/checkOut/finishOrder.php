@@ -44,6 +44,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <script src="js/cart/getTotalSum.js"></script>
   <script src="js/deleteCart.js"></script>
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/responsiv.css">
 
   <title>Check Out</title>
  

@@ -1,6 +1,7 @@
 $(document).ready(function() {
+  var allQuantity=0;
   $.ajax({
-    
+  
     url: "../php/getTotalSum.php",
     type: "GET",
     dataType: "json",
@@ -24,14 +25,15 @@ $(document).ready(function() {
                 itemId: response[i].itemId
               },
               success: function(itemResponse) {
+                allQuantity+=response[i].quantity;
                 $('#cartFooter').html(sum + "$");
-                if (response[i].quantity >= 10) {
+                if (allQuantity>= 10) {
                   const discount = sum * 0.15;
                   const totalSum = (sum - discount).toFixed(2);
                   $('#cartFooter').html(totalSum + "$");
                   $('#discount').html("15% Discount");
                   $('#discountSum').html("-" + discount.toFixed(2) + "$");
-                } else if (response[i].quantity >= 5) {
+                } else if (allQuantity >= 5) {
                   const discount = sum * 0.05;
                   const totalSum = (sum - discount).toFixed(2);
                   $('#cartFooter').html(totalSum + "$");
