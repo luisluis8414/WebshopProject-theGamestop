@@ -69,13 +69,13 @@ SMTP_HOST=
 
 ![image](https://github.com/luisluis8414/Gamestop/assets/86251888/c20ce29d-4b23-4ebe-95dc-5047975e0245)
 
-10. Submit your order and wait for confirmation.
+10. Submit your order and wait for confirmation. (And u can go for more confetti!)
 
 ![image](https://github.com/luisluis8414/Gamestop/assets/86251888/cc3a0887-b75d-49f9-aa13-dbcd505b6c66)
 
 12. Once your order has been confirmed you get an email.
 
-![image](https://github.com/luisluis8414/Gamestop/assets/86251888/769dd7d3-efe9-47af-85a6-1d740274c32a)
+![image](https://github.com/luisluis8414/Gamestop/assets/86251888/7b60536e-59f4-4fff-bcfb-1fb3d7122b9e)
 
 14. You can visit the Profile Page to see/ reorder old orders or see other Users online and edit your Profile
 
