@@ -14,7 +14,7 @@ try {
     $itemId = $row['item_id'];
     $quantity = $row['quantity'];
 
-    $stmt2 = $mysql->prepare("INSERT INTO bestellungsItems (orderId, itemId, quantity) VALUES (:orderId, :itemId, :quantity)");
+    $stmt2 = $mysql->prepare("INSERT INTO bestellungsitems (orderId, itemId, quantity) VALUES (:orderId, :itemId, :quantity)");
     $stmt2->bindParam(":orderId", $orderId);
     $stmt2->bindParam(":itemId", $itemId);
     $stmt2->bindParam(":quantity", $quantity);

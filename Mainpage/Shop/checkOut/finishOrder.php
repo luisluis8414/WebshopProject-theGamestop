@@ -19,7 +19,7 @@ if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)) {
   <link rel="apple-touch-icon" sizes="180x180" href="../../../src/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../../../src/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../../src/favicon/favicon-16x16.png">
-  <link rel="manifest" href="../../src/favicon/site.webmanifest">
+  <link rel="manifest" href="../../../src/favicon/site.webmanifest">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script type="text/javascript" src="../../../Extern/js/jquery.min.js"></script>
 

@@ -5,7 +5,7 @@ $(document).ready(function() {
             type: "GET",
             success: function(response) {
                 var data = JSON.parse(response);
-                // console.log(data)
+                console.log(data)
                 var userContainer = $(".user-list");
                 userContainer.empty();
 
@@ -13,6 +13,7 @@ $(document).ready(function() {
 
                 for (let i = 0; i < data.length; i++) {
                     var user = data[i];
+                    console.log("user"+ data[i].isOnline)
                     var userDiv = $("<div>").addClass("user");
 
                     var userDetailsDiv = $("<div>").addClass("user-details");
@@ -23,7 +24,8 @@ $(document).ready(function() {
                     userDiv.append(userDetailsDiv);
 
                     var statusDotDiv = $("<div>").addClass("status-dot");
-                    if (user.isOnline === 1) {
+                    if (user.isOnline == 1) {
+                        console.log('one')
                         statusDotDiv.addClass("online");
                         onlineUserCount++; 
                     } else {
@@ -33,7 +35,7 @@ $(document).ready(function() {
 
                     userContainer.append(userDiv);
                 }
-
+                console.log("count:"+onlineUserCount)
                 $('#UsersOnlineNumber').html(onlineUserCount); 
             },
             error: function(xhr, status, error) {

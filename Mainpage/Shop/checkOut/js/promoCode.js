@@ -27,7 +27,7 @@ $(document).ready(function() {
             recent=discount;
             $('#cartFooter').html("<strong>" + total.toFixed(2) + "$</strong>");
             $('#thecode').html(promoCode);
-            $('#promoAmount').html("-$" + discount.toFixed(2));
+            $('#promoAmount').html("-$" + parseFloat(discount).toFixed(2));
           } else {
             $('#discountError').html("Order total after discount is less than $20. Cannot apply promo code.");
             recent=0;

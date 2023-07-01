@@ -2,14 +2,14 @@
 try {
     session_start();
     $userId = $_SESSION['userId'];
-    $email=$_SESSION['email'];
+    $email = $_SESSION['email'];
 
     $email2 = $_POST['email'];
 
     if (empty($email2) || !preg_match("/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/", $email2)) {
         $email2 = $email;
     }
-    
+
 
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -23,10 +23,10 @@ try {
     $ccExpiration = $_POST['ccExpiration'];
     $ccCvv = $_POST['ccCvv'];
     $totalSum = $_POST['totalSum'];
-    $fees =$_POST['fees'];
-    $promo =$_POST['promo'];
+    $fees = $_POST['fees'];
+    $promo = $_POST['promo'];
 
-    $sql = "INSERT INTO Bestellungen (vorname, nachname, email, adresse, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv, totalSum)
+    $sql = "INSERT INTO bestellungen (vorname, nachname, email, adresse, land, plz, downloadtyp, zahlungsmethode, kartenname, kartennummer, kartenablauf, cvv, totalSum)
         VALUES ('$firstName', '$lastName', '$email', '$address', '$country', '$zip', '$download', '$paymentMethod', '$ccName', '$ccNumber', '$ccExpiration', '$ccCvv', '$totalSum')";
 
     require("../../../../DBConnection/mysql.php");
@@ -45,27 +45,27 @@ try {
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $itemIds = array();
-        $quantities = array();
-        foreach ($rows as $row) {
-            $itemIds[] = $row['item_id'];
-            $quantities[] = $row['quantity'];
-        }
+    $quantities = array();
+    foreach ($rows as $row) {
+        $itemIds[] = $row['item_id'];
+        $quantities[] = $row['quantity'];
+    }
     $response = array();
-   
 
-    
-$itemNames = array();
-$prices = array();
-foreach ($itemIds as $itemId) {
-    $stmt = $mysql->prepare("SELECT name, price FROM items WHERE id = :itemId");
-    $stmt->bindParam(":itemId", $itemId);
-    $stmt->execute();
 
-    $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $itemNames[] = $item['name'];
-    $prices[] = $item['price'];
-}
+    $itemNames = array();
+    $prices = array();
+    foreach ($itemIds as $itemId) {
+        $stmt = $mysql->prepare("SELECT name, price FROM items WHERE id = :itemId");
+        $stmt->bindParam(":itemId", $itemId);
+        $stmt->execute();
+
+        $item = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $itemNames[] = $item['name'];
+        $prices[] = $item['price'];
+    }
 
 
 
