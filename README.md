@@ -26,7 +26,7 @@ This is a webshop for ingame items built with ThreeJS, PHP, and Ajax. The websho
 
 git clone https://github.com/luisluis8414/threeJs.git
 
-2. Import the database schema using the `webshop.sql` file included in the repository. //not included yet
+2. Import the database schema using the `webshop.sql` file included in the repository. 
 
 3. Create a .env file in the root directory
 
