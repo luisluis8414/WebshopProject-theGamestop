@@ -1,5 +1,7 @@
 
-
+  #mobile{
+    display: none;
+  }
   #loading-screen {
     position: absolute;
     top: 0;
@@ -15,3 +17,30 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     }
+
+
+    @media only screen and (orientation: portrait) {
+      #modelContainer{
+        display: none;
+      }
+
+      #loading-screen{
+        display: none;
+      }
+
+      .custom{
+        width: fit-content;
+      }
+
+      #rightSide{
+        display: none;
+      }
+
+      #landscape{
+        display: none;
+      }
+      #mobile{
+        display: block;
+      }
+    }
+    
