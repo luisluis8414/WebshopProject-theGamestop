@@ -46,18 +46,23 @@ SMTP_HOST=
 
 ## Usage
 
-1. Register a new account or log in to an existing one.
+1. Register a new account or log in to an existing one. (You can also reset your Password and 2FA)
+   ![image](https://github.com/luisluis8414/Gamestop/assets/86251888/737a15b7-aeae-40c7-8fec-aa7973454aea)
 
-2. Browse the available ingame items and select the ones you want to purchase.
+   ![image](https://github.com/luisluis8414/Gamestop/assets/86251888/a4ccc02f-ed9b-485c-8f48-06ef025f77ba)
 
-3. Add the selected items to your cart.
 
-4. Proceed to checkout and fill in the necessary information.
 
-5. Submit your order and wait for confirmation.
+3. Browse the available ingame items and select the ones you want to purchase.
 
-6. Once your order has been confirmed you get an email.
+4. Add the selected items to your cart.
 
-7. You can visit the Profile Page to see/ reorder old orders or see other Users online and edit your Profile 
+5. Proceed to checkout and fill in the necessary information.
+
+6. Submit your order and wait for confirmation.
+
+7. Once your order has been confirmed you get an email.
+
+8. You can visit the Profile Page to see/ reorder old orders or see other Users online and edit your Profile 
 
 
