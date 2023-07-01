@@ -56,6 +56,8 @@ SMTP_HOST=
 
 5. Submit your order and wait for confirmation.
 
-6. Once your order has been confirmed, you can download your purchased ingame items.
+6. Once your order has been confirmed you get an email.
+
+7. You can visit the Profile Page to see/ reorder old orders or see other Users online and edit your Profile 
 
 
