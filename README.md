@@ -46,8 +46,8 @@ SMTP_HOST=
 
 ## Usage
 
-1. Register a new account or log in to an existing one. (You can also reset your Password and 2FA)
-2. 
+1. Register a new account or log in to an existing one. Just follow the instructions(You can also reset your Password and 2FA)
+2. U need Google Authenticator for a login. 
    ![image](https://github.com/luisluis8414/Gamestop/assets/86251888/737a15b7-aeae-40c7-8fec-aa7973454aea)
 
    ![image](https://github.com/luisluis8414/Gamestop/assets/86251888/a4ccc02f-ed9b-485c-8f48-06ef025f77ba)
